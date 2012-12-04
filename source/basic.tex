@@ -1612,9 +1612,10 @@ up as types in the scope designated by the
 \grammarterm{nested-name-specifier}. Similarly, in a
 \grammarterm{qualified-id} of the form:
 
-\begin{ncbnf}
-nested-name-specifier\opt class-name \terminal{::} \terminal{\tilde} class-name
-\end{ncbnf}
+% html-comment
+%\begin{ncbnf}
+%nested-name-specifier\opt class-name \terminal{::} \terminal{\tilde} class-name
+%\end{ncbnf}
 
 the second \grammarterm{class-name} is looked up in the same scope as the
 first. \enterexample
@@ -3958,16 +3959,16 @@ There is a partial ordering on cv-qualifiers, so that a type can be
 said to be \grammarterm{more cv-qualified} than another.
 Table~\ref{tab:relations.on.const.and.volatile} shows the relations that
 constitute this ordering.
-
-\begin{floattable}{Relations on \tcode{const} and \tcode{volatile}}{tab:relations.on.const.and.volatile}
-{ccc}
-\topline
-\cvqual{no cv-qualifier}    &<& \tcode{const}           \\
-\cvqual{no cv-qualifier}    &<& \tcode{volatile}        \\
-\cvqual{no cv-qualifier}    &<& \tcode{const volatile}  \\
-\tcode{const}               &<& \tcode{const volatile}  \\
-\tcode{volatile}            &<& \tcode{const volatile}  \\
-\end{floattable}
+% html-comment
+%\begin{floattable}{Relations on \tcode{const} and \tcode{volatile}}{tab:relations.on.const.and.volatile}
+%{ccc}
+%\topline
+%\cvqual{no cv-qualifier}    &<& \tcode{const}           \\
+%\cvqual{no cv-qualifier}    &<& \tcode{volatile}        \\
+%\cvqual{no cv-qualifier}    &<& \tcode{const volatile}  \\
+%\tcode{const}               &<& \tcode{const volatile}  \\
+%\tcode{volatile}            &<& \tcode{const volatile}  \\
+%\end{floattable}
 
 \pnum
 In this International Standard, the notation \term{cv} (or
@@ -4000,7 +4001,7 @@ Expressions are categorized according to the taxonomy in Figure~\ref{fig:categor
 \begin{importgraphic}
 {Expression category taxonomy}
 {fig:categories}
-{valuecategories.pdf}
+{valuecategories.jpg}
 \end{importgraphic}
 
 \begin{itemize}

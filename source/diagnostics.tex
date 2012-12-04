@@ -13,12 +13,13 @@ documenting program assertions, and
 a global variable for error number codes,
 as summarized in Table~\ref{tab:diagnostics.lib.summary}.
 
-\begin{libsumtab}{Diagnostics library summary}{tab:diagnostics.lib.summary}
-\ref{std.exceptions}  & Exception classes     &   \tcode{<stdexcept>}     \\ \rowsep
-\ref{assertions}      & Assertions            &   \tcode{<cassert>}       \\ \rowsep
-\ref{errno}           & Error numbers         &   \tcode{<cerrno>}        \\ \rowsep
-\ref{syserr}          & System error support  &   \tcode{<system_error>}  \\ \rowsep
-\end{libsumtab}
+% html-comment
+%\begin{libsumtab}{Diagnostics library summary}{tab:diagnostics.lib.summary}
+%\ref{std.exceptions}  & Exception classes     &   \tcode{<stdexcept>}     \\ \rowsep
+%\ref{assertions}      & Assertions            &   \tcode{<cassert>}       \\ \rowsep
+%\ref{errno}           & Error numbers         &   \tcode{<cerrno>}        \\ \rowsep
+%\ref{syserr}          & System error support  &   \tcode{<system_error>}  \\ \rowsep
+%\end{libsumtab}
 
 \rSec1[std.exceptions]{Exception classes}
 
@@ -541,10 +542,10 @@ The header
 (Table~\ref{tab:diagnostics.hdr.cassert}),
 provides a macro for documenting \Cpp program assertions and a mechanism
 for disabling the assertion checks.
-
-\begin{libsyntab2}{cassert}{tab:diagnostics.hdr.cassert}
-\macro  &   \tcode{assert}  \\
-\end{libsyntab2}
+% html-comment
+%\begin{libsyntab2}{cassert}{tab:diagnostics.hdr.cassert}
+%\macro  &   \tcode{assert}  \\
+%\end{libsyntab2}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -557,104 +558,104 @@ ISO C 7.2.
 
 \pnum
 The header \tcode{<cerrno>} is described in Table~\ref{tab:diagnostics.hdr.cerrno}. Its contents are the same as the POSIX header \tcode{<errno.h>}, except that \tcode{errno} shall be defined as a macro. \enternote The intent is to remain in close alignment with the POSIX standard. \exitnote A separate \tcode{errno} value shall be provided for each thread.
-
-\begin{libsyntab6}{cerrno}{tab:diagnostics.hdr.cerrno}
-
-\macros &
-\tcode{ECONNREFUSED} &
-\tcode{EIO} &
-\tcode{ENODEV} &
-\tcode{ENOTEMPTY} &
-\tcode{ERANGE} \\
-
-\tcode{E2BIG} &
-\tcode{ECONNRESET} &
-\tcode{EISCONN} &
-\tcode{ENOENT} &
-\tcode{ENOTRECOVERABLE} &
-\tcode{EROFS} \\
-
-\tcode{EACCES} &
-\tcode{EDEADLK} &
-\tcode{EISDIR} &
-\tcode{ENOEXEC} &
-\tcode{ENOTSOCK} &
-\tcode{ESPIPE} \\
-
-\tcode{EADDRINUSE} &
-\tcode{EDESTADDRREQ} &
-\tcode{ELOOP} &
-\tcode{ENOLCK} &
-\tcode{ENOTSUP} &
-\tcode{ESRCH} \\
-
-\tcode{EADDRNOTAVAIL} &
-\tcode{EDOM} &
-\tcode{EMFILE} &
-\tcode{ENOLINK} &
-\tcode{ENOTTY} &
-\tcode{ETIME} \\
-
-\tcode{EAFNOSUPPORT} &
-\tcode{EEXIST} &
-\tcode{EMLINK} &
-\tcode{ENOMEM} &
-\tcode{ENXIO} &
-\tcode{ETIMEDOUT} \\
-
-\tcode{EAGAIN} &
-\tcode{EFAULT} &
-\tcode{EMSGSIZE} &
-\tcode{ENOMSG} &
-\tcode{EOPNOTSUPP} &
-\tcode{ETXTBSY} \\
-
-\tcode{EALREADY} &
-\tcode{EFBIG} &
-\tcode{ENAMETOOLONG} &
-\tcode{ENOPROTOOPT} &
-\tcode{EOVERFLOW} &
-\tcode{EWOULDBLOCK} \\
-
-\tcode{EBADF} &
-\tcode{EHOSTUNREACH} &
-\tcode{ENETDOWN} &
-\tcode{ENOSPC} &
-\tcode{EOWNERDEAD} &
-\tcode{EXDEV} \\
-
-\tcode{EBADMSG} &
-\tcode{EIDRM} &
-\tcode{ENETRESET} &
-\tcode{ENOSR} &
-\tcode{EPERM} &
-\tcode{errno} \\
-
-\tcode{EBUSY} &
-\tcode{EILSEQ} &
-\tcode{ENETUNREACH} &
-\tcode{ENOSTR} &
-\tcode{EPIPE}  & \\
-
-\tcode{ECANCELED} &
-\tcode{EINPROGRESS} &
-\tcode{ENFILE} &
-\tcode{ENOSYS} &
-\tcode{EPROTO} & \\
-
-\tcode{ECHILD} &
-\tcode{EINTR} &
-\tcode{ENOBUFS} &
-\tcode{ENOTCONN} &
-\tcode{EPROTONOSUPPORT} & \\
-
-\tcode{ECONNABORTED} &
-\tcode{EINVAL} &
-\tcode{ENODATA} &
-\tcode{ENOTDIR} &
-\tcode{EPROTOTYPE} & \\
-
-\end{libsyntab6}
+% html-comment
+%\begin{libsyntab6}{cerrno}{tab:diagnostics.hdr.cerrno}
+%
+%\macros &
+%\tcode{ECONNREFUSED} &
+%\tcode{EIO} &
+%\tcode{ENODEV} &
+%\tcode{ENOTEMPTY} &
+%\tcode{ERANGE} \\
+%
+%\tcode{E2BIG} &
+%\tcode{ECONNRESET} &
+%\tcode{EISCONN} &
+%\tcode{ENOENT} &
+%\tcode{ENOTRECOVERABLE} &
+%\tcode{EROFS} \\
+%
+%\tcode{EACCES} &
+%\tcode{EDEADLK} &
+%\tcode{EISDIR} &
+%\tcode{ENOEXEC} &
+%\tcode{ENOTSOCK} &
+%\tcode{ESPIPE} \\
+%
+%\tcode{EADDRINUSE} &
+%\tcode{EDESTADDRREQ} &
+%\tcode{ELOOP} &
+%\tcode{ENOLCK} &
+%\tcode{ENOTSUP} &
+%\tcode{ESRCH} \\
+%
+%\tcode{EADDRNOTAVAIL} &
+%\tcode{EDOM} &
+%\tcode{EMFILE} &
+%\tcode{ENOLINK} &
+%\tcode{ENOTTY} &
+%\tcode{ETIME} \\
+%
+%\tcode{EAFNOSUPPORT} &
+%\tcode{EEXIST} &
+%\tcode{EMLINK} &
+%\tcode{ENOMEM} &
+%\tcode{ENXIO} &
+%\tcode{ETIMEDOUT} \\
+%
+%\tcode{EAGAIN} &
+%\tcode{EFAULT} &
+%\tcode{EMSGSIZE} &
+%\tcode{ENOMSG} &
+%\tcode{EOPNOTSUPP} &
+%\tcode{ETXTBSY} \\
+%
+%\tcode{EALREADY} &
+%\tcode{EFBIG} &
+%\tcode{ENAMETOOLONG} &
+%\tcode{ENOPROTOOPT} &
+%\tcode{EOVERFLOW} &
+%\tcode{EWOULDBLOCK} \\
+%
+%\tcode{EBADF} &
+%\tcode{EHOSTUNREACH} &
+%\tcode{ENETDOWN} &
+%\tcode{ENOSPC} &
+%\tcode{EOWNERDEAD} &
+%\tcode{EXDEV} \\
+%
+%\tcode{EBADMSG} &
+%\tcode{EIDRM} &
+%\tcode{ENETRESET} &
+%\tcode{ENOSR} &
+%\tcode{EPERM} &
+%\tcode{errno} \\
+%
+%\tcode{EBUSY} &
+%\tcode{EILSEQ} &
+%\tcode{ENETUNREACH} &
+%\tcode{ENOSTR} &
+%\tcode{EPIPE}  & \\
+%
+%\tcode{ECANCELED} &
+%\tcode{EINPROGRESS} &
+%\tcode{ENFILE} &
+%\tcode{ENOSYS} &
+%\tcode{EPROTO} & \\
+%
+%\tcode{ECHILD} &
+%\tcode{EINTR} &
+%\tcode{ENOBUFS} &
+%\tcode{ENOTCONN} &
+%\tcode{EPROTONOSUPPORT} & \\
+%
+%\tcode{ECONNABORTED} &
+%\tcode{EINVAL} &
+%\tcode{ENODATA} &
+%\tcode{ENOTDIR} &
+%\tcode{EPROTOTYPE} & \\
+%
+%\end{libsyntab6}
 
 \rSec1[syserr]{System error support}
 

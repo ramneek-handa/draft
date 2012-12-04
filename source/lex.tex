@@ -256,17 +256,17 @@ following sequences of three characters (``\term{trigraph
 sequences}'') is replaced by the single character indicated in
 Table~\ref{tab:trigraph.sequences}.
 
-\begin{tokentable}{Trigraph sequences}{tab:trigraph.sequences}{Trigraph}{Replacement}
-\tcode{??=}        &   \tcode{\#}             &
-\tcode{??(}        &   \tcode{[}              &
-\tcode{??<}        &   \tcode{\{}             \\ \rowsep
-\tcode{??/}        &   \tcode{\textbackslash} &
-\tcode{??)}        &   \tcode{]}              &
-\tcode{??>}        &   \tcode{\}}             \\ \rowsep
-\tcode{??'}        &   \tcode{\^{}}           &
-\tcode{??!}        &   \tcode{|}              &
-\tcode{??-}        &   \tcode{$\sim$}         \\
-\end{tokentable}
+%\begin{tokentable}{Trigraph sequences}{tab:trigraph.sequences}{Trigraph}{Replacement}
+%\tcode{??=}        &   \tcode{\#}             &
+%\tcode{??(}        &   \tcode{[}              &
+%\tcode{??<}        &   \tcode{\{}             \\ \rowsep
+%\tcode{??/}        &   \tcode{\textbackslash} &
+%\tcode{??)}        &   \tcode{]}              &
+%\tcode{??>}        &   \tcode{\}}             \\ \rowsep
+%\tcode{??'}        &   \tcode{\^{}}           &
+%\tcode{??!}        &   \tcode{|}              &
+%\tcode{??-}        &   \tcode{$\sim$}         \\
+%\end{tokentable}
 
 \pnum
 \enterexample
@@ -401,26 +401,26 @@ spelling, but the tokens can otherwise be freely interchanged. }
 The set of alternative tokens is defined in
 Table~\ref{tab:alternative.tokens}.
 
-\begin{tokentable}{Alternative tokens}{tab:alternative.tokens}{Alternative}{Primary}
-\tcode{<\%}             &   \tcode{\{}         &
-\tcode{and}             &   \tcode{\&\&}       &
-\tcode{and_eq}          &   \tcode{\&=}        \\ \rowsep
-\tcode{\%>}             &   \tcode{\}}         &
-\tcode{bitor}           &   \tcode{|}          &
-\tcode{or_eq}           &   \tcode{|=}         \\ \rowsep
-\tcode{<:}              &   \tcode{[}          &
-\tcode{or}              &   \tcode{||}         &
-\tcode{xor_eq}          &   \tcode{\^{}=}      \\ \rowsep
-\tcode{:>}              &   \tcode{]}          &
-\tcode{xor}             &   \tcode{\^{}}       &
-\tcode{not}             &   \tcode{!}          \\ \rowsep
-\tcode{\%:}             &   \tcode{\#}         &
-\tcode{compl}           &   \tcode{$\sim$}     &
-\tcode{not_eq}          &   \tcode{!=}         \\ \rowsep
-\tcode{\%:\%:}          &   \tcode{\#\#}       &
-\tcode{bitand}          &   \tcode{\&}         &
-                        &                      \\
-\end{tokentable}%
+%\begin{tokentable}{Alternative tokens}{tab:alternative.tokens}{Alternative}{Primary}
+%\tcode{<\%}             &   \tcode{\{}         &
+%\tcode{and}             &   \tcode{\&\&}       &
+%\tcode{and_eq}          &   \tcode{\&=}        \\ \rowsep
+%\tcode{\%>}             &   \tcode{\}}         &
+%\tcode{bitor}           &   \tcode{|}          &
+%\tcode{or_eq}           &   \tcode{|=}         \\ \rowsep
+%\tcode{<:}              &   \tcode{[}          &
+%\tcode{or}              &   \tcode{||}         &
+%\tcode{xor_eq}          &   \tcode{\^{}=}      \\ \rowsep
+%\tcode{:>}              &   \tcode{]}          &
+%\tcode{xor}             &   \tcode{\^{}}       &
+%\tcode{not}             &   \tcode{!}          \\ \rowsep
+%\tcode{\%:}             &   \tcode{\#}         &
+%\tcode{compl}           &   \tcode{$\sim$}     &
+%\tcode{not_eq}          &   \tcode{!=}         \\ \rowsep
+%\tcode{\%:\%:}          &   \tcode{\#\#}       &
+%\tcode{bitand}          &   \tcode{\&}         &
+%                        &                      \\
+%\end{tokentable}%
 \indextext{token!alternative|)}
 
 \rSec1[lex.token]{Tokens}
@@ -602,12 +602,12 @@ are used explicitly rather than using the \grammarterm{identifier} grammar produ
 Any ambiguity as to whether a given \grammarterm{identifier} has a special meaning is
 resolved to interpret the token as a regular \grammarterm{identifier}.
 
-\begin{floattable}{Identifiers with special meaning}{tab:identifiers.special}
-{ll}
-\topline
-\tcode{override}        &
-\tcode{final}           \\
-\end{floattable}
+%\begin{floattable}{Identifiers with special meaning}{tab:identifiers.special}
+%{ll}
+%\topline
+%\tcode{override}        &
+%\tcode{final}           \\
+%\end{floattable}
 
 \pnum
 \indextext{\idxcode{_}|see{character, underscore}}%
@@ -628,99 +628,99 @@ as keywords (that is, they are unconditionally treated as keywords in
 phase 7) except in an \grammarterm{attribute-token}~(\ref{dcl.attr.grammar})
 \enternote The \tcode{export} keyword is unused but is reserved for future use.\exitnote:
 
-\begin{floattable}{Keywords}{tab:keywords}
-{lllll}
-\topline
-
-\tcode{alignas}           &
-\tcode{continue}          &
-\tcode{friend}            &
-\tcode{register}          &
-\tcode{true}              \\
-
-\tcode{alignof}           &
-\tcode{decltype}          &
-\tcode{goto}              &
-\tcode{reinterpret_cast}  &
-\tcode{try}               \\
-
-\tcode{asm}               &
-\tcode{default}           &
-\tcode{if}                &
-\tcode{return}            &
-\tcode{typedef}           \\
-
-\tcode{auto}              &
-\tcode{delete}            &
-\tcode{inline}            &
-\tcode{short}             &
-\tcode{typeid}            \\
-
-\tcode{bool}              &
-\tcode{do}                &
-\tcode{int}               &
-\tcode{signed}            &
-\tcode{typename}          \\
-
-\tcode{break}             &
-\tcode{double}            &
-\tcode{long}              &
-\tcode{sizeof}            &
-\tcode{union}             \\
-
-\tcode{case}              &
-\tcode{dynamic_cast}      &
-\tcode{mutable}           &
-\tcode{static}            &
-\tcode{unsigned}          \\
-
-\tcode{catch}             &
-\tcode{else}              &
-\tcode{namespace}         &
-\tcode{static_assert}     &
-\tcode{using}             \\
-
-\tcode{char}              &
-\tcode{enum}              &
-\tcode{new}               &
-\tcode{static_cast}       &
-\tcode{virtual}           \\
-
-\tcode{char16_t}          &
-\tcode{explicit}          &
-\tcode{noexcept}          &
-\tcode{struct}            &
-\tcode{void}              \\
-
-\tcode{char32_t}          &
-\tcode{export}            &
-\tcode{nullptr}           &
-\tcode{switch}            &
-\tcode{volatile}          \\
-
-\tcode{class}             &
-\tcode{extern}            &
-\tcode{operator}          &
-\tcode{template}          &
-\tcode{wchar_t}           \\
-
-\tcode{const}             &
-\tcode{false}             &
-\tcode{private}           &
-\tcode{this}              &
-\tcode{while}             \\
-
-\tcode{constexpr}         &
-\tcode{float}             &
-\tcode{protected}         &
-\tcode{thread_local}      & \\
-
-\tcode{const_cast}        &
-\tcode{for}               &
-\tcode{public}            &
-\tcode{throw}             & \\
-
-\end{floattable}
+%\begin{floattable}{Keywords}{tab:keywords}
+%{lllll}
+%\topline
+%
+%\tcode{alignas}           &
+%\tcode{continue}          &
+%\tcode{friend}            &
+%\tcode{register}          &
+%\tcode{true}              \\
+%
+%\tcode{alignof}           &
+%\tcode{decltype}          &
+%\tcode{goto}              &
+%\tcode{reinterpret_cast}  &
+%\tcode{try}               \\
+%
+%\tcode{asm}               &
+%\tcode{default}           &
+%\tcode{if}                &
+%\tcode{return}            &
+%\tcode{typedef}           \\
+%
+%\tcode{auto}              &
+%\tcode{delete}            &
+%\tcode{inline}            &
+%\tcode{short}             &
+%\tcode{typeid}            \\
+%
+%\tcode{bool}              &
+%\tcode{do}                &
+%\tcode{int}               &
+%\tcode{signed}            &
+%\tcode{typename}          \\
+%
+%\tcode{break}             &
+%\tcode{double}            &
+%\tcode{long}              &
+%\tcode{sizeof}            &
+%\tcode{union}             \\
+%
+%\tcode{case}              &
+%\tcode{dynamic_cast}      &
+%\tcode{mutable}           &
+%\tcode{static}            &
+%\tcode{unsigned}          \\
+%
+%\tcode{catch}             &
+%\tcode{else}              &
+%\tcode{namespace}         &
+%\tcode{static_assert}     &
+%\tcode{using}             \\
+%
+%\tcode{char}              &
+%\tcode{enum}              &
+%\tcode{new}               &
+%\tcode{static_cast}       &
+%\tcode{virtual}           \\
+%
+%\tcode{char16_t}          &
+%\tcode{explicit}          &
+%\tcode{noexcept}          &
+%\tcode{struct}            &
+%\tcode{void}              \\
+%
+%\tcode{char32_t}          &
+%\tcode{export}            &
+%\tcode{nullptr}           &
+%\tcode{switch}            &
+%\tcode{volatile}          \\
+%
+%\tcode{class}             &
+%\tcode{extern}            &
+%\tcode{operator}          &
+%\tcode{template}          &
+%\tcode{wchar_t}           \\
+%
+%\tcode{const}             &
+%\tcode{false}             &
+%\tcode{private}           &
+%\tcode{this}              &
+%\tcode{while}             \\
+%
+%\tcode{constexpr}         &
+%\tcode{float}             &
+%\tcode{protected}         &
+%\tcode{thread_local}      & \\
+%
+%\tcode{const_cast}        &
+%\tcode{for}               &
+%\tcode{public}            &
+%\tcode{throw}             & \\
+%
+%\end{floattable}
 
 \pnum
 Furthermore, the alternative representations shown in
@@ -729,12 +729,12 @@ punctuators~(\ref{lex.digraph}) are reserved and shall not be used
 otherwise:
 
 
-\begin{floattable}{Alternative representations}{tab:alternative.representations}
-{llllll}
-\topline
-\tcode{and}     &   \tcode{and_eq}  &   \tcode{bitand}  &   \tcode{bitor}   &   \tcode{compl}   &   \tcode{not} \\
-\tcode{not_eq}  &   \tcode{or}      &   \tcode{or_eq}   &   \tcode{xor}     &   \tcode{xor_eq}  &       \\
-\end{floattable}%
+%\begin{floattable}{Alternative representations}{tab:alternative.representations}
+%{llllll}
+%\topline
+%\tcode{and}     &   \tcode{and_eq}  &   \tcode{bitand}  &   \tcode{bitor}   &   \tcode{compl}   &   \tcode{not} \\
+%\tcode{not_eq}  &   \tcode{or}      &   \tcode{or_eq}   &   \tcode{xor}     &   \tcode{xor_eq}  &       \\
+%\end{floattable}%
 \indextext{keyword|)}%
 
 
@@ -747,18 +747,18 @@ The lexical representation of \Cpp programs includes a number of
 preprocessing tokens which are used in the syntax of the preprocessor or
 are converted into tokens for operators and punctuators:
 
-\begin{bnfkeywordtab}
-\nontermdef{preprocessing-op-or-punc} \textnormal{one of}\br
-\>\{ \>\} \>[ \>] \>\# \>\#\# \>( \>)\br
-\><: \>:> \><\% \>\%> \>\%: \>\%:\%: \>; \>: \>.{..}\br
-\>new \>delete \>? \>:: \>. \>.*\br
-\>+ \>- \>* \>/ \>\% \>\^{} \>\& \>| \>\tilde\br
-\>! \>= \>< \>> \>+= \>-= \>*= \>/= \>\%=\br
-\>\^{}= \>\&= \>|= \>\shl \>\shr \>\shr= \>\shl= \>== \>!=\br
-\><= \>>= \>\&\& \>|| \>++ \>-{-} \>, \>->* \>->\br
-\>and \>and_eq \>bitand \>bitor \>compl \>not \>not_eq\br
-\>or \>or_eq \>xor \>xor_eq
-\end{bnfkeywordtab}
+%\begin{bnfkeywordtab}
+%\nontermdef{preprocessing-op-or-punc} \textnormal{one of}\br
+%\>\{ \>\} \>[ \>] \>\# \>\#\# \>( \>)\br
+%\><: \>:> \><\% \>\%> \>\%: \>\%:\%: \>; \>: \>.{..}\br
+%\>new \>delete \>? \>:: \>. \>.*\br
+%\>+ \>- \>* \>/ \>\% \>\^{} \>\& \>| \>\tilde\br
+%\>! \>= \>< \>> \>+= \>-= \>*= \>/= \>\%=\br
+%\>\^{}= \>\&= \>|= \>\shl \>\shr \>\shr= \>\shl= \>== \>!=\br
+%\><= \>>= \>\&\& \>|| \>++ \>-{-} \>, \>->* \>->\br
+%\>and \>and_eq \>bitand \>bitor \>compl \>not \>not_eq\br
+%\>or \>or_eq \>xor \>xor_eq
+%\end{bnfkeywordtab}
 
 Each \grammarterm{preprocessing-op-or-punc} is converted to a single token
 in translation phase 7~(\ref{lex.phases}).%
@@ -893,72 +893,72 @@ in Table~\ref{tab:lex.type.integer.constant} in which its value can be
 represented.
 
 \enlargethispage{\baselineskip}%
-\begin{LongTable}{Types of integer constants}{tab:lex.type.integer.constant}{l|l|l}
-\\ \topline
-\lhdr{Suffix} & \chdr{Decimal constants}  & \rhdr{Octal or hexadecimal constant}   \\  \capsep
-\endfirsthead
-\continuedcaption\\
-\hline
-\lhdr{Suffix} & \chdr{Decimal constants}  & \rhdr{Octal or hexadecimal constant}   \\  \capsep
-\endhead
-none    &
-  \tcode{int} &
-  \tcode{int}\\
-        &
-  \tcode{long int} &
-  \tcode{unsigned int}\\
-        &
-  \tcode{long long int} &
-  \tcode{long int}\\
-        &
-        &
-  \tcode{unsigned long int}\\
-        &
-        &
-  \tcode{long long int}\\
-        &
-        &
-  \tcode{unsigned long long int}\\\hline
-\tcode{u} or \tcode{U}  &
-  \tcode{unsigned int}  &
-  \tcode{unsigned int}\\
-                              &
-  \tcode{unsigned long int}   &
-  \tcode{unsigned long int}\\
-                              &
-  \tcode{unsigned long long int}   &
-  \tcode{unsigned long long int}\\\hline
-\tcode{l} or \tcode{L}  &
-  \tcode{long int}  &
-  \tcode{long int}\\
-                              &
-  \tcode{long long int}       &
-  \tcode{unsigned long int}\\
-                              &
-                              &
-  \tcode{long long int}\\
-                              &
-                              &
-  \tcode{unsigned long long int}\\\hline
-Both \tcode{u} or \tcode{U}   &
-  \tcode{unsigned long int}  &
-  \tcode{unsigned long int}\\
-and \tcode{l} or \tcode{L}  &
-  \tcode{unsigned long long int}  &
-  \tcode{unsigned long long int}\\\hline
-\tcode{ll} or \tcode{LL}  &
-  \tcode{long long int}       &
-  \tcode{long long int}\\
-                              &
-                              &
-  \tcode{unsigned long long int}\\\hline
-Both \tcode{u} or \tcode{U}   &
-  \tcode{unsigned long long int}  &
-  \tcode{unsigned long long int}\\
-and \tcode{ll} or \tcode{LL}  &
-                              &
-                              \\
-\end{LongTable}
+%\begin{LongTable}{Types of integer constants}{tab:lex.type.integer.constant}{l|l|l}
+%\\ \topline
+%\lhdr{Suffix} & \chdr{Decimal constants}  & \rhdr{Octal or hexadecimal constant}   \\  \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\hline
+%\lhdr{Suffix} & \chdr{Decimal constants}  & \rhdr{Octal or hexadecimal constant}   \\  \capsep
+%\endhead
+%none    &
+%  \tcode{int} &
+%  \tcode{int}\\
+%        &
+%  \tcode{long int} &
+%  \tcode{unsigned int}\\
+%        &
+%  \tcode{long long int} &
+%  \tcode{long int}\\
+%        &
+%        &
+%  \tcode{unsigned long int}\\
+%        &
+%        &
+%  \tcode{long long int}\\
+%        &
+%        &
+%  \tcode{unsigned long long int}\\\hline
+%\tcode{u} or \tcode{U}  &
+%  \tcode{unsigned int}  &
+%  \tcode{unsigned int}\\
+%                              &
+%  \tcode{unsigned long int}   &
+%  \tcode{unsigned long int}\\
+%                              &
+%  \tcode{unsigned long long int}   &
+%  \tcode{unsigned long long int}\\\hline
+%\tcode{l} or \tcode{L}  &
+%  \tcode{long int}  &
+%  \tcode{long int}\\
+%                              &
+%  \tcode{long long int}       &
+%  \tcode{unsigned long int}\\
+%                              &
+%                              &
+%  \tcode{long long int}\\
+%                              &
+%                              &
+%  \tcode{unsigned long long int}\\\hline
+%Both \tcode{u} or \tcode{U}   &
+%  \tcode{unsigned long int}  &
+%  \tcode{unsigned long int}\\
+%and \tcode{l} or \tcode{L}  &
+%  \tcode{unsigned long long int}  &
+%  \tcode{unsigned long long int}\\\hline
+%\tcode{ll} or \tcode{LL}  &
+%  \tcode{long long int}       &
+%  \tcode{long long int}\\
+%                              &
+%                              &
+%  \tcode{unsigned long long int}\\\hline
+%Both \tcode{u} or \tcode{U}   &
+%  \tcode{unsigned long long int}  &
+%  \tcode{unsigned long long int}\\
+%and \tcode{ll} or \tcode{LL}  &
+%                              &
+%                              \\
+%\end{LongTable}
 
 \pnum
 If an integer literal cannot be represented by any type in its list and
@@ -1106,23 +1106,23 @@ Table~\ref{tab:escape.sequences} are conditionally-supported, with \impldef{sema
 non-standard escape sequences} semantics. An escape sequence specifies a single
 character.
 
-\begin{floattable}{Escape sequences}{tab:escape.sequences}
-{llm}
-\topline
-new-line        &   NL(LF)          &   \tcode{\textbackslash n}                \\
-horizontal tab  &   HT              &   \tcode{\textbackslash t}                \\
-vertical tab    &   VT              &   \tcode{\textbackslash v}                \\
-backspace       &   BS              &   \tcode{\textbackslash b}                \\
-carriage return &   CR              &   \tcode{\textbackslash r}                \\
-form feed       &   FF              &   \tcode{\textbackslash f}                \\
-alert           &   BEL             &   \tcode{\textbackslash a}                \\
-backslash       &   \textbackslash  &   \tcode{\textbackslash\textbackslash}    \\
-question mark   &   ?               &   \tcode{\textbackslash ?}                \\
-single quote    &   \tcode{'}       &   \tcode{\textbackslash\tcode{'}}         \\
-double quote    &   \tcode{"}       &   \tcode{\textbackslash\tcode{"}}         \\
-octal number    &   \numconst{ooo}  &   \tcode{\textbackslash\numconst{ooo}}    \\
-hex number      &   \numconst{hhh}  &   \tcode{\textbackslash x\numconst{hhh}}  \\
-\end{floattable}
+%\begin{floattable}{Escape sequences}{tab:escape.sequences}
+%{llm}
+%\topline
+%new-line        &   NL(LF)          &   \tcode{\textbackslash n}                \\
+%horizontal tab  &   HT              &   \tcode{\textbackslash t}                \\
+%vertical tab    &   VT              &   \tcode{\textbackslash v}                \\
+%backspace       &   BS              &   \tcode{\textbackslash b}                \\
+%carriage return &   CR              &   \tcode{\textbackslash r}                \\
+%form feed       &   FF              &   \tcode{\textbackslash f}                \\
+%alert           &   BEL             &   \tcode{\textbackslash a}                \\
+%backslash       &   \textbackslash  &   \tcode{\textbackslash\textbackslash}    \\
+%question mark   &   ?               &   \tcode{\textbackslash ?}                \\
+%single quote    &   \tcode{'}       &   \tcode{\textbackslash\tcode{'}}         \\
+%double quote    &   \tcode{"}       &   \tcode{\textbackslash\tcode{"}}         \\
+%octal number    &   \numconst{ooo}  &   \tcode{\textbackslash\numconst{ooo}}    \\
+%hex number      &   \numconst{hhh}  &   \tcode{\textbackslash x\numconst{hhh}}  \\
+%\end{floattable}
 
 \pnum
 The escape
@@ -1449,25 +1449,25 @@ concatenation.
 \exitnote
 Table~\ref{tab:lex.string.concat} has some examples of valid concatenations.
 
-\begin{floattable}{String literal concatenations}{tab:lex.string.concat}
-{lll|lll|lll}
-\topline
-\multicolumn{2}{|c}{Source} &
-Means &
-\multicolumn{2}{c}{Source} &
-Means &
-\multicolumn{2}{c}{Source} &
-Means \\
-\tcode{u"a"} & \tcode{u"b"} & \tcode{u"ab"} &
-\tcode{U"a"} & \tcode{U"b"} & \tcode{U"ab"} &
-\tcode{L"a"} & \tcode{L"b"} & \tcode{L"ab"} \\
-\tcode{u"a"} & \tcode{"b"}  & \tcode{u"ab"} &
-\tcode{U"a"} & \tcode{"b"}  & \tcode{U"ab"} &
-\tcode{L"a"} & \tcode{"b"}  & \tcode{L"ab"} \\
-\tcode{"a"}  & \tcode{u"b"} & \tcode{u"ab"} &
-\tcode{"a"}  & \tcode{U"b"} & \tcode{U"ab"} &
-\tcode{"a"}  & \tcode{L"b"} & \tcode{L"ab"} \\
-\end{floattable}
+%\begin{floattable}{String literal concatenations}{tab:lex.string.concat}
+%{lll|lll|lll}
+%\topline
+%\multicolumn{2}{|c}{Source} &
+%Means &
+%\multicolumn{2}{c}{Source} &
+%Means &
+%\multicolumn{2}{c}{Source} &
+%Means \\
+%\tcode{u"a"} & \tcode{u"b"} & \tcode{u"ab"} &
+%\tcode{U"a"} & \tcode{U"b"} & \tcode{U"ab"} &
+%\tcode{L"a"} & \tcode{L"b"} & \tcode{L"ab"} \\
+%\tcode{u"a"} & \tcode{"b"}  & \tcode{u"ab"} &
+%\tcode{U"a"} & \tcode{"b"}  & \tcode{U"ab"} &
+%\tcode{L"a"} & \tcode{"b"}  & \tcode{L"ab"} \\
+%\tcode{"a"}  & \tcode{u"b"} & \tcode{u"ab"} &
+%\tcode{"a"}  & \tcode{U"b"} & \tcode{U"ab"} &
+%\tcode{"a"}  & \tcode{L"b"} & \tcode{L"ab"} \\
+%\end{floattable}
 
 Characters in concatenated strings are kept distinct.
 

@@ -6,24 +6,24 @@
 This Clause describes utilities that are generally useful in \Cpp programs; some
 of these utilities are used by other elements of the \Cpp standard library.
 These utilities are summarized in Table~\ref{tab:util.lib.summary}.
-
-\begin{libsumtab}{General utilities library summary}{tab:util.lib.summary}
-\ref{utility}               & Utility components                & \tcode{<utility>}     \\ \rowsep
-\ref{pairs}                 & Pairs                             & \tcode{<utility>}     \\ \rowsep
-\ref{tuple}                 & Tuples                            & \tcode{<tuple>}       \\ \rowsep
-\ref{template.bitset}       & Fixed-size sequences of bits      & \tcode{<bitset>}      \\ \rowsep
-                            &                                   & \tcode{<memory>}      \\
-\ref{memory}                & Memory                            & \tcode{<cstdlib>}     \\
-                            &                                   & \tcode{<cstring>}     \\ \rowsep
-\ref{smartptr}              & Smart pointers                    & \tcode{<memory>}      \\ \rowsep
-\ref{function.objects}      & Function objects                  & \tcode{<functional>}  \\ \rowsep
-\ref{meta}                  & Type traits                       & \tcode{<type_traits>} \\ \rowsep
-\ref{ratio}                 & Compile-time rational arithmetic  & \tcode{<ratio>}       \\ \rowsep
-\ref{time}                  & Time utilities                    & \tcode{<chrono>}      \\
-                            &                                   & \tcode{<ctime>}       \\ \rowsep
-\ref{allocator.adaptor}     & Scoped allocators                 & \tcode{<scoped_allocator>} \\ \rowsep
-\ref{type.index}            & Type indexes                      & \tcode{<typeindex>}   \\
-\end{libsumtab}
+% html-comment
+%\begin{libsumtab}{General utilities library summary}{tab:util.lib.summary}
+%\ref{utility}               & Utility components                & \tcode{<utility>}     \\ \rowsep
+%\ref{pairs}                 & Pairs                             & \tcode{<utility>}     \\ \rowsep
+%\ref{tuple}                 & Tuples                            & \tcode{<tuple>}       \\ \rowsep
+%\ref{template.bitset}       & Fixed-size sequences of bits      & \tcode{<bitset>}      \\ \rowsep
+%                            &                                   & \tcode{<memory>}      \\
+%\ref{memory}                & Memory                            & \tcode{<cstdlib>}     \\
+%                            &                                   & \tcode{<cstring>}     \\ \rowsep
+%\ref{smartptr}              & Smart pointers                    & \tcode{<memory>}      \\ \rowsep
+%\ref{function.objects}      & Function objects                  & \tcode{<functional>}  \\ \rowsep
+%\ref{meta}                  & Type traits                       & \tcode{<type_traits>} \\ \rowsep
+%\ref{ratio}                 & Compile-time rational arithmetic  & \tcode{<ratio>}       \\ \rowsep
+%\ref{time}                  & Time utilities                    & \tcode{<chrono>}      \\
+%                            &                                   & \tcode{<ctime>}       \\ \rowsep
+%\ref{allocator.adaptor}     & Scoped allocators                 & \tcode{<scoped_allocator>} \\ \rowsep
+%\ref{type.index}            & Type indexes                      & \tcode{<typeindex>}   \\
+%\end{libsumtab}
 
 \rSec1[utility]{Utility components}
 
@@ -3994,11 +3994,11 @@ return first;
 \pnum
 Table~\ref{tab:util.hdr.cstdlib} describes the header
 \tcode{<cstdlib>}.
-
-\begin{libsyntab3}{cstdlib}{tab:util.hdr.cstdlib}
-\functions  &   \tcode{calloc}  &   \tcode{malloc}      \\
-            &   \tcode{free}    &   \tcode{realloc}     \\
-\end{libsyntab3}
+% html-comment
+%\begin{libsyntab3}{cstdlib}{tab:util.hdr.cstdlib}
+%\functions  &   \tcode{calloc}  &   \tcode{malloc}      \\
+%            &   \tcode{free}    &   \tcode{realloc}     \\
+%\end{libsyntab3}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -4039,13 +4039,13 @@ treat memory allocated with these functions as though it were allocated with
 \pnum
 Table~\ref{tab:util.hdr.cstring} describes the header
 \tcode{<cstring>}.
-
-\begin{libsyntab3}{cstring}{tab:util.hdr.cstring}
-\macro          &   \tcode{NULL}    &                   \\ \rowsep
-\type           &   \tcode{size_t}  &                   \\ \rowsep
-\functions      &   \tcode{memchr}  &   \tcode{memcmp}  \\
-\tcode{memcpy}  &   \tcode{memmove} &   \tcode{memset}  \\
-\end{libsyntab3}
+% html-comment
+%\begin{libsyntab3}{cstring}{tab:util.hdr.cstring}
+%\macro          &   \tcode{NULL}    &                   \\ \rowsep
+%\type           &   \tcode{size_t}  &                   \\ \rowsep
+%\functions      &   \tcode{memchr}  &   \tcode{memcmp}  \\
+%\tcode{memcpy}  &   \tcode{memmove} &   \tcode{memset}  \\
+%\end{libsyntab3}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -8829,58 +8829,58 @@ For any given type \tcode{T}, exactly one of the primary type categories
 has a \tcode{value} member that evaluates to \tcode{true}.
 \exitnote
 
-\begin{libreqtab3e}{Primary type category predicates}{tab:type-traits.primary}
-\\ \topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\\capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
-\endhead
-\tcode{template <class T>}\br
- \tcode{struct is_void;}                &
-\tcode{T} is \tcode{void}       &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_integral;}        &
-\tcode{T} is an integral type~(\ref{basic.fundamental})                 &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_floating_point;}  &
-\tcode{T} is a floating point type~(\ref{basic.fundamental})            &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_array;}           &
-\tcode{T} is an array type~(\ref{basic.compound}) of known or unknown extent    &
-Class template \tcode{array}~(\ref{array})
-is not an array type.                   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_pointer;}         &
-\tcode{T} is a pointer type~(\ref{basic.compound})                      &
-Includes pointers to functions
-but not pointers to non-static members.                        \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_lvalue_reference;}    &
- \tcode{T} is an lvalue reference type~(\ref{dcl.ref})   &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_rvalue_reference;}    &
- \tcode{T} is an rvalue reference type~(\ref{dcl.ref})   &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_member_object_pointer;}&
- \tcode{T} is a pointer to non-static data member                              &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_member_function_pointer;}&
-\tcode{T} is a pointer to non-static member function                           &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_enum;}            &
-\tcode{T} is an enumeration type~(\ref{basic.compound})                 &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_union;}           &
-\tcode{T} is a union type~(\ref{basic.compound})                        &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_class;}           &
-\tcode{T} is a class type but not a union type~(\ref{basic.compound}) & \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_function;}        &
-\tcode{T} is a function type~(\ref{basic.compound})                     &   \\
-\end{libreqtab3e}
+%\begin{libreqtab3e}{Primary type category predicates}{tab:type-traits.primary}
+%\\ \topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\\capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
+%\endhead
+%\tcode{template <class T>}\br
+% \tcode{struct is_void;}                &
+%\tcode{T} is \tcode{void}       &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_integral;}        &
+%\tcode{T} is an integral type~(\ref{basic.fundamental})                 &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_floating_point;}  &
+%\tcode{T} is a floating point type~(\ref{basic.fundamental})            &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_array;}           &
+%\tcode{T} is an array type~(\ref{basic.compound}) of known or unknown extent    &
+%Class template \tcode{array}~(\ref{array})
+%is not an array type.                   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_pointer;}         &
+%\tcode{T} is a pointer type~(\ref{basic.compound})                      &
+%Includes pointers to functions
+%but not pointers to non-static members.                        \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_lvalue_reference;}    &
+% \tcode{T} is an lvalue reference type~(\ref{dcl.ref})   &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_rvalue_reference;}    &
+% \tcode{T} is an rvalue reference type~(\ref{dcl.ref})   &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_member_object_pointer;}&
+% \tcode{T} is a pointer to non-static data member                              &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_member_function_pointer;}&
+%\tcode{T} is a pointer to non-static member function                           &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_enum;}            &
+%\tcode{T} is an enumeration type~(\ref{basic.compound})                 &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_union;}           &
+%\tcode{T} is a union type~(\ref{basic.compound})                        &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_class;}           &
+%\tcode{T} is a class type but not a union type~(\ref{basic.compound}) & \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_function;}        &
+%\tcode{T} is a function type~(\ref{basic.compound})                     &   \\
+%\end{libreqtab3e}
 
 \rSec3[meta.unary.comp]{Composite type traits}
 
@@ -8892,37 +8892,37 @@ categories, corresponding to the descriptions given in section~\ref{basic.types}
 For any given type \tcode{T}, the result of applying one of these templates to
 \tcode{T}, and to \textit{cv-qualified} \tcode{T} shall yield the same result.
 
-\begin{libreqtab3b}{Composite type category predicates}{tab:type-traits.composite}
-\\ \topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
-\endhead
-\tcode{template <class T>}\br
- \tcode{struct is_reference;}   &
- \tcode{T} is an lvalue reference or an rvalue reference &  \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_arithmetic;}          &
- \tcode{T} is an arithmetic type~(\ref{basic.fundamental})              &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_fundamental;}         &
- \tcode{T} is a fundamental type~(\ref{basic.fundamental})              &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_object;}              &
- \tcode{T} is an object type~(\ref{basic.types})                            &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_scalar;}              &
- \tcode{T} is a scalar type~(\ref{basic.types})                         &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_compound;}            &
- \tcode{T} is a compound type~(\ref{basic.compound})                        &   \\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct is_member_pointer;}      &
- \tcode{T} is a pointer to non-static data member
- or non-static member function             &   \\
-\end{libreqtab3b}
+%\begin{libreqtab3b}{Composite type category predicates}{tab:type-traits.composite}
+%\\ \topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
+%\endhead
+%\tcode{template <class T>}\br
+% \tcode{struct is_reference;}   &
+% \tcode{T} is an lvalue reference or an rvalue reference &  \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_arithmetic;}          &
+% \tcode{T} is an arithmetic type~(\ref{basic.fundamental})              &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_fundamental;}         &
+% \tcode{T} is a fundamental type~(\ref{basic.fundamental})              &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_object;}              &
+% \tcode{T} is an object type~(\ref{basic.types})                            &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_scalar;}              &
+% \tcode{T} is a scalar type~(\ref{basic.types})                         &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_compound;}            &
+% \tcode{T} is a compound type~(\ref{basic.compound})                        &   \\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct is_member_pointer;}      &
+% \tcode{T} is a pointer to non-static data member
+% or non-static member function             &   \\
+%\end{libreqtab3b}
 
 \rSec3[meta.unary.prop]{Type properties}
 
@@ -8941,272 +8941,272 @@ template specialization may result in the implicit instantiation of
 the template argument if and only if the semantics of \tcode{X} require that
 the argument must be a complete type.
 
-\begin{libreqtab3b}{Type property predicates}{tab:type-traits.properties}
-\\ \topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Preconditions}    \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Preconditions}    \\ \capsep
-\endhead
-
-\tcode{template <class T>}\br
- \tcode{struct is_const;}               &
- \tcode{T} is const-qualified~(\ref{basic.type.qualifier})                  &   \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_volatile;}            &
- \tcode{T} is volatile-qualified~(\ref{basic.type.qualifier})                   &   \\ \rowsep
-
-
-\tcode{template <class T>}\br
- \tcode{struct is_trivial;}                 &
- \tcode{T} is a trivial type~(\ref{basic.types})     &
- \tcode{remove_all_extents<T>::type} shall be a complete
- type or (possibly cv-qualified) void.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_trivially_copyable;}      &
- \tcode{T} is a trivially copyable type~(\ref{basic.types}) &
- \tcode{remove_all_extents<T>::type} shall be a complete type or
- (possibly cv-qualified) \tcode{void}.                               \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_standard_layout;}                 &
- \tcode{T} is a standard-layout type~(\ref{basic.types})   &
- \tcode{remove_all_extents<T>::type} shall be a complete
- type or (possibly cv-qualified) void.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_pod;}                 &
- \tcode{T} is a POD type~(\ref{basic.types})                                &
- \tcode{remove_all_extents<T>::type} shall be a complete
- type or (possibly cv-qualified) void.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_literal_type;}        &
- \tcode{T} is a literal type~(\ref{basic.types})  &
- \tcode{remove_all_extents<T>::type} shall be a complete type or
- (possibly cv-qualified) \tcode{void}.                               \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_empty;}               &
- \tcode{T} is a class type, but not a union type, with no non-static data
- members other than bit-fields of length 0, no virtual member functions,
- no virtual base classes, and no base class \tcode{B} for
- which \tcode{is_empty<B>::value} is false. &
- If \tcode{T} is a non-union class type, \tcode{T} shall be a complete type.                               \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_polymorphic;}         &
- \tcode{T} is a polymorphic class~(\ref{class.virtual})                             &
- If \tcode{T} is a non-union class type, \tcode{T} shall be a complete type.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_abstract;}            &
- \tcode{T} is an abstract class~(\ref{class.abstract})                              &
- If \tcode{T} is a non-union class type, \tcode{T} shall be a complete type.                \\ \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_signed;}              &
-  \tcode{is_arithmetic<T>::value} \tcode{\&\&}
-  \tcode{T(-1) < T(0)}   &   \\  \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_unsigned;}            &
-  \tcode{is_arithmetic<T>::value} \tcode{\&\&}
-  \tcode{T(0) < T(-1)}   &   \\  \rowsep
-
-\tcode{template <class T, class... Args>}\br
- \tcode{struct is_constructible;}   &
- \seebelow                          &
- \tcode{T} and all types in the parameter pack \tcode{Args}
- shall be complete types, (possibly cv-qualified) \tcode{void},
- or arrays of unknown bound.  \\ \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_default_constructible;} &
-  \tcode{is_constructible<T>::value} is \tcode{true}. &
-  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
-  or an array of unknown bound. \\ \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_copy_constructible;} &
-  \tcode{is_constructible<T, const T\&>::value} is \tcode{true}. &
-  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
-  or an array of unknown bound. \\ \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_move_constructible;} &
-  \tcode{is_constructible<T, T\&\&>::value} is \tcode{true}. &
-  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
-  or an array of unknown bound. \\ \rowsep
-
-\tcode{template <class T, class U>}\br
-  \tcode{struct is_assignable;} &
-  The expression \tcode{declval<T>() =} \tcode{declval<U>()} is well-formed
-  when treated as an unevaluated
-  operand (Clause~\ref{expr}). Access checking is performed as if in a context
-  unrelated to \tcode{T} and \tcode{U}. Only the validity of the immediate context
-  of the assignment expression is considered. \enternote The compilation of the
-  expression can result in side effects such as the instantiation of class template
-  specializations and function template specializations, the generation of
-  implicitly-defined functions, and so on. Such side effects are not in the ``immediate
-  context'' and can result in the program being ill-formed. \exitnote &
-  \tcode{T} and \tcode{U} shall be complete types, (possibly cv-qualified) \tcode{void},
-  or arrays of unknown bound. \\ \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_copy_assignable;} &
-  \tcode{is_assignable<T\&, const T\&>::value} is \tcode{true}. &
-  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
-  or an array of unknown bound. \\ \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_move_assignable;} &
-  \tcode{is_assignable<T\&, T\&\&>::value} is \tcode{true}. &
-  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
-  or an array of unknown bound. \\ \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_destructible;} &
-  For reference types, \tcode{is_destructible<T>::value} is \tcode{true}. \br
-  For incomplete types and function types, \tcode{is_destructible<T>::value} is
-  \tcode{false}. \br
-  For object types and given \tcode{U} equal to \tcode{remove_all_extents<T>::type},
-  if the expression \tcode{std::declval<U\&>().\~{}U()} is well-formed
-  when treated as an unevaluated operand (Clause~\ref{expr}), \br then
-  \tcode{is_destructible<T>::value} is \tcode{true},
-  otherwise it is \tcode{false}. &
-  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
-  or an array of unknown bound. \\ \rowsep
-
-\tcode{template <class T, class... Args>}\br
-  \tcode{struct}\br
-  \tcode{is_trivially_constructible;} &
-  \tcode{is_constructible<T,}\br
-  \tcode{Args...>::value} is \tcode{true} and the variable
-  definition for \tcode{is_constructible}, as defined below, is known to call
-  no operation that is not trivial (~\ref{basic.types},~\ref{special}). &
-  \tcode{T} and all types in the parameter pack \tcode{Args} shall be complete types,
-  (possibly cv-qualified) \tcode{void}, or arrays of unknown bound. \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_trivially_default_constructible;} &
- \tcode{is_trivially_constructible<T>::value} is \tcode{true}. &
- \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown
- bound.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_trivially_copy_constructible;}      &
- \tcode{is_trivially_constructible<T, const T\&>::value} is \tcode{true}. &
-  \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown
- bound.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_trivially_move_constructible;}      &
- \tcode{is_trivially_constructible<T, T\&\&>::value} is \tcode{true}. &
-  \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown
- bound.                \\ \rowsep
-
-\tcode{template <class T, class U>}\br
-  \tcode{struct is_trivially_assignable;} &
-  \tcode{is_assignable<T, U>::value} is \tcode{true} and the assignment, as defined by
-  \tcode{is_assignable}, is known to call no operation that is not trivial
-  (\ref{basic.types},~\ref{special}). &
-  \tcode{T} and \tcode{U} shall be complete types, (possibly cv-qualified) \tcode{void},
-  or arrays of unknown bound. \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_trivially_copy_assignable;} &
- \tcode{is_trivially_assignable<T\&, const T\&>::value} is \tcode{true}. &
- \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown
- bound.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_trivially_move_assignable;} &
- \tcode{is_trivially_assignable<T\&, T\&\&>::value} is \tcode{true}. &
- \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown bound.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_trivially_destructible;} &
- \tcode{is_destructible<T>::value} is \tcode{true} and the indicated destructor is known
- to be trivial. &
- \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown
- bound.                \\ \rowsep
-
-\tcode{template <class T, class... Args>}\br
- \tcode{struct is_nothrow_constructible;}   &
- \tcode{is_constructible<T,} \tcode{ Args...>::value} is \tcode{true}
- and the
- variable definition for \tcode{is_constructible}, as defined below, is known not to
- throw any exceptions~(\ref{expr.unary.noexcept}).
- &
- \tcode{T} and all types in the parameter pack \tcode{Args}
- shall be complete types, (possibly cv-qualified) \tcode{void},
- or arrays of unknown bound.  \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_nothrow_default_constructible;} &
- \tcode{is_nothrow_constructible<T>::value} is \tcode{true}.  &
- \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown
- bound.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_nothrow_copy_constructible;}      &
- \tcode{is_nothrow_constructible<T, const T\&>::value} is \tcode{true}. &
- \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown
- bound.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_nothrow_move_constructible;}      &
- \tcode{is_nothrow_constructible<T, T\&\&>::value} is \tcode{true}. &
- \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown bound.                \\ \rowsep
-
-\tcode{template <class T, class U>}\br
-  \tcode{struct is_nothrow_assignable;} &
-  \tcode{is_assignable<T, U>::value} is \tcode{true} and the assignment is known not to
-  throw any exceptions~(\ref{expr.unary.noexcept}). &
-  \tcode{T} and \tcode{U} shall be complete types, (possibly cv-qualified) \tcode{void},
-  or arrays of unknown bound. \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct is_nothrow_copy_assignable;} &
- \tcode{is_nothrow_assignable<T\&, const T\&>::value} is \tcode{true}. &
- \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown
- bound.                \\ \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_nothrow_move_assignable;} &
-  \tcode{is_nothrow_assignable<T\&, T\&\&>::value} is \tcode{true}. &
- \tcode{T} shall be a complete type,
- (possibly cv-qualified) void, or an array of unknown
- bound.                \\ \rowsep
-
-\tcode{template <class T>}\br
-  \tcode{struct is_nothrow_destructible;} &
-  \tcode{is_destructible<T>::value} is \tcode{true} and the indicated destructor is known
-  not to throw any exceptions~(\ref{expr.unary.noexcept}). &
-  \tcode{T} shall be a complete type,
-  (possibly cv-qualified) void, or an array of unknown
-  bound.                \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct has_virtual_destructor;} &
- \tcode{T} has a virtual destructor~(\ref{class.dtor}) &
- If \tcode{T} is a non-union class type, \tcode{T} shall be a complete type.                \\ \rowsep
-
-\end{libreqtab3b}
+%\begin{libreqtab3b}{Type property predicates}{tab:type-traits.properties}
+%\\ \topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Preconditions}    \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Preconditions}    \\ \capsep
+%\endhead
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_const;}               &
+% \tcode{T} is const-qualified~(\ref{basic.type.qualifier})                  &   \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_volatile;}            &
+% \tcode{T} is volatile-qualified~(\ref{basic.type.qualifier})                   &   \\ \rowsep
+%
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_trivial;}                 &
+% \tcode{T} is a trivial type~(\ref{basic.types})     &
+% \tcode{remove_all_extents<T>::type} shall be a complete
+% type or (possibly cv-qualified) void.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_trivially_copyable;}      &
+% \tcode{T} is a trivially copyable type~(\ref{basic.types}) &
+% \tcode{remove_all_extents<T>::type} shall be a complete type or
+% (possibly cv-qualified) \tcode{void}.                               \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_standard_layout;}                 &
+% \tcode{T} is a standard-layout type~(\ref{basic.types})   &
+% \tcode{remove_all_extents<T>::type} shall be a complete
+% type or (possibly cv-qualified) void.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_pod;}                 &
+% \tcode{T} is a POD type~(\ref{basic.types})                                &
+% \tcode{remove_all_extents<T>::type} shall be a complete
+% type or (possibly cv-qualified) void.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_literal_type;}        &
+% \tcode{T} is a literal type~(\ref{basic.types})  &
+% \tcode{remove_all_extents<T>::type} shall be a complete type or
+% (possibly cv-qualified) \tcode{void}.                               \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_empty;}               &
+% \tcode{T} is a class type, but not a union type, with no non-static data
+% members other than bit-fields of length 0, no virtual member functions,
+% no virtual base classes, and no base class \tcode{B} for
+% which \tcode{is_empty<B>::value} is false. &
+% If \tcode{T} is a non-union class type, \tcode{T} shall be a complete type.                               \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_polymorphic;}         &
+% \tcode{T} is a polymorphic class~(\ref{class.virtual})                             &
+% If \tcode{T} is a non-union class type, \tcode{T} shall be a complete type.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_abstract;}            &
+% \tcode{T} is an abstract class~(\ref{class.abstract})                              &
+% If \tcode{T} is a non-union class type, \tcode{T} shall be a complete type.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_signed;}              &
+%  \tcode{is_arithmetic<T>::value} \tcode{\&\&}
+%  \tcode{T(-1) < T(0)}   &   \\  \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_unsigned;}            &
+%  \tcode{is_arithmetic<T>::value} \tcode{\&\&}
+%  \tcode{T(0) < T(-1)}   &   \\  \rowsep
+%
+%\tcode{template <class T, class... Args>}\br
+% \tcode{struct is_constructible;}   &
+% \seebelow                          &
+% \tcode{T} and all types in the parameter pack \tcode{Args}
+% shall be complete types, (possibly cv-qualified) \tcode{void},
+% or arrays of unknown bound.  \\ \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_default_constructible;} &
+%  \tcode{is_constructible<T>::value} is \tcode{true}. &
+%  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
+%  or an array of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_copy_constructible;} &
+%  \tcode{is_constructible<T, const T\&>::value} is \tcode{true}. &
+%  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
+%  or an array of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_move_constructible;} &
+%  \tcode{is_constructible<T, T\&\&>::value} is \tcode{true}. &
+%  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
+%  or an array of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T, class U>}\br
+%  \tcode{struct is_assignable;} &
+%  The expression \tcode{declval<T>() =} \tcode{declval<U>()} is well-formed
+%  when treated as an unevaluated
+%  operand (Clause~\ref{expr}). Access checking is performed as if in a context
+%  unrelated to \tcode{T} and \tcode{U}. Only the validity of the immediate context
+%  of the assignment expression is considered. \enternote The compilation of the
+%  expression can result in side effects such as the instantiation of class template
+%  specializations and function template specializations, the generation of
+%  implicitly-defined functions, and so on. Such side effects are not in the ``immediate
+%  context'' and can result in the program being ill-formed. \exitnote &
+%  \tcode{T} and \tcode{U} shall be complete types, (possibly cv-qualified) \tcode{void},
+%  or arrays of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_copy_assignable;} &
+%  \tcode{is_assignable<T\&, const T\&>::value} is \tcode{true}. &
+%  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
+%  or an array of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_move_assignable;} &
+%  \tcode{is_assignable<T\&, T\&\&>::value} is \tcode{true}. &
+%  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
+%  or an array of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_destructible;} &
+%  For reference types, \tcode{is_destructible<T>::value} is \tcode{true}. \br
+%  For incomplete types and function types, \tcode{is_destructible<T>::value} is
+%  \tcode{false}. \br
+%  For object types and given \tcode{U} equal to \tcode{remove_all_extents<T>::type},
+%  if the expression \tcode{std::declval<U\&>().\~{}U()} is well-formed
+%  when treated as an unevaluated operand (Clause~\ref{expr}), \br then
+%  \tcode{is_destructible<T>::value} is \tcode{true},
+%  otherwise it is \tcode{false}. &
+%  \tcode{T} shall be a complete type, (possibly \cv-qualified) \tcode{void},
+%  or an array of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T, class... Args>}\br
+%  \tcode{struct}\br
+%  \tcode{is_trivially_constructible;} &
+%  \tcode{is_constructible<T,}\br
+%  \tcode{Args...>::value} is \tcode{true} and the variable
+%  definition for \tcode{is_constructible}, as defined below, is known to call
+%  no operation that is not trivial (~\ref{basic.types},~\ref{special}). &
+%  \tcode{T} and all types in the parameter pack \tcode{Args} shall be complete types,
+%  (possibly cv-qualified) \tcode{void}, or arrays of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_trivially_default_constructible;} &
+% \tcode{is_trivially_constructible<T>::value} is \tcode{true}. &
+% \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown
+% bound.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_trivially_copy_constructible;}      &
+% \tcode{is_trivially_constructible<T, const T\&>::value} is \tcode{true}. &
+%  \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown
+% bound.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_trivially_move_constructible;}      &
+% \tcode{is_trivially_constructible<T, T\&\&>::value} is \tcode{true}. &
+%  \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown
+% bound.                \\ \rowsep
+%
+%\tcode{template <class T, class U>}\br
+%  \tcode{struct is_trivially_assignable;} &
+%  \tcode{is_assignable<T, U>::value} is \tcode{true} and the assignment, as defined by
+%  \tcode{is_assignable}, is known to call no operation that is not trivial
+%  (\ref{basic.types},~\ref{special}). &
+%  \tcode{T} and \tcode{U} shall be complete types, (possibly cv-qualified) \tcode{void},
+%  or arrays of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_trivially_copy_assignable;} &
+% \tcode{is_trivially_assignable<T\&, const T\&>::value} is \tcode{true}. &
+% \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown
+% bound.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_trivially_move_assignable;} &
+% \tcode{is_trivially_assignable<T\&, T\&\&>::value} is \tcode{true}. &
+% \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown bound.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_trivially_destructible;} &
+% \tcode{is_destructible<T>::value} is \tcode{true} and the indicated destructor is known
+% to be trivial. &
+% \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown
+% bound.                \\ \rowsep
+%
+%\tcode{template <class T, class... Args>}\br
+% \tcode{struct is_nothrow_constructible;}   &
+% \tcode{is_constructible<T,} \tcode{ Args...>::value} is \tcode{true}
+% and the
+% variable definition for \tcode{is_constructible}, as defined below, is known not to
+% throw any exceptions~(\ref{expr.unary.noexcept}).
+% &
+% \tcode{T} and all types in the parameter pack \tcode{Args}
+% shall be complete types, (possibly cv-qualified) \tcode{void},
+% or arrays of unknown bound.  \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_nothrow_default_constructible;} &
+% \tcode{is_nothrow_constructible<T>::value} is \tcode{true}.  &
+% \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown
+% bound.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_nothrow_copy_constructible;}      &
+% \tcode{is_nothrow_constructible<T, const T\&>::value} is \tcode{true}. &
+% \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown
+% bound.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_nothrow_move_constructible;}      &
+% \tcode{is_nothrow_constructible<T, T\&\&>::value} is \tcode{true}. &
+% \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown bound.                \\ \rowsep
+%
+%\tcode{template <class T, class U>}\br
+%  \tcode{struct is_nothrow_assignable;} &
+%  \tcode{is_assignable<T, U>::value} is \tcode{true} and the assignment is known not to
+%  throw any exceptions~(\ref{expr.unary.noexcept}). &
+%  \tcode{T} and \tcode{U} shall be complete types, (possibly cv-qualified) \tcode{void},
+%  or arrays of unknown bound. \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct is_nothrow_copy_assignable;} &
+% \tcode{is_nothrow_assignable<T\&, const T\&>::value} is \tcode{true}. &
+% \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown
+% bound.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_nothrow_move_assignable;} &
+%  \tcode{is_nothrow_assignable<T\&, T\&\&>::value} is \tcode{true}. &
+% \tcode{T} shall be a complete type,
+% (possibly cv-qualified) void, or an array of unknown
+% bound.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+%  \tcode{struct is_nothrow_destructible;} &
+%  \tcode{is_destructible<T>::value} is \tcode{true} and the indicated destructor is known
+%  not to throw any exceptions~(\ref{expr.unary.noexcept}). &
+%  \tcode{T} shall be a complete type,
+%  (possibly cv-qualified) void, or an array of unknown
+%  bound.                \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct has_virtual_destructor;} &
+% \tcode{T} has a virtual destructor~(\ref{class.dtor}) &
+% If \tcode{T} is a non-union class type, \tcode{T} shall be a complete type.                \\ \rowsep
+%
+%\end{libreqtab3b}
 
 \pnum
 \enterexample
@@ -9259,35 +9259,35 @@ of implicitly-defined functions, and so on. Such side effects are not in the
 This sub-clause contains templates that may be used to query
 properties of types at compile time.
 
-\begin{libreqtab2a}{Type property queries}{tab:type-traits.properties.queries}
-\\ \topline
-\lhdr{Template} &   \rhdr{Value}    \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \rhdr{Value}    \\ \capsep
-\endhead
-
-\tcode{template <class T>\br
- struct alignment_of;}      &
- \tcode{alignof(T)}.\br
- \precondition
- \tcode{alignof(T)} shall be a valid expression~(\ref{expr.alignof})  \\  \rowsep
-
-\tcode{template <class T>\br
- struct rank;}      &
- If \tcode{T} names an array type, an integer value representing
- the number of dimensions of \tcode{T}; otherwise, 0. \\    \rowsep
-
-\tcode{template <class T,\br
- unsigned I = 0>\br
- struct extent;}        &
- If \tcode{T} is not an array type, or if it has rank less
- than or equal to \tcode{I}, or if \tcode{I} is 0 and \tcode{T}
- has type ``array of unknown bound of \tcode{U}'', then
- 0; otherwise, the bound~(\ref{dcl.array}) of the \tcode{I}'th dimension of
-\tcode{T}, where indexing of \tcode{I} is zero-based \\
-\end{libreqtab2a}
+%\begin{libreqtab2a}{Type property queries}{tab:type-traits.properties.queries}
+%\\ \topline
+%\lhdr{Template} &   \rhdr{Value}    \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \rhdr{Value}    \\ \capsep
+%\endhead
+%
+%\tcode{template <class T>\br
+% struct alignment_of;}      &
+% \tcode{alignof(T)}.\br
+% \precondition
+% \tcode{alignof(T)} shall be a valid expression~(\ref{expr.alignof})  \\  \rowsep
+%
+%\tcode{template <class T>\br
+% struct rank;}      &
+% If \tcode{T} names an array type, an integer value representing
+% the number of dimensions of \tcode{T}; otherwise, 0. \\    \rowsep
+%
+%\tcode{template <class T,\br
+% unsigned I = 0>\br
+% struct extent;}        &
+% If \tcode{T} is not an array type, or if it has rank less
+% than or equal to \tcode{I}, or if \tcode{I} is 0 and \tcode{T}
+% has type ``array of unknown bound of \tcode{U}'', then
+% 0; otherwise, the bound~(\ref{dcl.array}) of the \tcode{I}'th dimension of
+%\tcode{T}, where indexing of \tcode{I} is zero-based \\
+%\end{libreqtab2a}
 
 \pnum
 \enterexample
@@ -9327,41 +9327,41 @@ with a BaseCharacteristic of
 \tcode{true_type} if the corresponding condition is true, otherwise
 \tcode{false_type}.
 
-\begin{libreqtab3f}{Type relationship predicates}{tab:type-traits.relationship}
-\\ \topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
-\endhead
-\tcode{template <class T, class U>}\br
- \tcode{struct is_same;}                    &
- \tcode{T} and \tcode{U} name the same type with the same cv-qualifications                            &   \\ \rowsep
-
-\tcode{template <class Base, class Derived>}\br
- \tcode{struct is_base_of;}                 &
- \tcode{Base} is a base class of \tcode{Derived} (Clause~\ref{class.derived})
- without regard to cv-qualifiers
- or \tcode{Base} and \tcode{Derived} are not unions and
- name the same class type
- without regard to cv-qualifiers&
- If \tcode{Base} and
- \tcode{Derived} are non-union class types and are different types (ignoring
- possible cv-qualifiers) then
- \tcode{Derived} shall be a complete
- type.
- \enternote Base classes that are private, protected, or ambiguous
- are, nonetheless, base classes. \exitnote \\ \rowsep
-
-\tcode{template <class From, class To>}\br
- \tcode{struct is_convertible;}             &
- \seebelow
-  &
- \tcode{From} and \tcode{To} shall be complete
- types, arrays of unknown
- bound, or (possibly cv-qualified) \tcode{void} types.                      \\
-\end{libreqtab3f}
+%\begin{libreqtab3f}{Type relationship predicates}{tab:type-traits.relationship}
+%\\ \topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
+%\endhead
+%\tcode{template <class T, class U>}\br
+% \tcode{struct is_same;}                    &
+% \tcode{T} and \tcode{U} name the same type with the same cv-qualifications                            &   \\ \rowsep
+%
+%\tcode{template <class Base, class Derived>}\br
+% \tcode{struct is_base_of;}                 &
+% \tcode{Base} is a base class of \tcode{Derived} (Clause~\ref{class.derived})
+% without regard to cv-qualifiers
+% or \tcode{Base} and \tcode{Derived} are not unions and
+% name the same class type
+% without regard to cv-qualifiers&
+% If \tcode{Base} and
+% \tcode{Derived} are non-union class types and are different types (ignoring
+% possible cv-qualifiers) then
+% \tcode{Derived} shall be a complete
+% type.
+% \enternote Base classes that are private, protected, or ambiguous
+% are, nonetheless, base classes. \exitnote \\ \rowsep
+%
+%\tcode{template <class From, class To>}\br
+% \tcode{struct is_convertible;}             &
+% \seebelow
+%  &
+% \tcode{From} and \tcode{To} shall be complete
+% types, arrays of unknown
+% bound, or (possibly cv-qualified) \tcode{void} types.                      \\
+%\end{libreqtab3f}
 
 \pnum
 \enterexample
@@ -9422,159 +9422,159 @@ Each of the templates in this subclause shall be a
 
 \rSec3[meta.trans.cv]{Const-volatile modifications}
 
-\begin{libreqtab2a}{Const-volatile modifications}{tab:type-traits.const-volatile}
-\\ \topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endhead
-\tcode{template <class T>\br
- struct remove_const;}                  &
- The member typedef \tcode{type} shall name
- the same type as \tcode{T}
- except that any top-level const-qualifier has been removed.
- \enterexample \tcode{remove_const<const volatile int>::type} evaluates
- to \tcode{volatile int}, whereas \tcode{remove_const<const int*>::type} evaluates to
- \tcode{const int*}. \exitexample                          \\  \rowsep
-\tcode{template <class T>\br
- struct remove_volatile;}               &
- The member typedef \tcode{type} shall name
- the same type as \tcode{T}
- except that any top-level volatile-qualifier has been removed.
- \enterexample \tcode{remove_volatile<const volatile
- int>::type} evaluates to \tcode{const int},
- whereas \tcode{remove_volatile<volatile int*>::type} evaluates to \tcode{volatile int*}.
- \exitexample                                              \\  \rowsep
-\tcode{template <class T>\br
- struct remove_cv;}                 &
- The member typedef \tcode{type} shall be the same as \tcode{T}
- except that any top-level cv-qualifier has been removed.
- \enterexample \tcode{remove_cv<const
- volatile int>::type} evaluates to \tcode{int}, whereas \tcode{remove_cv<const
- volatile int*>::type} evaluates to \tcode{const volatile int*}. \exitexample  \\  \rowsep
-\tcode{template <class T>\br
- struct add_const;}                 &
- If \tcode{T} is a reference, function, or top-level const-qualified
- type, then \tcode{type} shall name
- the same type as \tcode{T}, otherwise
- \tcode{T const}.                                                           \\  \rowsep
-\tcode{template <class T>\br
- struct add_volatile;}                  &
- If \tcode{T} is a reference, function, or top-level volatile-qualified
- type, then \tcode{type} shall name
- the same type as \tcode{T}, otherwise
- \tcode{T volatile}.                                                            \\  \rowsep
-\tcode{template <class T>\br
- struct add_cv;}                    &
- The member typedef \tcode{type} shall name
- the same type as
- \tcode{add_const<typename add_volatile<T>::type>::type}.                               \\
-\end{libreqtab2a}
+%\begin{libreqtab2a}{Const-volatile modifications}{tab:type-traits.const-volatile}
+%\\ \topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endhead
+%\tcode{template <class T>\br
+% struct remove_const;}                  &
+% The member typedef \tcode{type} shall name
+% the same type as \tcode{T}
+% except that any top-level const-qualifier has been removed.
+% \enterexample \tcode{remove_const<const volatile int>::type} evaluates
+% to \tcode{volatile int}, whereas \tcode{remove_const<const int*>::type} evaluates to
+% \tcode{const int*}. \exitexample                          \\  \rowsep
+%\tcode{template <class T>\br
+% struct remove_volatile;}               &
+% The member typedef \tcode{type} shall name
+% the same type as \tcode{T}
+% except that any top-level volatile-qualifier has been removed.
+% \enterexample \tcode{remove_volatile<const volatile
+% int>::type} evaluates to \tcode{const int},
+% whereas \tcode{remove_volatile<volatile int*>::type} evaluates to \tcode{volatile int*}.
+% \exitexample                                              \\  \rowsep
+%\tcode{template <class T>\br
+% struct remove_cv;}                 &
+% The member typedef \tcode{type} shall be the same as \tcode{T}
+% except that any top-level cv-qualifier has been removed.
+% \enterexample \tcode{remove_cv<const
+% volatile int>::type} evaluates to \tcode{int}, whereas \tcode{remove_cv<const
+% volatile int*>::type} evaluates to \tcode{const volatile int*}. \exitexample  \\  \rowsep
+%\tcode{template <class T>\br
+% struct add_const;}                 &
+% If \tcode{T} is a reference, function, or top-level const-qualified
+% type, then \tcode{type} shall name
+% the same type as \tcode{T}, otherwise
+% \tcode{T const}.                                                           \\  \rowsep
+%\tcode{template <class T>\br
+% struct add_volatile;}                  &
+% If \tcode{T} is a reference, function, or top-level volatile-qualified
+% type, then \tcode{type} shall name
+% the same type as \tcode{T}, otherwise
+% \tcode{T volatile}.                                                            \\  \rowsep
+%\tcode{template <class T>\br
+% struct add_cv;}                    &
+% The member typedef \tcode{type} shall name
+% the same type as
+% \tcode{add_const<typename add_volatile<T>::type>::type}.                               \\
+%\end{libreqtab2a}
 
 \rSec3[meta.trans.ref]{Reference modifications}
 
-\begin{libreqtab2a}{Reference modifications}{tab:type-traits.reference}
-\\ \topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endhead
-
-\tcode{template <class T>\br
- struct remove_reference;}                  &
- If \tcode{T} has type ``reference to \tcode{T1}'' then the
- member typedef \tcode{type} shall name \tcode{T1};
- otherwise, \tcode{type} shall name \tcode{T}.\\ \rowsep
-
-\tcode{template <class T>\br
- struct add_lvalue_reference;}                     &
- If \tcode{T} names an object or function type then
- the member typedef \tcode{type} shall name \tcode{T\&};
- otherwise, if \tcode{T} names a
-  type ``rvalue reference to \tcode{T1}'' then
- the member typedef \tcode{type} shall name \tcode{T1\&};
- otherwise, \tcode{type} shall
- name \tcode{T}. \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct add_rvalue_reference;}    &
- If \tcode{T} names an object or function type then
- the member typedef \tcode{type} shall name \tcode{T\&\&};
- otherwise, \tcode{type} shall name \tcode{T}.
- \enternote This rule reflects the semantics of reference collapsing~(\ref{dcl.ref}).
- For example, when a type \tcode{T} names a type \tcode{T1\&}, the type
- \tcode{add_rvalue_reference<T>::type} is not an rvalue reference.
- \exitnote \\
-\end{libreqtab2a}
+%\begin{libreqtab2a}{Reference modifications}{tab:type-traits.reference}
+%\\ \topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endhead
+%
+%\tcode{template <class T>\br
+% struct remove_reference;}                  &
+% If \tcode{T} has type ``reference to \tcode{T1}'' then the
+% member typedef \tcode{type} shall name \tcode{T1};
+% otherwise, \tcode{type} shall name \tcode{T}.\\ \rowsep
+%
+%\tcode{template <class T>\br
+% struct add_lvalue_reference;}                     &
+% If \tcode{T} names an object or function type then
+% the member typedef \tcode{type} shall name \tcode{T\&};
+% otherwise, if \tcode{T} names a
+%  type ``rvalue reference to \tcode{T1}'' then
+% the member typedef \tcode{type} shall name \tcode{T1\&};
+% otherwise, \tcode{type} shall
+% name \tcode{T}. \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct add_rvalue_reference;}    &
+% If \tcode{T} names an object or function type then
+% the member typedef \tcode{type} shall name \tcode{T\&\&};
+% otherwise, \tcode{type} shall name \tcode{T}.
+% \enternote This rule reflects the semantics of reference collapsing~(\ref{dcl.ref}).
+% For example, when a type \tcode{T} names a type \tcode{T1\&}, the type
+% \tcode{add_rvalue_reference<T>::type} is not an rvalue reference.
+% \exitnote \\
+%\end{libreqtab2a}
 
 \rSec3[meta.trans.sign]{Sign modifications}
-\begin{libreqtab2a}{Sign modifications}{tab:type-traits.sign}
-\\ \topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endhead
-\tcode{template <class T>}\br
- \tcode{struct make_signed;} &
- If \tcode{T} names a (possibly cv-qualified) signed integer
- type~(\ref{basic.fundamental}) then the member typedef
- \tcode{type} shall name the type \tcode{T}; otherwise,
- if \tcode{T} names a (possibly cv-qualified) unsigned integer
- type then \tcode{type} shall name the corresponding
- signed integer type, with the same cv-qualifiers as \tcode{T};
- otherwise, \tcode{type} shall name the signed integer type with smallest
- rank~(\ref{conv.rank}) for which
- \tcode{sizeof(T) == sizeof(type)}, with the same
- cv-qualifiers as \tcode{T}.\br
- \requires \tcode{T} shall be a (possibly cv-qualified)
- integral type or enumeration
- but not a \tcode{bool} type.\\ \rowsep
-\tcode{template <class T>}\br
- \tcode{struct make_unsigned;} &
- If \tcode{T} names a (possibly cv-qualified) unsigned integer
- type~(\ref{basic.fundamental}) then the member typedef
- \tcode{type} shall name the type \tcode{T}; otherwise,
- if \tcode{T} names a (possibly cv-qualified) signed integer
- type then \tcode{type} shall name the corresponding
- unsigned integer type, with the same cv-qualifiers as \tcode{T};
- otherwise, \tcode{type} shall name the unsigned integer type with smallest
- rank~(\ref{conv.rank}) for which
- \tcode{sizeof(T) == sizeof(type)}, with the same
- cv-qualifiers as \tcode{T}.\br
- \requires \tcode{T} shall be a (possibly cv-qualified)
- integral type or enumeration
- but not a \tcode{bool} type.\\
-\end{libreqtab2a}
+%\begin{libreqtab2a}{Sign modifications}{tab:type-traits.sign}
+%\\ \topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endhead
+%\tcode{template <class T>}\br
+% \tcode{struct make_signed;} &
+% If \tcode{T} names a (possibly cv-qualified) signed integer
+% type~(\ref{basic.fundamental}) then the member typedef
+% \tcode{type} shall name the type \tcode{T}; otherwise,
+% if \tcode{T} names a (possibly cv-qualified) unsigned integer
+% type then \tcode{type} shall name the corresponding
+% signed integer type, with the same cv-qualifiers as \tcode{T};
+% otherwise, \tcode{type} shall name the signed integer type with smallest
+% rank~(\ref{conv.rank}) for which
+% \tcode{sizeof(T) == sizeof(type)}, with the same
+% cv-qualifiers as \tcode{T}.\br
+% \requires \tcode{T} shall be a (possibly cv-qualified)
+% integral type or enumeration
+% but not a \tcode{bool} type.\\ \rowsep
+%\tcode{template <class T>}\br
+% \tcode{struct make_unsigned;} &
+% If \tcode{T} names a (possibly cv-qualified) unsigned integer
+% type~(\ref{basic.fundamental}) then the member typedef
+% \tcode{type} shall name the type \tcode{T}; otherwise,
+% if \tcode{T} names a (possibly cv-qualified) signed integer
+% type then \tcode{type} shall name the corresponding
+% unsigned integer type, with the same cv-qualifiers as \tcode{T};
+% otherwise, \tcode{type} shall name the unsigned integer type with smallest
+% rank~(\ref{conv.rank}) for which
+% \tcode{sizeof(T) == sizeof(type)}, with the same
+% cv-qualifiers as \tcode{T}.\br
+% \requires \tcode{T} shall be a (possibly cv-qualified)
+% integral type or enumeration
+% but not a \tcode{bool} type.\\
+%\end{libreqtab2a}
 \clearpage
 
 \rSec3[meta.trans.arr]{Array modifications}
-\begin{libreqtab2a}{Array modifications}{tab:type-traits.array}
-\\ \topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endhead
-\tcode{template <class T>\br
- struct remove_extent;}                 &
- If \tcode{T} names a type ``array of \tcode{U}'',
- the member typedef \tcode{type} shall
- be \tcode{U}, otherwise \tcode{T}.
- \enternote For multidimensional arrays, only the first array dimension is
- removed. For a type ``array of \tcode{const U}'', the resulting type is
- \tcode{const U}. \exitnote                                 \\  \rowsep
-\tcode{template <class T>\br
- struct remove_all_extents;}                &
- If \tcode{T} is ``multi-dimensional array of \tcode{U}'', the resulting member
- typedef \tcode{type} is \tcode{U}, otherwise \tcode{T}.                                       \\
-\end{libreqtab2a}
+%\begin{libreqtab2a}{Array modifications}{tab:type-traits.array}
+%\\ \topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endhead
+%\tcode{template <class T>\br
+% struct remove_extent;}                 &
+% If \tcode{T} names a type ``array of \tcode{U}'',
+% the member typedef \tcode{type} shall
+% be \tcode{U}, otherwise \tcode{T}.
+% \enternote For multidimensional arrays, only the first array dimension is
+% removed. For a type ``array of \tcode{const U}'', the resulting type is
+% \tcode{const U}. \exitnote                                 \\  \rowsep
+%\tcode{template <class T>\br
+% struct remove_all_extents;}                &
+% If \tcode{T} is ``multi-dimensional array of \tcode{U}'', the resulting member
+% typedef \tcode{type} is \tcode{U}, otherwise \tcode{T}.                                       \\
+%\end{libreqtab2a}
 
 \pnum
 [\textit{Example}
@@ -9599,127 +9599,127 @@ assert((is_same<remove_all_extents<int[][3]>::type, int>::value));
 \exitexample
 
 \rSec3[meta.trans.ptr]{Pointer modifications}
-\begin{libreqtab2a}{Pointer modifications}{tab:type-traits.pointer}
-\\ \topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \rhdr{Comments} \\ \capsep
-\endhead
-\tcode{template <class T>\br
- struct remove_pointer;}                    &
- If \tcode{T} has type ``(possibly cv-qualified) pointer
- to \tcode{T1}'' then the member typedef \tcode{type}
- shall name \tcode{T1}; otherwise, it shall name \tcode{T}.\\ \rowsep
-\tcode{template <class T>\br
- struct add_pointer;}                       &
- The member typedef \tcode{type} shall name the same type as
- \tcode{remove_reference<T>::type*}.                         \\
-\end{libreqtab2a}
+%\begin{libreqtab2a}{Pointer modifications}{tab:type-traits.pointer}
+%\\ \topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \rhdr{Comments} \\ \capsep
+%\endhead
+%\tcode{template <class T>\br
+% struct remove_pointer;}                    &
+% If \tcode{T} has type ``(possibly cv-qualified) pointer
+% to \tcode{T1}'' then the member typedef \tcode{type}
+% shall name \tcode{T1}; otherwise, it shall name \tcode{T}.\\ \rowsep
+%\tcode{template <class T>\br
+% struct add_pointer;}                       &
+% The member typedef \tcode{type} shall name the same type as
+% \tcode{remove_reference<T>::type*}.                         \\
+%\end{libreqtab2a}
 \clearpage
 
 \rSec3[meta.trans.other]{Other transformations}
 
-\begin{libreqtab3d}{Other transformations}{tab:type-traits.other}
-\\ \topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
-\endhead
-
-\tcode{template <std::size_t Len,\br
- std::size_t Align\br
- = \textit{default-alignment}>\br
- struct aligned_storage;}
- &
- \tcode{Len} shall not be zero.
- \tcode{Align} shall be equal
- to \tcode{alignof(T)} for some type \tcode{T}
- or to \textit{default-alignment}.
- &
- The value of \textit{default-alignment} shall be the most
- stringent alignment requirement for any \Cpp object type whose size
- is no greater than \tcode{Len}~(\ref{basic.types}).
- The member typedef \tcode{type} shall be a POD type
- suitable for use as uninitialized storage for any object whose size
- is at most \textit{Len} and whose alignment is a divisor of \textit{Align}. \\ \rowsep
-
-\tcode{template <std::size_t Len,\br
-  class... Types>\br
-  struct aligned_union;}
-  &
-  At least one type is provided.
-  &
-  The member typedef \tcode{type} shall be a POD type suitable for use as
-  uninitialized storage for any object whose type is listed in \tcode{Types};
-  its size shall be at least \tcode{Len}. The static member \tcode{alignment_value}
-  shall be an integral constant of type \tcode{std::size_t} whose value is the
-  strictest alignment of all types listed in \tcode{Types}.
-  \\ \rowsep
-
-\tcode{template <class T> struct} \tcode{decay;} &   &
- Let \tcode{U} be \tcode{remove_reference<T>::type}. If \tcode{is_array<U>::value}
- is \tcode{true}, the member typedef \tcode{type} shall equal
- \tcode{remove_extent<U>::type*}. If \tcode{is_function<U>::value} is \tcode{true},
- the member typedef \tcode{type} shall equal \tcode{add_pointer<U>::type}. Otherwise
- the member typedef \tcode{type} equals \tcode{remove_cv<U>::type}.
- \enternote This behavior is similar to the lvalue-to-rvalue~(\ref{conv.lval}),
- array-to-pointer~(\ref{conv.array}), and function-to-pointer~(\ref{conv.func})
- conversions applied when an lvalue expression is used as an rvalue, but also
- strips \cv-qualifiers from class types in order to more closely model by-value
- argument passing. \exitnote
- \\ \rowsep
-
-\tcode{template <bool B, class T = void>} \tcode{struct enable_if;} & &
- If \tcode{B} is \tcode{true}, the member typedef \tcode{type}
- shall equal \tcode{T}; otherwise, there shall be no member
- \tcode{type}. \\ \rowsep
-
-\tcode{template <bool B, class T,} \tcode{class F> struct conditional}; & &
- If \tcode{B} is \tcode{true}, the member typedef \tcode{type}
- shall equal \tcode{T}.
- If \tcode{B} is \tcode{false}, the member typedef \tcode{type}
- shall equal \tcode{F}. \\ \rowsep
-
- \tcode{template <class... T>} \tcode{struct common_type;} & &
- The member typedef \tcode{type} shall be defined as set out below. All types in
-the parameter pack \tcode{T} shall be complete or (possibly \cv) \tcode{void}. A
-program may specialize this trait if at least one template parameter in the
-specialization is a user-defined type. \enternote Such specializations are
-needed when only explicit conversions are desired among the template arguments.
-\exitnote \\ \rowsep
-
-\tcode{template <class T>}\br
- \tcode{struct underlying_type;}  &
- \tcode{T} shall be an enumeration type~(\ref{dcl.enum}) &
- The member typedef \tcode{type} shall name the underlying type
- of \tcode{T}. \\ \rowsep
-
-\tcode{template <class Fn,}\br
- \tcode{class... ArgTypes> struct}
- \tcode{result_of<Fn(ArgTypes...)>;}  &
- \tcode{Fn} and all types in the parameter pack \tcode{ArgTypes} shall
- be complete types, (possibly cv-qualified) \tcode{void}, or arrays of
- unknown bound. &
- If the expression \tcode{INVOKE(declval<Fn>(), declval<ArgTypes>()...)}
- is well formed when treated as an unevaluated operand (Clause~\ref{expr}),
- the member typedef \tcode{type} shall name the type
- \tcode{decltype(INVOKE(declval<Fn>(),} \tcode{declval<ArgTypes>()...))};
- otherwise, there shall be no member \tcode{type}. Access checking is
- performed as if in a context unrelated to \tcode{Fn} and
- \tcode{ArgTypes}. Only the validity of the immediate context of the
- expression is considered.
- \enternote
- The compilation of the expression can result in side effects such as
- the instantiation of class template specializations and function
- template specializations, the generation of implicitly-defined
- functions, and so on. Such side effects are not in the ``immediate
- context'' and can result in the program being ill-formed.
- \exitnote \\
- \end{libreqtab3d}
+%\begin{libreqtab3d}{Other transformations}{tab:type-traits.other}
+%\\ \topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Template} &   \chdr{Condition}    &   \rhdr{Comments} \\ \capsep
+%\endhead
+%
+%\tcode{template <std::size_t Len,\br
+% std::size_t Align\br
+% = \textit{default-alignment}>\br
+% struct aligned_storage;}
+% &
+% \tcode{Len} shall not be zero.
+% \tcode{Align} shall be equal
+% to \tcode{alignof(T)} for some type \tcode{T}
+% or to \textit{default-alignment}.
+% &
+% The value of \textit{default-alignment} shall be the most
+% stringent alignment requirement for any \Cpp object type whose size
+% is no greater than \tcode{Len}~(\ref{basic.types}).
+% The member typedef \tcode{type} shall be a POD type
+% suitable for use as uninitialized storage for any object whose size
+% is at most \textit{Len} and whose alignment is a divisor of \textit{Align}. \\ \rowsep
+%
+%\tcode{template <std::size_t Len,\br
+%  class... Types>\br
+%  struct aligned_union;}
+%  &
+%  At least one type is provided.
+%  &
+%  The member typedef \tcode{type} shall be a POD type suitable for use as
+%  uninitialized storage for any object whose type is listed in \tcode{Types};
+%  its size shall be at least \tcode{Len}. The static member \tcode{alignment_value}
+%  shall be an integral constant of type \tcode{std::size_t} whose value is the
+%  strictest alignment of all types listed in \tcode{Types}.
+%  \\ \rowsep
+%
+%\tcode{template <class T> struct} \tcode{decay;} &   &
+% Let \tcode{U} be \tcode{remove_reference<T>::type}. If \tcode{is_array<U>::value}
+% is \tcode{true}, the member typedef \tcode{type} shall equal
+% \tcode{remove_extent<U>::type*}. If \tcode{is_function<U>::value} is \tcode{true},
+% the member typedef \tcode{type} shall equal \tcode{add_pointer<U>::type}. Otherwise
+% the member typedef \tcode{type} equals \tcode{remove_cv<U>::type}.
+% \enternote This behavior is similar to the lvalue-to-rvalue~(\ref{conv.lval}),
+% array-to-pointer~(\ref{conv.array}), and function-to-pointer~(\ref{conv.func})
+% conversions applied when an lvalue expression is used as an rvalue, but also
+% strips \cv-qualifiers from class types in order to more closely model by-value
+% argument passing. \exitnote
+% \\ \rowsep
+%
+%\tcode{template <bool B, class T = void>} \tcode{struct enable_if;} & &
+% If \tcode{B} is \tcode{true}, the member typedef \tcode{type}
+% shall equal \tcode{T}; otherwise, there shall be no member
+% \tcode{type}. \\ \rowsep
+%
+%\tcode{template <bool B, class T,} \tcode{class F> struct conditional}; & &
+% If \tcode{B} is \tcode{true}, the member typedef \tcode{type}
+% shall equal \tcode{T}.
+% If \tcode{B} is \tcode{false}, the member typedef \tcode{type}
+% shall equal \tcode{F}. \\ \rowsep
+%
+% \tcode{template <class... T>} \tcode{struct common_type;} & &
+% The member typedef \tcode{type} shall be defined as set out below. All types in
+%the parameter pack \tcode{T} shall be complete or (possibly \cv) \tcode{void}. A
+%program may specialize this trait if at least one template parameter in the
+%specialization is a user-defined type. \enternote Such specializations are
+%needed when only explicit conversions are desired among the template arguments.
+%\exitnote \\ \rowsep
+%
+%\tcode{template <class T>}\br
+% \tcode{struct underlying_type;}  &
+% \tcode{T} shall be an enumeration type~(\ref{dcl.enum}) &
+% The member typedef \tcode{type} shall name the underlying type
+% of \tcode{T}. \\ \rowsep
+%
+%\tcode{template <class Fn,}\br
+% \tcode{class... ArgTypes> struct}
+% \tcode{result_of<Fn(ArgTypes...)>;}  &
+% \tcode{Fn} and all types in the parameter pack \tcode{ArgTypes} shall
+% be complete types, (possibly cv-qualified) \tcode{void}, or arrays of
+% unknown bound. &
+% If the expression \tcode{INVOKE(declval<Fn>(), declval<ArgTypes>()...)}
+% is well formed when treated as an unevaluated operand (Clause~\ref{expr}),
+% the member typedef \tcode{type} shall name the type
+% \tcode{decltype(INVOKE(declval<Fn>(),} \tcode{declval<ArgTypes>()...))};
+% otherwise, there shall be no member \tcode{type}. Access checking is
+% performed as if in a context unrelated to \tcode{Fn} and
+% \tcode{ArgTypes}. Only the validity of the immediate context of the
+% expression is considered.
+% \enternote
+% The compilation of the expression can result in side effects such as
+% the instantiation of class template specializations and function
+% template specializations, the generation of implicitly-defined
+% functions, and so on. Such side effects are not in the ``immediate
+% context'' and can result in the program being ill-formed.
+% \exitnote \\
+% \end{libreqtab3d}
 
 \pnum
 \enternote A typical implementation would define \tcode{aligned_storage} as:
@@ -9900,35 +9900,35 @@ ill-formed. Otherwise, an implementation should yield correct values of \tcode{U
 program is ill-formed unless the implementation yields correct values of \tcode{U} and
 \tcode{V}.
 
-\begin{floattable}{Expressions used to perform ratio arithmetic}{tab:ratio.arithmetic}
-{lll}
-\topline
-\lhdr{Type}                     &
-  \chdr{Value of \tcode{X}}     &
-  \rhdr{Value of \tcode{Y}}     \\ \rowsep
-
-\tcode{ratio_add<R1, R2>}       &
-  \tcode{R1::num * R2::den +}   &
-  \tcode{R1::den * R2::den}     \\
-                                &
-  \tcode{R2::num * R1::den}     &
-                                \\ \rowsep
-
-\tcode{ratio_subtract<R1, R2>}  &
-  \tcode{R1::num * R2::den -}   &
-  \tcode{R1::den * R2::den}     \\
-                                &
-  \tcode{R2::num * R1::den}     &
-                                \\ \rowsep
-
-\tcode{ratio_multiply<R1, R2>}  &
-  \tcode{R1::num * R2::num}     &
-  \tcode{R1::den * R2::den}     \\ \rowsep
-
-\tcode{ratio_divide<R1, R2>}    &
-  \tcode{R1::num * R2::den}     &
-  \tcode{R1::den * R2::num}     \\
-\end{floattable}
+%\begin{floattable}{Expressions used to perform ratio arithmetic}{tab:ratio.arithmetic}
+%{lll}
+%\topline
+%\lhdr{Type}                     &
+%  \chdr{Value of \tcode{X}}     &
+%  \rhdr{Value of \tcode{Y}}     \\ \rowsep
+%
+%\tcode{ratio_add<R1, R2>}       &
+%  \tcode{R1::num * R2::den +}   &
+%  \tcode{R1::den * R2::den}     \\
+%                                &
+%  \tcode{R2::num * R1::den}     &
+%                                \\ \rowsep
+%
+%\tcode{ratio_subtract<R1, R2>}  &
+%  \tcode{R1::num * R2::den -}   &
+%  \tcode{R1::den * R2::den}     \\
+%                                &
+%  \tcode{R2::num * R1::den}     &
+%                                \\ \rowsep
+%
+%\tcode{ratio_multiply<R1, R2>}  &
+%  \tcode{R1::num * R2::num}     &
+%  \tcode{R1::den * R2::den}     \\ \rowsep
+%
+%\tcode{ratio_divide<R1, R2>}    &
+%  \tcode{R1::num * R2::den}     &
+%  \tcode{R1::den * R2::num}     \\
+%\end{floattable}
 
 \pnum
 \enterexample
@@ -10173,44 +10173,44 @@ before \tcode{C1::time_point::max()}.
 \enternote this means \tcode{C1} did not wrap around between \tcode{t1} and
 \tcode{t2}. \exitnote
 
-\begin{libreqtab3a}
-{Clock requirements}
-{tab:time.clock}
-\\ \topline
-\lhdr{Expression}       &   \chdr{Return type}  &   \rhdr{Operational semantics} \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\hline
-\lhdr{Expression}       &   \chdr{Return type}  &   \rhdr{Operational semantics}       \\ \capsep
-\endhead
-
-\tcode{C1::rep} &
-  An arithmetic type or a class emulating an arithmetic type &
-  The representation type of \tcode{C1::duration}.  \\ \rowsep
-
-\tcode{C1::period}  &
-  a specialization of \tcode{ratio}     &
-  The tick period of the clock in seconds.  \\ \rowsep
-
-\tcode{C1::duration}  &
-  \tcode{chrono::duration<C1::rep, C1::period>} &
-  The \tcode{duration} type of the clock. \\ \rowsep
-
-\tcode{C1::time_point}  &
-  \tcode{chrono::time_point<C1>} or \tcode{chrono::time_point<C2, C1::duration>}  &
-  The \tcode{time_point} type of the clock. \tcode{C1} and \tcode{C2} shall
-  refer to the same epoch. \\ \rowsep
-
-\tcode{C1::is_steady}  &
-  \tcode{const bool}      &
-  \tcode{true} if \tcode{t1 <= t2} is always \tcode{true} and the time between clock
-  ticks is constant, otherwise \tcode{false}.  \\ \rowsep
-
-\tcode{C1::now()} &
-  \tcode{C1::time_point}  &
-  Returns a \tcode{time_point} object representing the current point in time. \\
-
-\end{libreqtab3a}
+%\begin{libreqtab3a}
+%{Clock requirements}
+%{tab:time.clock}
+%\\ \topline
+%\lhdr{Expression}       &   \chdr{Return type}  &   \rhdr{Operational semantics} \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\hline
+%\lhdr{Expression}       &   \chdr{Return type}  &   \rhdr{Operational semantics}       \\ \capsep
+%\endhead
+%
+%\tcode{C1::rep} &
+%  An arithmetic type or a class emulating an arithmetic type &
+%  The representation type of \tcode{C1::duration}.  \\ \rowsep
+%
+%\tcode{C1::period}  &
+%  a specialization of \tcode{ratio}     &
+%  The tick period of the clock in seconds.  \\ \rowsep
+%
+%\tcode{C1::duration}  &
+%  \tcode{chrono::duration<C1::rep, C1::period>} &
+%  The \tcode{duration} type of the clock. \\ \rowsep
+%
+%\tcode{C1::time_point}  &
+%  \tcode{chrono::time_point<C1>} or \tcode{chrono::time_point<C2, C1::duration>}  &
+%  The \tcode{time_point} type of the clock. \tcode{C1} and \tcode{C2} shall
+%  refer to the same epoch. \\ \rowsep
+%
+%\tcode{C1::is_steady}  &
+%  \tcode{const bool}      &
+%  \tcode{true} if \tcode{t1 <= t2} is always \tcode{true} and the time between clock
+%  ticks is constant, otherwise \tcode{false}.  \\ \rowsep
+%
+%\tcode{C1::now()} &
+%  \tcode{C1::time_point}  &
+%  Returns a \tcode{time_point} object representing the current point in time. \\
+%
+%\end{libreqtab3a}
 
 \pnum
 \enternote The relative difference in durations between those reported by a given clock and the
@@ -11395,35 +11395,35 @@ public:
 Table~\ref{tab:util.hdr.ctime} describes the header
 \tcode{<ctime>}.
 
-\begin{libsyntab5}{ctime}{tab:util.hdr.ctime}
-
-\macros             &
- \tcode{NULL}       &
- \tcode{CLOCKS_PER_SEC}     &
-                    &
-                    \\ \rowsep
-\types              &
- \tcode{size_t}     &
- \tcode{clock_t}    &
- \tcode{time_t}     &
-                    \\ \rowsep
-\struct             &
- \tcode{tm}         &
-                    &
-                    &
-                    \\ \rowsep
-\cspan{\functions}  \\
-\tcode{asctime}     &
- \tcode{clock}      &
- \tcode{difftime}   &
- \tcode{localtime}  &
- \tcode{strftime}   \\
-\tcode{ctime}       &
- \tcode{gmtime}     &
- \tcode{mktime}     &
- \tcode{time}       &
-                    \\
-\end{libsyntab5}
+%\begin{libsyntab5}{ctime}{tab:util.hdr.ctime}
+%
+%\macros             &
+% \tcode{NULL}       &
+% \tcode{CLOCKS_PER_SEC}     &
+%                    &
+%                    \\ \rowsep
+%\types              &
+% \tcode{size_t}     &
+% \tcode{clock_t}    &
+% \tcode{time_t}     &
+%                    \\ \rowsep
+%\struct             &
+% \tcode{tm}         &
+%                    &
+%                    &
+%                    \\ \rowsep
+%\cspan{\functions}  \\
+%\tcode{asctime}     &
+% \tcode{clock}      &
+% \tcode{difftime}   &
+% \tcode{localtime}  &
+% \tcode{strftime}   \\
+%\tcode{ctime}       &
+% \tcode{gmtime}     &
+% \tcode{mktime}     &
+% \tcode{time}       &
+%                    \\
+%\end{libsyntab5}
 
 \pnum
 The contents are the same as the Standard C library header

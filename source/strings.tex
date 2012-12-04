@@ -16,16 +16,16 @@ character traits class, a string class, and
 null-terminated sequence utilities,
 as summarized in Table~\ref{tab:strings.lib.summary}.
 
-\begin{libsumtab}{Strings library summary}{tab:strings.lib.summary}
-\ref{char.traits}     & Character traits                    & \tcode{<string>}  \\ \rowsep
-\ref{string.classes}  & String classes                      & \tcode{<string>}  \\ \rowsep
-                      &                                     & \tcode{<cctype>}  \\
-                      &                                     & \tcode{<cwctype>} \\
-\ref{c.strings}       & Null-terminated sequence utilities  & \tcode{<cstring>} \\
-                      &                                     & \tcode{<cwchar>}  \\
-                      &                                     & \tcode{<cstdlib>} \\
-                      &                                     & \tcode{<cuchar>}  \\
-\end{libsumtab}
+%\begin{libsumtab}{Strings library summary}{tab:strings.lib.summary}
+%\ref{char.traits}     & Character traits                    & \tcode{<string>}  \\ \rowsep
+%\ref{string.classes}  & String classes                      & \tcode{<string>}  \\ \rowsep
+%                      &                                     & \tcode{<cctype>}  \\
+%                      &                                     & \tcode{<cwctype>} \\
+%\ref{c.strings}       & Null-terminated sequence utilities  & \tcode{<cstring>} \\
+%                      &                                     & \tcode{<cwchar>}  \\
+%                      &                                     & \tcode{<cstdlib>} \\
+%                      &                                     & \tcode{<cuchar>}  \\
+%\end{libsumtab}
 
 \rSec1[char.traits]{Character traits}
 
@@ -124,73 +124,73 @@ denotes an lvalue of type
 \tcode{CharT}.
 Operations on Traits shall not throw exceptions.
 
-\begin{libreqtab4d}
-{Character traits requirements}
-{tab:char.traits.require}
-\\ \topline
-\lhdr{Expression}       &   \chdr{Return type}  &   \chdr{Assertion/note}   &   \rhdr{Complexity}\\
-                        &                       &   \chdr{pre-/post-condition}   &               \\ \capsep
-\endfirsthead
-\continuedcaption\\
-\topline
-\lhdr{Expression}       &   \chdr{Return type}  &   \chdr{Assertion/note}   &   \rhdr{Complexity}\\
-                        &                       &   \chdr{pre-/post-condition}   &               \\ \capsep
-\endhead
-\tcode{X::char_type}    &   \tcode{charT}       &
-(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
-\tcode{X::int_type} &                       &
-(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
-\tcode{X::off_type} &                       &
-(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
-\tcode{X::pos_type} &                       &
-(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
-\tcode{X::state_type}   &                       &
-(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
-\tcode{X::eq(c,d)}      &   \tcode{bool}        &
-yields: whether \tcode{c} is to be treated as equal to \tcode{d}.   &   constant    \\ \rowsep
-\tcode{X::lt(c,d)}      &   \tcode{bool}        &
-yields: whether \tcode{c} is to be treated as less than \tcode{d}.  &   constant    \\ \rowsep
-\tcode{X::compare(p,q,n)}   &   \tcode{int}     &
-yields: \tcode{0} if for each \tcode{i} in \tcode{[0,n)}, \tcode{X::eq(p[i],q[i])}
-is true; else, a negative value if, for some \tcode{j} in \tcode{[0,n)},
-\tcode{X::lt(p[j],q[j])} is true and for each \tcode{i} in \tcode{[0,j)}
-\tcode{X::eq(p[i],q[i])} is true; else a positive value.            &   linear      \\ \rowsep
-\tcode{X::length(p)}    &   \tcode{std::size_t}     &
-yields: the smallest \tcode{i} such that \tcode{X::eq(p[i],charT())} is true.  &   linear  \\ \rowsep
-\tcode{X::find(p,n,c)}  &   \tcode{const X::char_type*} &
-yields: the smallest \tcode{q} in \tcode{[p,p+n)} such that
-\tcode{X::eq(*q,c)} is true, zero otherwise.                        &   linear      \\ \rowsep
-\tcode{X::move(s,p,n)}  &   \tcode{X::char_type*}   &
-for each \tcode{i} in \tcode{[0,n)}, performs \tcode{X::assign(s[i],p[i])}.
-Copies correctly even where the ranges \tcode{[p,p+n)} and \tcode{[s,s+n)} overlap. yields: \tcode{s}.    &   linear  \\ \rowsep
-\tcode{X::copy(s,p,n)}  &   \tcode{X::char_type*}   &
-pre: \tcode{p} not in \tcode{[s,s+n)}. yields: \tcode{s}. for each \tcode{i} in
-\tcode{[0,n)}, performs \tcode{X::assign(s[i],p[i])}.               &   linear      \\ \rowsep
-\tcode{X::assign(r,d)}  &   (not used)          &
-assigns \tcode{r=d}.                            &   constant        \\ \rowsep
-\tcode{X::assign\-(s,n,c)}  &   \tcode{X::char_type*}   &
-for each \tcode{i} in \tcode{[0,n)}, performs
-\tcode{X::assign(s[i],c)}. yields: \tcode{s}.                       &   linear      \\ \rowsep
-\tcode{X::not_eof(e)}   &   \tcode{int_type}        &
-yields: \tcode{e} if \tcode{X::eq_int_type(e,X::eof())} is false,
-otherwise a value \tcode{f} such that
-\tcode{X::eq_int_type(f,X::eof())} is false.                       &   constant    \\ \rowsep
-\tcode{X::to_char_type\-(e)}    &   \tcode{X::char_type}    &
-yields: if for some \tcode{c}, \tcode{X::eq_int_type(e,X::to_int_type(c))}
-is true, \tcode{c}; else some unspecified value.                    &   constant    \\ \rowsep
-\tcode{X::to_int_type\-(c)} &   \tcode{X::int_type} &
-yields: some value \tcode{e}, constrained by the definitions of
-\tcode{to_char_type} and \tcode{eq_int_type}.                  &   constant    \\ \rowsep
-\tcode{X::eq_int_type\-(e,f)}   &   \tcode{bool}            &
-yields: for all \tcode{c} and \tcode{d}, \tcode{X::eq(c,d)} is equal to
-\tcode{X::eq_int_type(X::to_int_type(c), X::to_int_type(d))}; otherwise, yields true
-if \tcode{e} and \tcode{f} are both copies of \tcode{X::eof()}; otherwise, yields false if
-one of \tcode{e} and \tcode{f} is a copy of \tcode{X::eof()} and the other is not; otherwise
-the value is unspecified.                                           &   constant    \\ \rowsep
-\tcode{X::eof()}                &   \tcode{X::int_type} &
-yields: a value \tcode{e} such that \tcode{X::eq_int_type(e,X::to_int_type(c))}
-is false for all values \tcode{c}.                                  &   constant    \\
-\end{libreqtab4d}
+%\begin{libreqtab4d}
+%{Character traits requirements}
+%{tab:char.traits.require}
+%\\ \topline
+%\lhdr{Expression}       &   \chdr{Return type}  &   \chdr{Assertion/note}   &   \rhdr{Complexity}\\
+%                        &                       &   \chdr{pre-/post-condition}   &               \\ \capsep
+%\endfirsthead
+%\continuedcaption\\
+%\topline
+%\lhdr{Expression}       &   \chdr{Return type}  &   \chdr{Assertion/note}   &   \rhdr{Complexity}\\
+%                        &                       &   \chdr{pre-/post-condition}   &               \\ \capsep
+%\endhead
+%\tcode{X::char_type}    &   \tcode{charT}       &
+%(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
+%\tcode{X::int_type} &                       &
+%(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
+%\tcode{X::off_type} &                       &
+%(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
+%\tcode{X::pos_type} &                       &
+%(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
+%\tcode{X::state_type}   &                       &
+%(described in~\ref{char.traits.typedefs})   &   compile-time    \\ \rowsep
+%\tcode{X::eq(c,d)}      &   \tcode{bool}        &
+%yields: whether \tcode{c} is to be treated as equal to \tcode{d}.   &   constant    \\ \rowsep
+%\tcode{X::lt(c,d)}      &   \tcode{bool}        &
+%yields: whether \tcode{c} is to be treated as less than \tcode{d}.  &   constant    \\ \rowsep
+%\tcode{X::compare(p,q,n)}   &   \tcode{int}     &
+%yields: \tcode{0} if for each \tcode{i} in \tcode{[0,n)}, \tcode{X::eq(p[i],q[i])}
+%is true; else, a negative value if, for some \tcode{j} in \tcode{[0,n)},
+%\tcode{X::lt(p[j],q[j])} is true and for each \tcode{i} in \tcode{[0,j)}
+%\tcode{X::eq(p[i],q[i])} is true; else a positive value.            &   linear      \\ \rowsep
+%\tcode{X::length(p)}    &   \tcode{std::size_t}     &
+%yields: the smallest \tcode{i} such that \tcode{X::eq(p[i],charT())} is true.  &   linear  \\ \rowsep
+%\tcode{X::find(p,n,c)}  &   \tcode{const X::char_type*} &
+%yields: the smallest \tcode{q} in \tcode{[p,p+n)} such that
+%\tcode{X::eq(*q,c)} is true, zero otherwise.                        &   linear      \\ \rowsep
+%\tcode{X::move(s,p,n)}  &   \tcode{X::char_type*}   &
+%for each \tcode{i} in \tcode{[0,n)}, performs \tcode{X::assign(s[i],p[i])}.
+%Copies correctly even where the ranges \tcode{[p,p+n)} and \tcode{[s,s+n)} overlap. yields: \tcode{s}.    &   linear  \\ \rowsep
+%\tcode{X::copy(s,p,n)}  &   \tcode{X::char_type*}   &
+%pre: \tcode{p} not in \tcode{[s,s+n)}. yields: \tcode{s}. for each \tcode{i} in
+%\tcode{[0,n)}, performs \tcode{X::assign(s[i],p[i])}.               &   linear      \\ \rowsep
+%\tcode{X::assign(r,d)}  &   (not used)          &
+%assigns \tcode{r=d}.                            &   constant        \\ \rowsep
+%\tcode{X::assign\-(s,n,c)}  &   \tcode{X::char_type*}   &
+%for each \tcode{i} in \tcode{[0,n)}, performs
+%\tcode{X::assign(s[i],c)}. yields: \tcode{s}.                       &   linear      \\ \rowsep
+%\tcode{X::not_eof(e)}   &   \tcode{int_type}        &
+%yields: \tcode{e} if \tcode{X::eq_int_type(e,X::eof())} is false,
+%otherwise a value \tcode{f} such that
+%\tcode{X::eq_int_type(f,X::eof())} is false.                       &   constant    \\ \rowsep
+%\tcode{X::to_char_type\-(e)}    &   \tcode{X::char_type}    &
+%yields: if for some \tcode{c}, \tcode{X::eq_int_type(e,X::to_int_type(c))}
+%is true, \tcode{c}; else some unspecified value.                    &   constant    \\ \rowsep
+%\tcode{X::to_int_type\-(c)} &   \tcode{X::int_type} &
+%yields: some value \tcode{e}, constrained by the definitions of
+%\tcode{to_char_type} and \tcode{eq_int_type}.                  &   constant    \\ \rowsep
+%\tcode{X::eq_int_type\-(e,f)}   &   \tcode{bool}            &
+%yields: for all \tcode{c} and \tcode{d}, \tcode{X::eq(c,d)} is equal to
+%\tcode{X::eq_int_type(X::to_int_type(c), X::to_int_type(d))}; otherwise, yields true
+%if \tcode{e} and \tcode{f} are both copies of \tcode{X::eof()}; otherwise, yields false if
+%one of \tcode{e} and \tcode{f} is a copy of \tcode{X::eof()} and the other is not; otherwise
+%the value is unspecified.                                           &   constant    \\ \rowsep
+%\tcode{X::eof()}                &   \tcode{X::int_type} &
+%yields: a value \tcode{e} such that \tcode{X::eq_int_type(e,X::to_int_type(c))}
+%is false for all values \tcode{c}.                                  &   constant    \\
+%\end{libreqtab4d}
 
 \pnum
 The struct template
@@ -1135,11 +1135,11 @@ Constructs an object of class
 \tcode{basic_string}.
 The postconditions of this function are indicated in Table~\ref{tab:strings.ctr.1}.
 
-\begin{libefftabvalue}{\tcode{basic_string(const Allocator\&)} effects}{tab:strings.ctr.1}
-\tcode{data()}      &   a non-null pointer that is copyable and can have 0 added to it  \\ \rowsep
-\tcode{size()}      &   0                                                               \\ \rowsep
-\tcode{capacity()}  &   an unspecified value                                            \\
-\end{libefftabvalue}
+%\begin{libefftabvalue}{\tcode{basic_string(const Allocator\&)} effects}{tab:strings.ctr.1}
+%\tcode{data()}      &   a non-null pointer that is copyable and can have 0 added to it  \\ \rowsep
+%\tcode{size()}      &   0                                                               \\ \rowsep
+%\tcode{capacity()}  &   an unspecified value                                            \\
+%\end{libefftabvalue}
 \end{itemdescr}
 
 \indexlibrary{\idxcode{basic_string}!constructor}%
@@ -1157,15 +1157,15 @@ as indicated in Table~\ref{tab:strings.ctr.cpy}.
 In the second form, \tcode{str}
 is left in a valid state with an unspecified value.
 
-\begin{libefftabvalue}
-{\tcode{basic_string(const basic_string\&)} effects}
-{tab:strings.ctr.cpy}
-\tcode{data()}      &
-points at the first element of an allocated copy of the array
-whose first element is pointed at by \tcode{str.data()} \\
-\tcode{size()}      &   \tcode{str.size()}                                                  \\
-\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
-\end{libefftabvalue}
+%\begin{libefftabvalue}
+%{\tcode{basic_string(const basic_string\&)} effects}
+%{tab:strings.ctr.cpy}
+%\tcode{data()}      &
+%points at the first element of an allocated copy of the array
+%whose first element is pointed at by \tcode{str.data()} \\
+%\tcode{size()}      &   \tcode{str.size()}                                                  \\
+%\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
+%\end{libefftabvalue}
 \end{itemdescr}
 
 \indexlibrary{\idxcode{basic_string}!constructor}%
@@ -1195,15 +1195,15 @@ value as the smaller of \tcode{n} and
 \tcode{str.size() - pos},
 as indicated in Table~\ref{tab:strings.ctr.2}.
 
-\begin{libefftabvalue}
-{\tcode{basic_string(const basic_string\&, size_type, size_type, const Allocator\&)} effects}
-{tab:strings.ctr.2}
-\tcode{data()}      &
-points at the first element of an allocated copy of \tcode{rlen} consecutive elements
-of the string controlled by \tcode{str} beginning at position \tcode{pos}              \\
-\tcode{size()}      &   \tcode{rlen}                                                    \\
-\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
-\end{libefftabvalue}
+%\begin{libefftabvalue}
+%{\tcode{basic_string(const basic_string\&, size_type, size_type, const Allocator\&)} effects}
+%{tab:strings.ctr.2}
+%\tcode{data()}      &
+%points at the first element of an allocated copy of \tcode{rlen} consecutive elements
+%of the string controlled by \tcode{str} beginning at position \tcode{pos}              \\
+%\tcode{size()}      &   \tcode{rlen}                                                    \\
+%\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
+%\end{libefftabvalue}
 \end{itemdescr}
 
 \indexlibrary{\idxcode{basic_string}!constructor}%
@@ -1227,15 +1227,15 @@ and determines its initial string value from the array of
 of length \tcode{n} whose first element is designated by \tcode{s},
 as indicated in Table~\ref{tab:strings.ctr.3}.
 
-\begin{libefftabvalue}
-{\tcode{basic_string(const charT*, size_type, const Allocator\&)} effects}
-{tab:strings.ctr.3}
-\tcode{data()}      &
-points at the first element of an allocated copy of the array whose first element
-is pointed at by \tcode{s}                                                              \\
-\tcode{size()}      &   \tcode{n}                                                       \\
-\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
-\end{libefftabvalue}
+%\begin{libefftabvalue}
+%{\tcode{basic_string(const charT*, size_type, const Allocator\&)} effects}
+%{tab:strings.ctr.3}
+%\tcode{data()}      &
+%points at the first element of an allocated copy of the array whose first element
+%is pointed at by \tcode{s}                                                              \\
+%\tcode{size()}      &   \tcode{n}                                                       \\
+%\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
+%\end{libefftabvalue}
 \end{itemdescr}
 
 \indexlibrary{\idxcode{basic_string}!constructor}%
@@ -1260,15 +1260,15 @@ whose first element is designated
 by \tcode{s},
 as indicated in Table~\ref{tab:strings.ctr.4}.
 
-\begin{libefftabvalue}
-{\tcode{basic_string(const charT*, const Allocator\&)} effects}
-{tab:strings.ctr.4}
-\tcode{data()}      &
-points at the first element of an allocated copy of the array whose first element
-is pointed at by \tcode{s}                                                              \\
-\tcode{size()}      &   \tcode{traits::length(s)}                                       \\
-\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
-\end{libefftabvalue}
+%\begin{libefftabvalue}
+%{\tcode{basic_string(const charT*, const Allocator\&)} effects}
+%{tab:strings.ctr.4}
+%\tcode{data()}      &
+%points at the first element of an allocated copy of the array whose first element
+%is pointed at by \tcode{s}                                                              \\
+%\tcode{size()}      &   \tcode{traits::length(s)}                                       \\
+%\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
+%\end{libefftabvalue}
 
 \pnum
 \notes
@@ -1295,15 +1295,15 @@ and determines its initial string value by repeating the char-like
 object \tcode{c} for all \tcode{n} elements,
 as indicated in Table~\ref{tab:strings.ctr.5}.
 
-\begin{libefftabvalue}
-{\tcode{basic_string(size_t, charT, const Allocator\&)} effects}
-{tab:strings.ctr.5}
-\tcode{data()}      &
-points at the first element of an allocated array of \tcode{n} elements, each
-storing the initial value \tcode{c}                                                     \\
-\tcode{size()}      &   \tcode{n}                                                       \\
-\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
-\end{libefftabvalue}
+%\begin{libefftabvalue}
+%{\tcode{basic_string(size_t, charT, const Allocator\&)} effects}
+%{tab:strings.ctr.5}
+%\tcode{data()}      &
+%points at the first element of an allocated array of \tcode{n} elements, each
+%storing the initial value \tcode{c}                                                     \\
+%\tcode{size()}      &   \tcode{n}                                                       \\
+%\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
+%\end{libefftabvalue}
 \end{itemdescr}
 
 \indexlibrary{\idxcode{basic_string}!constructor}%
@@ -1353,17 +1353,17 @@ Table~\ref{tab:strings.ctr.6}. The stored allocator is constructed from
 \tcode{alloc}. In the second form, \tcode{str} is left in a valid state with an
 unspecified value.
 
-\begin{libefftabvalue}
-{\tcode{basic_string(const basic_string\&, const Allocator\&)} and
-\tcode{basic_string(basic_string\&\&, const Allocator\&)} effects}
-{tab:strings.ctr.6}
-\tcode{data()}      &
-points at the first element of an allocated copy of the array whose first
-element is pointed at by the original value of \tcode{str.data()}. \\
-\tcode{size()}      &   the original value of \tcode{str.size()}   \\
-\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
-\tcode{get_allocator()} &	\tcode{alloc} \\
-\end{libefftabvalue}
+%\begin{libefftabvalue}
+%{\tcode{basic_string(const basic_string\&, const Allocator\&)} and
+%\tcode{basic_string(basic_string\&\&, const Allocator\&)} effects}
+%{tab:strings.ctr.6}
+%\tcode{data()}      &
+%points at the first element of an allocated copy of the array whose first
+%element is pointed at by the original value of \tcode{str.data()}. \\
+%\tcode{size()}      &   the original value of \tcode{str.size()}   \\
+%\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
+%\tcode{get_allocator()} &	\tcode{alloc} \\
+%\end{libefftabvalue}
 
 \pnum
 \throws The second form throws nothing if \tcode{alloc == str.get_allocator()}.
@@ -1396,15 +1396,15 @@ the member has no effect.
 \returns
 \tcode{*this}
 
-\begin{libefftabvalue}
-{\tcode{operator=(const basic_string\&)} effects}
-{tab:strings.op=}
-\tcode{data()}      &
-points at the first element of an allocated copy of the array whose first
-element is pointed at by \tcode{str.data()}                                             \\
-\tcode{size()}      &   \tcode{str.size()}                                              \\
-\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
-\end{libefftabvalue}
+%\begin{libefftabvalue}
+%{\tcode{operator=(const basic_string\&)} effects}
+%{tab:strings.op=}
+%\tcode{data()}      &
+%points at the first element of an allocated copy of the array whose first
+%element is pointed at by \tcode{str.data()}                                             \\
+%\tcode{size()}      &   \tcode{str.size()}                                              \\
+%\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
+%\end{libefftabvalue}
 \end{itemdescr}
 
 \indexlibrary{\idxcode{operator=}!\idxcode{basic_string}}%
@@ -1435,15 +1435,15 @@ the member has no effect.
 \returns
 \tcode{*this}
 
-\begin{libefftabvalue}
-{\tcode{operator=(basic_string\&\&)} effects}
-{tab:strings.op=rv}
-\tcode{data()}      &
-points at the array whose first
-element was pointed at by \tcode{str.data()}                                            \\
-\tcode{size()}      &   previous value of \tcode{str.size()}                            \\
-\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
-\end{libefftabvalue}
+%\begin{libefftabvalue}
+%{\tcode{operator=(basic_string\&\&)} effects}
+%{tab:strings.op=rv}
+%\tcode{data()}      &
+%points at the array whose first
+%element was pointed at by \tcode{str.data()}                                            \\
+%\tcode{size()}      &   previous value of \tcode{str.size()}                            \\
+%\tcode{capacity()}  &   a value at least as large as \tcode{size()}                     \\
+%\end{libefftabvalue}
 \end{itemdescr}
 
 \indexlibrary{\idxcode{operator=}!\idxcode{basic_string}}%
@@ -3405,14 +3405,14 @@ The function then compares the two strings by calling
 The nonzero result if the result of the comparison is nonzero.
 Otherwise, returns a value as indicated in Table~\ref{tab:strings.compare}.
 
-\begin{floattable}{\tcode{compare()} results}{tab:strings.compare}
-{lc}
-\topline
-\lhdr{Condition}                &   \rhdr{Return Value} \\ \capsep
-\tcode{size() < \ str.size()}  &   \tcode{< 0}         \\
-\tcode{size() == str.size()}    &   \tcode{ \ 0}       \\
-\tcode{size() > \ str.size()}  &   \tcode{> 0}         \\
-\end{floattable}
+%\begin{floattable}{\tcode{compare()} results}{tab:strings.compare}
+%{lc}
+%\topline
+%\lhdr{Condition}                &   \rhdr{Return Value} \\ \capsep
+%\tcode{size() < \ str.size()}  &   \tcode{< 0}         \\
+%\tcode{size() == str.size()}    &   \tcode{ \ 0}       \\
+%\tcode{size() > \ str.size()}  &   \tcode{> 0}         \\
+%\end{floattable}
 \end{itemdescr}
 
 \indexlibrary{\idxcode{compare}!\idxcode{basic_string}}%
@@ -4531,219 +4531,219 @@ Calling the functions listed in Table~\ref{tab:mbstate.data.races} with an \tcod
 \tcode{NULL} may introduce a data race~(\ref{res.on.data.races}) with other calls to
 these functions with an \tcode{mbstate_t*} argument of \tcode{NULL}.
 
-\begin{floattable}
-{Potential \tcode{mbstate_t} data races}
-{tab:mbstate.data.races}
-{lllll}
-\topline
-
-\tcode{mbrlen}    &
-\tcode{mbrtowc}   &
-\tcode{mbsrtowc}  &
-\tcode{mbtowc}    &
-\tcode{wcrtomb}   \\
-
-\tcode{wcsrtomb}  &
-\tcode{wctomb}    &&&\\
-
-\end{floattable}
+%\begin{floattable}
+%{Potential \tcode{mbstate_t} data races}
+%{tab:mbstate.data.races}
+%{lllll}
+%\topline
+%
+%\tcode{mbrlen}    &
+%\tcode{mbrtowc}   &
+%\tcode{mbsrtowc}  &
+%\tcode{mbtowc}    &
+%\tcode{wcrtomb}   \\
+%
+%\tcode{wcsrtomb}  &
+%\tcode{wctomb}    &&&\\
+%
+%\end{floattable}
 
 \xref
 ISO C 7.3, 7.10.7, 7.10.8, and  7.11.
 Amendment 1 4.4, 4.5, and 4.6.
 
-\begin{libsyntabf5}{cctype}{tab:strings.hdr.cctype}
+%\begin{libsyntabf5}{cctype}{tab:strings.hdr.cctype}
+%
+%\cspan{\functions}  \\
+%\tcode{isalnum}     &
+% \tcode{isblank}    &
+% \tcode{isdigit}    &
+% \tcode{isprint}    &
+% \tcode{isupper}    \\
+% \tcode{tolower}    &
+%\tcode{isalpha}     &
+% \tcode{isgraph}    &
+% \tcode{ispunct}    &
+% \tcode{isxdigit}   \\
+% \tcode{toupper}    &
+%\tcode{iscntrl}     &
+% \tcode{islower}    &
+% \tcode{isspace}    &
+%                    \\
+%\end{libsyntabf5}
 
-\cspan{\functions}  \\
-\tcode{isalnum}     &
- \tcode{isblank}    &
- \tcode{isdigit}    &
- \tcode{isprint}    &
- \tcode{isupper}    \\
- \tcode{tolower}    &
-\tcode{isalpha}     &
- \tcode{isgraph}    &
- \tcode{ispunct}    &
- \tcode{isxdigit}   \\
- \tcode{toupper}    &
-\tcode{iscntrl}     &
- \tcode{islower}    &
- \tcode{isspace}    &
-                    \\
-\end{libsyntabf5}
-
-\begin{libsyntabf5}{cwctype}{tab:strings.hdr.cwctype}
-\macro              &   \multicolumn{4}{l|}{\tcode{WEOF}} \\ \rowsep
-\types              &
- \tcode{wctrans_t}  &
- \tcode{wctype_t}   &
- \multicolumn{2}{l|}{\tcode{wint_t}}  \\ \rowsep
-\cspan{\functions}  \\
-
-\tcode{iswalnum}    &
-\tcode{iswctype}    &
-\tcode{iswprint}    &
-\tcode{iswxdigit}   &
-\tcode{wctrans}     \\
-
-\tcode{iswalpha}    &
-\tcode{iswdigit}    &
-\tcode{iswpunct}    &
-\tcode{towctrans}   &
-\tcode{wctype}      \\
-
-\tcode{iswblank}    &
-\tcode{iswgraph}    &
-\tcode{iswspace}    &
-\tcode{towlower}    & \\
-
-\tcode{iswcntrl}    &
-\tcode{iswlower}    &
-\tcode{iswupper}    &
-\tcode{towupper}    & \\
-
-
-\end{libsyntabf5}
-
-\begin{libsyntabf5}{cstring}{tab:strings.hdr.cstring}
-\macro              &
- \multicolumn{4}{l|}{\tcode{NULL <cstring>}}    \\ \rowsep
-\type               &
- \multicolumn{4}{l|}{\tcode{size_t <cstring>}}  \\ \rowsep
-\cspan{\functions}  \\
-\tcode{memchr}      &
- \tcode{strcat}     &
- \tcode{strcspn}    &
- \tcode{strncpy}    &
- \tcode{strtok}     \\
-\tcode{memcmp}      &
- \tcode{strchr}     &
- \tcode{strerror}   &
- \tcode{strpbrk}    &
- \tcode{strxfrm}    \\
-\tcode{memcpy}      &
- \tcode{strcmp}     &
- \tcode{strlen}     &
- \tcode{strrchr}    &
-                    \\
-\tcode{memmove}     &
- \tcode{strcoll}    &
- \tcode{strncat}    &
- \tcode{strspn}     &
-                    \\
-\tcode{memset}      &
- \tcode{strcpy}     &
- \tcode{strncmp}    &
- \tcode{strstr}     &
-                    \\
-\end{libsyntabf5}
-
-\begin{libsyntabf5}{cwchar}{tab:strings.hdr.cwchar}
-\macros                 &
- \tcode{NULL}           &
- \tcode{WCHAR_MAX}      &
- \tcode{WCHAR_MIN}      &
- \tcode{WEOF}           \\ \rowsep
-\types                  &
- \tcode{mbstate_t}      &
- \tcode{wint_t}         &
- \tcode{size_t}         &
- \tcode{tm}             \\ \rowsep
-\cspan{\functions}      \\
-
-\tcode{btowc}           &
-\tcode{mbsinit}         &
-\tcode{vwscanf}         &
-\tcode{wcsncpy}         &
-\tcode{wcstoull}        \\
-
-\tcode{fgetwc}          &
-\tcode{mbsrtowcs}       &
-\tcode{wcrtomb}         &
-\tcode{wcspbrk}         &
-\tcode{wcstoul}         \\
-
-\tcode{fgetws}          &
-\tcode{putwchar}        &
-\tcode{wcscat}          &
-\tcode{wcsrchr}         &
-\tcode{wcsxfrm}         \\
-
-\tcode{fputwc}          &
-\tcode{putwc}           &
-\tcode{wcschr}          &
-\tcode{wcsrtombs}       &
-\tcode{wctob}           \\
-
-\tcode{fputws}          &
-\tcode{swprintf}        &
-\tcode{wcscmp}          &
-\tcode{wcsspn}          &
-\tcode{wmemchr}         \\
-
-\tcode{fwide}           &
-\tcode{swscanf}         &
-\tcode{wcscoll}         &
-\tcode{wcsstr}          &
-\tcode{wmemcmp}         \\
-
-\tcode{fwprintf}        &
-\tcode{ungetwc}         &
-\tcode{wcscpy}          &
-\tcode{wcstod}          &
-\tcode{wmemcpy}         \\
-
-\tcode{fwscanf}         &
-\tcode{vfwprintf}       &
-\tcode{wcscspn}         &
-\tcode{wcstof}          &
-\tcode{wmemmove}        \\
-
-\tcode{getwchar}        &
-\tcode{vfwscanf}        &
-\tcode{wcsftime}        &
-\tcode{wcstok}          &
-\tcode{wmemset}         \\
-
-\tcode{getwc}           &
-\tcode{vswprintf}       &
-\tcode{wcslen}          &
-\tcode{wcstold}         &
-\tcode{wprintf}         \\
-
-\tcode{mbrlen}          &
-\tcode{vswscanf}        &
-\tcode{wcsncat}         &
-\tcode{wcstoll}         &
-\tcode{wscanf}          \\
-
-\tcode{mbrtowc}         &
-\tcode{vwprintf}        &
-\tcode{wcsncmp}         &
-\tcode{wcstol}          & \\
-
-\end{libsyntabf5}
-
-\begin{libsyntabf4}{cstdlib}{tab:strings.hdr.cstdlib}
-\macros             &
- \tcode{MB_CUR_MAX} &
-                    &
-                    \\ \rowsep
-\cspan{\functions}  \\
-\tcode{atof}        & \tcode{mblen}     & \tcode{strtof} & \tcode{strtoul}   \\
-\tcode{atoi}        & \tcode{mbtowc}    & \tcode{strtol}    & \tcode{strtoull}\\
-\tcode{atol}        & \tcode{mbstowcs}& \tcode{strtold}     & \tcode{wctomb}\\
-\tcode{atoll}       & \tcode{strtod}    & \tcode{strtoll}   &  \tcode{wcstombs}\\
-\end{libsyntabf4}
-
-\begin{libsyntabf3}{cuchar}{tab:strings.hdr.cuchar}
-\macros             &
- \mbox{\tcode{__STDC_UTF_16__}}    & \\
- & \mbox{\tcode{__STDC_UTF_32__}}  & \\ \rowsep
-\functions          &
- \tcode{mbrtoc16}   &
- \tcode{c16rtomb}   \\
-                    &
- \tcode{mbrtoc32}   &
- \tcode{c32rtomb}   \\
-\end{libsyntabf3}
+%\begin{libsyntabf5}{cwctype}{tab:strings.hdr.cwctype}
+%\macro              &   \multicolumn{4}{l|}{\tcode{WEOF}} \\ \rowsep
+%\types              &
+% \tcode{wctrans_t}  &
+% \tcode{wctype_t}   &
+% \multicolumn{2}{l|}{\tcode{wint_t}}  \\ \rowsep
+%\cspan{\functions}  \\
+%
+%\tcode{iswalnum}    &
+%\tcode{iswctype}    &
+%\tcode{iswprint}    &
+%\tcode{iswxdigit}   &
+%\tcode{wctrans}     \\
+%
+%\tcode{iswalpha}    &
+%\tcode{iswdigit}    &
+%\tcode{iswpunct}    &
+%\tcode{towctrans}   &
+%\tcode{wctype}      \\
+%
+%\tcode{iswblank}    &
+%\tcode{iswgraph}    &
+%\tcode{iswspace}    &
+%\tcode{towlower}    & \\
+%
+%\tcode{iswcntrl}    &
+%\tcode{iswlower}    &
+%\tcode{iswupper}    &
+%\tcode{towupper}    & \\
+%
+%
+%\end{libsyntabf5}
+%
+%\begin{libsyntabf5}{cstring}{tab:strings.hdr.cstring}
+%\macro              &
+% \multicolumn{4}{l|}{\tcode{NULL <cstring>}}    \\ \rowsep
+%\type               &
+% \multicolumn{4}{l|}{\tcode{size_t <cstring>}}  \\ \rowsep
+%\cspan{\functions}  \\
+%\tcode{memchr}      &
+% \tcode{strcat}     &
+% \tcode{strcspn}    &
+% \tcode{strncpy}    &
+% \tcode{strtok}     \\
+%\tcode{memcmp}      &
+% \tcode{strchr}     &
+% \tcode{strerror}   &
+% \tcode{strpbrk}    &
+% \tcode{strxfrm}    \\
+%\tcode{memcpy}      &
+% \tcode{strcmp}     &
+% \tcode{strlen}     &
+% \tcode{strrchr}    &
+%                    \\
+%\tcode{memmove}     &
+% \tcode{strcoll}    &
+% \tcode{strncat}    &
+% \tcode{strspn}     &
+%                    \\
+%\tcode{memset}      &
+% \tcode{strcpy}     &
+% \tcode{strncmp}    &
+% \tcode{strstr}     &
+%                    \\
+%\end{libsyntabf5}
+%
+%\begin{libsyntabf5}{cwchar}{tab:strings.hdr.cwchar}
+%\macros                 &
+% \tcode{NULL}           &
+% \tcode{WCHAR_MAX}      &
+% \tcode{WCHAR_MIN}      &
+% \tcode{WEOF}           \\ \rowsep
+%\types                  &
+% \tcode{mbstate_t}      &
+% \tcode{wint_t}         &
+% \tcode{size_t}         &
+% \tcode{tm}             \\ \rowsep
+%\cspan{\functions}      \\
+%
+%\tcode{btowc}           &
+%\tcode{mbsinit}         &
+%\tcode{vwscanf}         &
+%\tcode{wcsncpy}         &
+%\tcode{wcstoull}        \\
+%
+%\tcode{fgetwc}          &
+%\tcode{mbsrtowcs}       &
+%\tcode{wcrtomb}         &
+%\tcode{wcspbrk}         &
+%\tcode{wcstoul}         \\
+%
+%\tcode{fgetws}          &
+%\tcode{putwchar}        &
+%\tcode{wcscat}          &
+%\tcode{wcsrchr}         &
+%\tcode{wcsxfrm}         \\
+%
+%\tcode{fputwc}          &
+%\tcode{putwc}           &
+%\tcode{wcschr}          &
+%\tcode{wcsrtombs}       &
+%\tcode{wctob}           \\
+%
+%\tcode{fputws}          &
+%\tcode{swprintf}        &
+%\tcode{wcscmp}          &
+%\tcode{wcsspn}          &
+%\tcode{wmemchr}         \\
+%
+%\tcode{fwide}           &
+%\tcode{swscanf}         &
+%\tcode{wcscoll}         &
+%\tcode{wcsstr}          &
+%\tcode{wmemcmp}         \\
+%
+%\tcode{fwprintf}        &
+%\tcode{ungetwc}         &
+%\tcode{wcscpy}          &
+%\tcode{wcstod}          &
+%\tcode{wmemcpy}         \\
+%
+%\tcode{fwscanf}         &
+%\tcode{vfwprintf}       &
+%\tcode{wcscspn}         &
+%\tcode{wcstof}          &
+%\tcode{wmemmove}        \\
+%
+%\tcode{getwchar}        &
+%\tcode{vfwscanf}        &
+%\tcode{wcsftime}        &
+%\tcode{wcstok}          &
+%\tcode{wmemset}         \\
+%
+%\tcode{getwc}           &
+%\tcode{vswprintf}       &
+%\tcode{wcslen}          &
+%\tcode{wcstold}         &
+%\tcode{wprintf}         \\
+%
+%\tcode{mbrlen}          &
+%\tcode{vswscanf}        &
+%\tcode{wcsncat}         &
+%\tcode{wcstoll}         &
+%\tcode{wscanf}          \\
+%
+%\tcode{mbrtowc}         &
+%\tcode{vwprintf}        &
+%\tcode{wcsncmp}         &
+%\tcode{wcstol}          & \\
+%
+%\end{libsyntabf5}
+%
+%\begin{libsyntabf4}{cstdlib}{tab:strings.hdr.cstdlib}
+%\macros             &
+% \tcode{MB_CUR_MAX} &
+%                    &
+%                    \\ \rowsep
+%\cspan{\functions}  \\
+%\tcode{atof}        & \tcode{mblen}     & \tcode{strtof} & \tcode{strtoul}   \\
+%\tcode{atoi}        & \tcode{mbtowc}    & \tcode{strtol}    & \tcode{strtoull}\\
+%\tcode{atol}        & \tcode{mbstowcs}& \tcode{strtold}     & \tcode{wctomb}\\
+%\tcode{atoll}       & \tcode{strtod}    & \tcode{strtoll}   &  \tcode{wcstombs}\\
+%\end{libsyntabf4}
+%
+%\begin{libsyntabf3}{cuchar}{tab:strings.hdr.cuchar}
+%\macros             &
+% \mbox{\tcode{__STDC_UTF_16__}}    & \\
+% & \mbox{\tcode{__STDC_UTF_32__}}  & \\ \rowsep
+%\functions          &
+% \tcode{mbrtoc16}   &
+% \tcode{c16rtomb}   \\
+%                    &
+% \tcode{mbrtoc32}   &
+% \tcode{c32rtomb}   \\
+%\end{libsyntabf3}

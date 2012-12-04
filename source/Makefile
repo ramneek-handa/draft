@@ -11,14 +11,15 @@
 #   texlive-fonts-extra
 #   texlive-generic-recommended
 
-FIGURES = $(patsubst %.dot,%.pdf,$(wildcard *.dot))
+FIGURES = $(patsubst %.dot,%.jpg,$(wildcard *.dot))
 
 STDPDF = pdflatex std | grep -v "^Overfull"
 
 default: rebuild
-	
+
+images: $(FIGURES)	
 clean:
-	rm -f *.aux std.pdf *.idx *.ilg *.ind *.log *.lot *.lof *.tmp *.out
+	rm -f *.aux std.pdf *.idx *.ilg *.ind *.log *.lot *.lof *.tmp *.out *.jpg
 	
 refresh:
 	$(STDPDF)
@@ -32,6 +33,9 @@ full: $(FIGURES) grammar xrefs reindex
 
 %.pdf: %.dot
 	dot -o $@ -Tpdf $<
+
+%.jpg: %.dot
+	dot -o $@ -Tjpg $<
 
 grammar:
 	sh ../tools/makegram

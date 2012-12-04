@@ -6,7 +6,8 @@
 % \documentclass[letterpaper,oneside,openany]{memoir}
 \documentclass[ebook,10pt,oneside,openany,final]{memoir}
 % \includeonly{declarations}
-
+%\usepackage[dvips]{color,graphicx}
+%\usepackage[tex4ht]{hyperref}
 \usepackage[american]
            {babel}        % needed for iso dates
 \usepackage[iso,american]
@@ -29,21 +30,22 @@
 \usepackage{fixme}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
-\usepackage[pdftex, final]{graphicx}
-\usepackage[pdftex,
-            pdftitle={C++ International Standard},
-            pdfsubject={C++ International Standard},
-            pdfcreator={Stefanus Du Toit},
-            bookmarks=true,
-            bookmarksnumbered=true,
-            pdfpagelabels=true,
-            pdfpagemode=UseOutlines,
-            pdfstartview=FitH,
-            linktocpage=true,
-            colorlinks=true,
-            linkcolor=blue,
-            plainpages=false
-           ]{hyperref}
+\usepackage{graphicx}
+%\usepackage[pdftex, final]{graphicx}
+%\usepackage[pdftex,
+%            pdftitle={C++ International Standard},
+%            pdfsubject={C++ International Standard},
+%            pdfcreator={Stefanus Du Toit},
+%            bookmarks=true,
+%            bookmarksnumbered=true,
+%            pdfpagelabels=true,
+%            pdfpagemode=UseOutlines,
+%            pdfstartview=FitH,
+%            linktocpage=true,
+%            colorlinks=true,
+%            linkcolor=blue,
+%            plainpages=false
+%           ]{hyperref}
 \usepackage{memhfixc}     % fix interactions between hyperref and memoir
 
 \input{layout}
@@ -122,7 +124,7 @@
 %%--------------------------------------------------
 %% back matter
 \backmatter
-\include{back}
+%\include{back}
 
 
 %%--------------------------------------------------

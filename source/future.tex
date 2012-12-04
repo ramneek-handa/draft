@@ -55,43 +55,43 @@ the \Cpp standard library provides the 25
 \textit{C headers},
 as shown in Table~\ref{tab:future.c.headers}.
 
-\begin{floattable}{C headers}{tab:future.c.headers}
-{lllll}
-\topline
-
-\tcode{<assert.h>}			&
-\tcode{<inttypes.h>}		&
-\tcode{<signal.h>}			&
-\tcode{<stdio.h>}			  &
-\tcode{<wchar.h>}			  \\
-
-\tcode{<complex.h>}			&
-\tcode{<iso646.h>}			&
-\tcode{<stdalign.h>}    &
-\tcode{<stdlib.h>}			&
-\tcode{<wctype.h>}			\\
-
-\tcode{<ctype.h>}			  &
-\tcode{<limits.h>}			&
-\tcode{<stdarg.h>}			&
-\tcode{<string.h>}			& \\
-
-\tcode{<errno.h>}			  &
-\tcode{<locale.h>}			&
-\tcode{<stdbool.h>}			&
-\tcode{<tgmath.h>}			& \\
-
-\tcode{<fenv.h>}			  &
-\tcode{<math.h>}			  &
-\tcode{<stddef.h>}			&
-\tcode{<time.h>}				& \\
-
-\tcode{<float.h>}			  &
-\tcode{<setjmp.h>}			&
-\tcode{<stdint.h>}			&
-\tcode{<uchar.h>}			  & \\
-
-\end{floattable}
+%\begin{floattable}{C headers}{tab:future.c.headers}
+%{lllll}
+%\topline
+%
+%\tcode{<assert.h>}			&
+%\tcode{<inttypes.h>}		&
+%\tcode{<signal.h>}			&
+%\tcode{<stdio.h>}			  &
+%\tcode{<wchar.h>}			  \\
+%
+%\tcode{<complex.h>}			&
+%\tcode{<iso646.h>}			&
+%\tcode{<stdalign.h>}    &
+%\tcode{<stdlib.h>}			&
+%\tcode{<wctype.h>}			\\
+%
+%\tcode{<ctype.h>}			  &
+%\tcode{<limits.h>}			&
+%\tcode{<stdarg.h>}			&
+%\tcode{<string.h>}			& \\
+%
+%\tcode{<errno.h>}			  &
+%\tcode{<locale.h>}			&
+%\tcode{<stdbool.h>}			&
+%\tcode{<tgmath.h>}			& \\
+%
+%\tcode{<fenv.h>}			  &
+%\tcode{<math.h>}			  &
+%\tcode{<stddef.h>}			&
+%\tcode{<time.h>}				& \\
+%
+%\tcode{<float.h>}			  &
+%\tcode{<setjmp.h>}			&
+%\tcode{<stdint.h>}			&
+%\tcode{<uchar.h>}			  & \\
+%
+%\end{floattable}
 
 \pnum
 Every C header, each of which has a name of the form
@@ -388,14 +388,14 @@ initializing the base class with
 The postconditions of this function are indicated in Table~\ref{tab:future.strstreambuf.effects}.
 \end{itemdescr}
 
-\begin{libtab2}{\tcode{strstreambuf(streamsize)} effects}{tab:future.strstreambuf.effects}
-{ll}
-{Element}{Value}
-\tcode{strmode}	&	\tcode{dynamic}		\\
-\tcode{alsize}	&	\tcode{alsize_arg}	\\
-\tcode{palloc}	&	a null pointer		\\
-\tcode{pfree}	&	a null pointer		\\
-\end{libtab2}
+%\begin{libtab2}{\tcode{strstreambuf(streamsize)} effects}{tab:future.strstreambuf.effects}
+%{ll}
+%{Element}{Value}
+%\tcode{strmode}	&	\tcode{dynamic}		\\
+%\tcode{alsize}	&	\tcode{alsize_arg}	\\
+%\tcode{palloc}	&	a null pointer		\\
+%\tcode{pfree}	&	a null pointer		\\
+%\end{libtab2}
 
 \indexlibrary{\idxcode{strstreambuf}}%
 \begin{itemdecl}
@@ -411,15 +411,15 @@ initializing the base class with
 \tcode{streambuf()}.
 The postconditions of this function are indicated in Table~\ref{tab:future.strstreambuf1.effects}.
 
-\begin{libtab2}{\tcode{strstreambuf(void* (*)(size_t), void (*)(void*))} effects}
-{tab:future.strstreambuf1.effects}
-{ll}
-{Element}{Value}
-\tcode{strmode}	&	\tcode{dynamic}			\\
-\tcode{alsize}	&	an unspecified value	\\
-\tcode{palloc}	&	\tcode{palloc_arg}		\\
-\tcode{pfree}	&	\tcode{pfree_arg}		\\
-\end{libtab2}
+%\begin{libtab2}{\tcode{strstreambuf(void* (*)(size_t), void (*)(void*))} effects}
+%{tab:future.strstreambuf1.effects}
+%{ll}
+%{Element}{Value}
+%\tcode{strmode}	&	\tcode{dynamic}			\\
+%\tcode{alsize}	&	an unspecified value	\\
+%\tcode{palloc}	&	\tcode{palloc_arg}		\\
+%\tcode{pfree}	&	\tcode{pfree_arg}		\\
+%\end{libtab2}
 \end{itemdescr}
 
 \indextext{unspecified}%
@@ -440,15 +440,15 @@ initializing the base class with
 \tcode{streambuf()}.
 The postconditions of this function are indicated in Table~\ref{tab:future.strstreambuf2.effects}.
 
-\begin{libtab2}{\tcode{strstreambuf(charT*, streamsize, charT*)} effects}
-{tab:future.strstreambuf2.effects}
-{ll}
-{Element}{Value}
-\tcode{strmode}	&	0						\\
-\tcode{alsize}	&	an unspecified value	\\
-\tcode{palloc}	&	a null pointer			\\
-\tcode{pfree}	&	a null pointer			\\
-\end{libtab2}
+%\begin{libtab2}{\tcode{strstreambuf(charT*, streamsize, charT*)} effects}
+%{tab:future.strstreambuf2.effects}
+%{ll}
+%{Element}{Value}
+%\tcode{strmode}	&	0						\\
+%\tcode{alsize}	&	an unspecified value	\\
+%\tcode{palloc}	&	a null pointer			\\
+%\tcode{pfree}	&	a null pointer			\\
+%\end{libtab2}
 
 \pnum
 \tcode{gnext_arg} shall point to the first element of an array
@@ -771,22 +771,22 @@ pos_type seekoff(off_type off, seekdir way, openmode which = in | out);
 Alters the stream position within one of the
 controlled sequences, if possible, as indicated in Table~\ref{tab:future.seekoff.positioning}.
 
-\begin{libtab2}{\tcode{seekoff} positioning}{tab:future.seekoff.positioning}
-{p{2.5in}l}{Conditions}{Result}
-\tcode{(which \& ios::in) != 0}	&
- positions the input sequence	\\ \rowsep
-\tcode{(which \& ios::out) != 0}	&
- positions the output sequence	\\ \rowsep
-\tcode{(which \& (ios::in |}\br
-\tcode{ios::out)) == (ios::in |}\br
-\tcode{ios::out))} and\br
-\tcode{way ==} either\br
-\tcode{ios::beg} or\br
-\tcode{ios::end}			&
- positions both the input and the output sequences	\\ \rowsep
-Otherwise	&
- the positioning operation fails.	\\
-\end{libtab2}
+%\begin{libtab2}{\tcode{seekoff} positioning}{tab:future.seekoff.positioning}
+%{p{2.5in}l}{Conditions}{Result}
+%\tcode{(which \& ios::in) != 0}	&
+% positions the input sequence	\\ \rowsep
+%\tcode{(which \& ios::out) != 0}	&
+% positions the output sequence	\\ \rowsep
+%\tcode{(which \& (ios::in |}\br
+%\tcode{ios::out)) == (ios::in |}\br
+%\tcode{ios::out))} and\br
+%\tcode{way ==} either\br
+%\tcode{ios::beg} or\br
+%\tcode{ios::end}			&
+% positions both the input and the output sequences	\\ \rowsep
+%Otherwise	&
+% the positioning operation fails.	\\
+%\end{libtab2}
 
 \pnum
 For a sequence to be positioned, if its next pointer is a null pointer,
@@ -794,20 +794,20 @@ the positioning operation fails.
 Otherwise, the function determines \tcode{newoff} as indicated in
 Table~\ref{tab:future.newoff.values}.
 
-\begin{libtab2}{\tcode{newoff} values}{tab:future.newoff.values}
-{p{2.0in}p{2.0in}}{Condition}{\tcode{newoff} Value}
-\tcode{way == ios::beg}	&
- 0	\\ \rowsep
-\tcode{way == ios::cur}	&
- the next pointer minus the beginning pointer (\tcode{xnext - xbeg}).	\\ \rowsep
-\tcode{way == ios::end}	&
- \tcode{seekhigh} minus the beginning pointer (\tcode{seekhigh - xbeg}).\\ \rowsep
-If \tcode{(newoff + off) <}\br
-\tcode{(seeklow - xbeg)},\br
-or \tcode{(seekhigh - xbeg) <}\br
-\tcode{(newoff + off)}			&
- the positioning operation fails	\\
-\end{libtab2}
+%\begin{libtab2}{\tcode{newoff} values}{tab:future.newoff.values}
+%{p{2.0in}p{2.0in}}{Condition}{\tcode{newoff} Value}
+%\tcode{way == ios::beg}	&
+% 0	\\ \rowsep
+%\tcode{way == ios::cur}	&
+% the next pointer minus the beginning pointer (\tcode{xnext - xbeg}).	\\ \rowsep
+%\tcode{way == ios::end}	&
+% \tcode{seekhigh} minus the beginning pointer (\tcode{seekhigh - xbeg}).\\ \rowsep
+%If \tcode{(newoff + off) <}\br
+%\tcode{(seeklow - xbeg)},\br
+%or \tcode{(seekhigh - xbeg) <}\br
+%\tcode{(newoff + off)}			&
+% the positioning operation fails	\\
+%\end{libtab2}
 
 \pnum
 Otherwise, the function assigns

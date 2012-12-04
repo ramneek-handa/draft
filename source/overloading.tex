@@ -963,17 +963,18 @@ to the equivalent function-call notation as summarized in
 Table~\ref{tab:over.rel.op.func}
 (where \tcode{@} denotes one of the operators covered in the specified subclause).
 
-\begin{floattable}{Relationship between operator and function call notation}{tab:over.rel.op.func}
-{l|m|m|m}
-\topline
-\hdstyle{Subclause} &   \hdstyle{Expression}    &   \hdstyle{As member function}    &   \hdstyle{As non-member function}    \\ \capsep
-\ref{over.unary}    &   @a      &   (a).operator@ (\,)  &   operator@ (a)       \\
-\ref{over.binary}   &   a@b &   (a).operator@ (b)   &   operator@ (a, b)        \\
-\ref{over.ass}      &   a=b     &   (a).operator= (b)   &                       \\
-\ref{over.sub}      &   a[b]    &   (a).operator[](b)   &                       \\
-\ref{over.ref}      &   a-> &   (a).operator-> (\,) &                           \\
-\ref{over.inc}      &   a@      &   (a).operator@ (0)   &   operator@ (a, 0)    \\
-\end{floattable}
+% html-comment
+%\begin{floattable}{Relationship between operator and function call notation}{tab:over.rel.op.func}
+%{l|m|m|m}
+%\topline
+%\hdstyle{Subclause} &   \hdstyle{Expression}    &   \hdstyle{As member function}    &   \hdstyle{As non-member function}    \\ \capsep
+%\ref{over.unary}    &   @a      &   (a).operator@ (\,)  &   operator@ (a)       \\
+%\ref{over.binary}   &   a@b &   (a).operator@ (b)   &   operator@ (a, b)        \\
+%\ref{over.ass}      &   a=b     &   (a).operator= (b)   &                       \\
+%\ref{over.sub}      &   a[b]    &   (a).operator[](b)   &                       \\
+%\ref{over.ref}      &   a-> &   (a).operator-> (\,) &                           \\
+%\ref{over.inc}      &   a@      &   (a).operator@ (0)   &   operator@ (a, 0)    \\
+%\end{floattable}
 
 \pnum
 For a unary operator
@@ -1865,23 +1866,24 @@ sequence has Conversion rank; otherwise, if any of those has Promotion rank,
 the sequence has Promotion rank; otherwise, the sequence has Exact
 Match rank.
 
-\begin{floattable}{Conversions}{tab:over.conversions}{l|c|c|c}
-\topline
-\hdstyle{Conversion}            &   \hdstyle{Category}          &   \hdstyle{Rank}  &   \hdstyle{Subclause} \\ \capsep
-No conversions required         &   Identity                    &                   &                       \\ \cline{1-2}\cline{4-4}
-Lvalue-to-rvalue conversion     &                               &                   &   \ref{conv.lval}     \\ \cline{1-1}\cline{4-4}
-Array-to-pointer conversion     &   Lvalue Transformation       &   Exact Match     &   \ref{conv.array}    \\ \cline{1-1}\cline{4-4}
-Function-to-pointer conversion  &                               &                   &   \ref{conv.func}     \\ \cline{1-2}\cline{4-4}
-Qualification conversions       &   Qualification Adjustment    &                   &   \ref{conv.qual}     \\ \hline
-Integral promotions             &                               &                   &   \ref{conv.prom}     \\ \cline{1-1}\cline{4-4}
-Floating point promotion        &   \rb{Promotion}              &   \rb{Promotion}  &   \ref{conv.fpprom}   \\ \hline
-Integral conversions            &                               &                   &   \ref{conv.integral} \\ \cline{1-1}\cline{4-4}
-Floating point conversions      &                               &                   &   \ref{conv.double}   \\ \cline{1-1}\cline{4-4}
-Floating-integral conversions   &                               &                   &   \ref{conv.fpint}    \\ \cline{1-1}\cline{4-4}
-Pointer conversions             &   \rb{Conversion}             &   \rb{Conversion} &   \ref{conv.ptr}      \\ \cline{1-1}\cline{4-4}
-Pointer to member conversions   &                               &                   &   \ref{conv.mem}      \\ \cline{1-1}\cline{4-4}
-Boolean conversions             &                               &                   &   \ref{conv.bool}     \\
-\end{floattable}
+% html-comment
+%\begin{floattable}{Conversions}{tab:over.conversions}{l|c|c|c}
+%\topline
+%\hdstyle{Conversion}            &   \hdstyle{Category}          &   \hdstyle{Rank}  &   \hdstyle{Subclause} \\ \capsep
+%No conversions required         &   Identity                    &                   &                       \\ \cline{1-2}\cline{4-4}
+%Lvalue-to-rvalue conversion     &                               &                   &   \ref{conv.lval}     \\ \cline{1-1}\cline{4-4}
+%Array-to-pointer conversion     &   Lvalue Transformation       &   Exact Match     &   \ref{conv.array}    \\ \cline{1-1}\cline{4-4}
+%Function-to-pointer conversion  &                               &                   &   \ref{conv.func}     \\ \cline{1-2}\cline{4-4}
+%Qualification conversions       &   Qualification Adjustment    &                   &   \ref{conv.qual}     \\ \hline
+%Integral promotions             &                               &                   &   \ref{conv.prom}     \\ \cline{1-1}\cline{4-4}
+%Floating point promotion        &   \rb{Promotion}              &   \rb{Promotion}  &   \ref{conv.fpprom}   \\ \hline
+%Integral conversions            &                               &                   &   \ref{conv.integral} \\ \cline{1-1}\cline{4-4}
+%Floating point conversions      &                               &                   &   \ref{conv.double}   \\ \cline{1-1}\cline{4-4}
+%Floating-integral conversions   &                               &                   &   \ref{conv.fpint}    \\ \cline{1-1}\cline{4-4}
+%Pointer conversions             &   \rb{Conversion}             &   \rb{Conversion} &   \ref{conv.ptr}      \\ \cline{1-1}\cline{4-4}
+%Pointer to member conversions   &                               &                   &   \ref{conv.mem}      \\ \cline{1-1}\cline{4-4}
+%Boolean conversions             &                               &                   &   \ref{conv.bool}     \\
+%\end{floattable}
 
 \rSec4[over.ics.user]{User-defined conversion sequences}
 

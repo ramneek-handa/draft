@@ -10,20 +10,20 @@ provided via operations on atomic objects.
 The following subclauses describe atomics requirements and components for types
 and operations, as summarized below.
 
-\begin{libsumtab}{Atomics library summary}{tab:atomics.lib.summary}
-\ref{atomics.order} & Order and Consistency   &
-  \\
-\ref{atomics.lockfree}  & Lock-free Property   &
-  \\
-\ref{atomics.types.generic} & Atomic Types   & \tcode{<atomic>}
-  \\
-\ref{atomics.types.operations}  & Operations on Atomic Types &
-  \\
-\ref{atomics.flag}  & Flag Type and Operations   &
-  \\
-\ref{atomics.fences}  & Fences   &
-  \\
-\end{libsumtab}
+%\begin{libsumtab}{Atomics library summary}{tab:atomics.lib.summary}
+%\ref{atomics.order} & Order and Consistency   &
+%  \\
+%\ref{atomics.lockfree}  & Lock-free Property   &
+%  \\
+%\ref{atomics.types.generic} & Atomic Types   & \tcode{<atomic>}
+%  \\
+%\ref{atomics.types.operations}  & Operations on Atomic Types &
+%  \\
+%\ref{atomics.flag}  & Flag Type and Operations   &
+%  \\
+%\ref{atomics.fences}  & Fences   &
+%  \\
+%\end{libsumtab}
 
 \rSec1[atomics.syn]{Header \tcode{<atomic>} synopsis}
 
@@ -636,59 +636,59 @@ type is a either typedef to the corresponding specialization or a base class of 
 corresponding specialization. If it is a base class, it shall support the same
 member functions as the corresponding specialization.
 
-\begin{floattablebase}
-{\tcode{atomic} integral typedefs}{tab:atomics.integral}{ll}{ht}
-\hline
-\textbf{Named type}     & \textbf{Integral argument type} \\ \hline
-\tcode{atomic_char}     & \tcode{char}                    \\
-\tcode{atomic_schar}    & \tcode{signed char}             \\
-\tcode{atomic_uchar}    & \tcode{unsigned char}           \\
-\tcode{atomic_short}    & \tcode{short}                   \\
-\tcode{atomic_ushort}   & \tcode{unsigned short}          \\
-\tcode{atomic_int}      & \tcode{int}                     \\
-\tcode{atomic_uint}     & \tcode{unsigned int}            \\
-\tcode{atomic_long}     & \tcode{long}                    \\
-\tcode{atomic_ulong}    & \tcode{unsigned long}           \\
-\tcode{atomic_llong}    & \tcode{long long}               \\
-\tcode{atomic_ullong}   & \tcode{unsigned long long}      \\
-\tcode{atomic_char16_t} & \tcode{char16_t}                \\
-\tcode{atomic_char32_t} & \tcode{char32_t}                \\
-\tcode{atomic_wchar_t}  & \tcode{wchar_t}                 \\
-\hline
-\end{floattablebase}
+%\begin{floattablebase}
+%{\tcode{atomic} integral typedefs}{tab:atomics.integral}{ll}{ht}
+%\hline
+%\textbf{Named type}     & \textbf{Integral argument type} \\ \hline
+%\tcode{atomic_char}     & \tcode{char}                    \\
+%\tcode{atomic_schar}    & \tcode{signed char}             \\
+%\tcode{atomic_uchar}    & \tcode{unsigned char}           \\
+%\tcode{atomic_short}    & \tcode{short}                   \\
+%\tcode{atomic_ushort}   & \tcode{unsigned short}          \\
+%\tcode{atomic_int}      & \tcode{int}                     \\
+%\tcode{atomic_uint}     & \tcode{unsigned int}            \\
+%\tcode{atomic_long}     & \tcode{long}                    \\
+%\tcode{atomic_ulong}    & \tcode{unsigned long}           \\
+%\tcode{atomic_llong}    & \tcode{long long}               \\
+%\tcode{atomic_ullong}   & \tcode{unsigned long long}      \\
+%\tcode{atomic_char16_t} & \tcode{char16_t}                \\
+%\tcode{atomic_char32_t} & \tcode{char32_t}                \\
+%\tcode{atomic_wchar_t}  & \tcode{wchar_t}                 \\
+%\hline
+%\end{floattablebase}
 
 \pnum
 There shall be atomic typedefs corresponding to the typedefs in the header \tcode{<inttypes.h>} as
 specified in Table~\ref{tab:atomics.typedefs}.
 
-\begin{floattablebase}
-{\tcode{atomic} \tcode{<inttypes.h>} typedefs}{tab:atomics.typedefs}{ll}{ht}
-\hline
-\textbf{Atomic typedef}   & \textbf{\tcode{<inttypes.h>} type}  \\ \hline
-\tcode{atomic_int_least8_t}   & \tcode{int_least8_t}    \\
-\tcode{atomic_uint_least8_t}  & \tcode{uint_least8_t}   \\
-\tcode{atomic_int_least16_t}  & \tcode{int_least16_t}   \\
-\tcode{atomic_uint_least16_t} & \tcode{uint_least16_t}  \\
-\tcode{atomic_int_least32_t}  & \tcode{int_least32_t}   \\
-\tcode{atomic_uint_least32_t} & \tcode{uint_least32_t}  \\
-\tcode{atomic_int_least64_t}  & \tcode{int_least64_t}   \\
-\tcode{atomic_uint_least64_t} & \tcode{uint_least64_t}  \\
-\tcode{atomic_int_fast8_t}    & \tcode{int_fast8_t}     \\
-\tcode{atomic_uint_fast8_t}   & \tcode{uint_fast8_t}    \\
-\tcode{atomic_int_fast16_t}   & \tcode{int_fast16_t}    \\
-\tcode{atomic_uint_fast16_t}  & \tcode{uint_fast16_t}   \\
-\tcode{atomic_int_fast32_t}   & \tcode{int_fast32_t}    \\
-\tcode{atomic_uint_fast32_t}  & \tcode{uint_fast32_t}   \\
-\tcode{atomic_int_fast64_t}   & \tcode{int_fast64_t}    \\
-\tcode{atomic_uint_fast64_t}  & \tcode{uint_fast64_t}   \\
-\tcode{atomic_intptr_t}       & \tcode{intptr_t}        \\
-\tcode{atomic_uintptr_t}      & \tcode{uintptr_t}       \\
-\tcode{atomic_size_t}         & \tcode{size_t}          \\
-\tcode{atomic_ptrdiff_t}      & \tcode{ptrdiff_t}       \\
-\tcode{atomic_intmax_t}       & \tcode{intmax_t}        \\
-\tcode{atomic_uintmax_t}      & \tcode{uintmax_t}       \\
-\hline
-\end{floattablebase}
+%\begin{floattablebase}
+%{\tcode{atomic} \tcode{<inttypes.h>} typedefs}{tab:atomics.typedefs}{ll}{ht}
+%\hline
+%\textbf{Atomic typedef}   & \textbf{\tcode{<inttypes.h>} type}  \\ \hline
+%\tcode{atomic_int_least8_t}   & \tcode{int_least8_t}    \\
+%\tcode{atomic_uint_least8_t}  & \tcode{uint_least8_t}   \\
+%\tcode{atomic_int_least16_t}  & \tcode{int_least16_t}   \\
+%\tcode{atomic_uint_least16_t} & \tcode{uint_least16_t}  \\
+%\tcode{atomic_int_least32_t}  & \tcode{int_least32_t}   \\
+%\tcode{atomic_uint_least32_t} & \tcode{uint_least32_t}  \\
+%\tcode{atomic_int_least64_t}  & \tcode{int_least64_t}   \\
+%\tcode{atomic_uint_least64_t} & \tcode{uint_least64_t}  \\
+%\tcode{atomic_int_fast8_t}    & \tcode{int_fast8_t}     \\
+%\tcode{atomic_uint_fast8_t}   & \tcode{uint_fast8_t}    \\
+%\tcode{atomic_int_fast16_t}   & \tcode{int_fast16_t}    \\
+%\tcode{atomic_uint_fast16_t}  & \tcode{uint_fast16_t}   \\
+%\tcode{atomic_int_fast32_t}   & \tcode{int_fast32_t}    \\
+%\tcode{atomic_uint_fast32_t}  & \tcode{uint_fast32_t}   \\
+%\tcode{atomic_int_fast64_t}   & \tcode{int_fast64_t}    \\
+%\tcode{atomic_uint_fast64_t}  & \tcode{uint_fast64_t}   \\
+%\tcode{atomic_intptr_t}       & \tcode{intptr_t}        \\
+%\tcode{atomic_uintptr_t}      & \tcode{uintptr_t}       \\
+%\tcode{atomic_size_t}         & \tcode{size_t}          \\
+%\tcode{atomic_ptrdiff_t}      & \tcode{ptrdiff_t}       \\
+%\tcode{atomic_intmax_t}       & \tcode{intmax_t}        \\
+%\tcode{atomic_uintmax_t}      & \tcode{uintmax_t}       \\
+%\hline
+%\end{floattablebase}
 
 \pnum
 \enternote The representation of an atomic specialization need not have the same size as its
@@ -1084,31 +1084,31 @@ rapidly. \exitnote
 \pnum
 The following operations perform arithmetic computations. The key, operator, and computation correspondence is:
 
-\begin{floattable}
-{Atomic arithmetic computations}{tab:atomic.arithmetic.computations}{lll|lll}
-\hline
-\tcode{Key}       &
-  Op          &
-  Computation     &
-\tcode{Key}       &
-  Op          &
-  Computation     \\ \hline
-\tcode{add}       &
-  \tcode{+}       &
-  addition        &
-\tcode{sub}       &
-  \tcode{-}       &
-  subtraction     \\
-\tcode{or}        &
-  \tcode{|}       &
-  bitwise inclusive or  &
-\tcode{xor}       &
-  \tcode{\^{}}        &
-  bitwise exclusive or  \\
-\tcode{and}       &
-  \tcode{\&}      &
-  bitwise and     &&&\\\hline
-\end{floattable}
+%\begin{floattable}
+%{Atomic arithmetic computations}{tab:atomic.arithmetic.computations}{lll|lll}
+%\hline
+%\tcode{Key}       &
+%  Op          &
+%  Computation     &
+%\tcode{Key}       &
+%  Op          &
+%  Computation     \\ \hline
+%\tcode{add}       &
+%  \tcode{+}       &
+%  addition        &
+%\tcode{sub}       &
+%  \tcode{-}       &
+%  subtraction     \\
+%\tcode{or}        &
+%  \tcode{|}       &
+%  bitwise inclusive or  &
+%\tcode{xor}       &
+%  \tcode{\^{}}        &
+%  bitwise exclusive or  \\
+%\tcode{and}       &
+%  \tcode{\&}      &
+%  bitwise and     &&&\\\hline
+%\end{floattable}
 
 \indexlibrary{\idxcode{atomic type}!\idxcode{atomic_fetch_}}%
 \indexlibrary{\idxcode{atomic_fetch_}!\idxcode{atomic type}}%

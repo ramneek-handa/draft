@@ -15,12 +15,12 @@ The following subclauses describe components for
 locales themselves, the standard facets, and facilities
 from the ISO C library, as summarized in Table~\ref{tab:localization.lib.summary}.
 
-\begin{libsumtab}{Localization library summary}{tab:localization.lib.summary}
-\ref{locales} & Locales                   &   \tcode{<locale>}    \\
-\ref{locale.categories} & Standard \tcode{locale} Categories &   \\ \rowsep
-\ref{locale.stdcvt} & Standard code conversion facets  &   \tcode{<codecvt>} \\ \rowsep
-\ref{c.locales} & C library locales       &   \tcode{<clocale>}   \\
-\end{libsumtab}
+%\begin{libsumtab}{Localization library summary}{tab:localization.lib.summary}
+%\ref{locales} & Locales                   &   \tcode{<locale>}    \\
+%\ref{locale.categories} & Standard \tcode{locale} Categories &   \\ \rowsep
+%\ref{locale.stdcvt} & Standard code conversion facets  &   \tcode{<codecvt>} \\ \rowsep
+%\ref{c.locales} & C library locales       &   \tcode{<clocale>}   \\
+%\end{libsumtab}
 
 \rSec1[locale.syn]{Header \tcode{<locale>} synopsis}
 
@@ -340,27 +340,27 @@ Each locale category,
 in turn, identifies a set of locale facets, including at least those
 shown in Table~\ref{tab:localization.category.facets}.
 
-\begin{floattable}{Locale category facets}{tab:localization.category.facets}
-{ml}
-\topline
-\lhdr{Category} &   \rhdr{Includes facets}                                      \\ \capsep
-collate     &   \tcode{collate<char>}, \tcode{collate<wchar_t>}                 \\ \rowsep
-ctype       &   \tcode{ctype<char>}, \tcode{ctype<wchar_t>}                     \\
-            &   \tcode{codecvt<char,char,mbstate_t>}                            \\
-            &   \tcode{codecvt<char16_t,char,mbstate_t>}        \\
-            &   \tcode{codecvt<char32_t,char,mbstate_t>}        \\
-            &   \tcode{codecvt<wchar_t,char,mbstate_t>}                         \\ \rowsep
-monetary    &   \tcode{moneypunct<char>}, \tcode{moneypunct<wchar_t>}           \\
-            &   \tcode{moneypunct<char,true>}, \tcode{moneypunct<wchar_t,true>} \\
-            &   \tcode{money_get<char>}, \tcode{money_get<wchar_t>}             \\
-            &   \tcode{money_put<char>}, \tcode{money_put<wchar_t>}             \\ \rowsep
-numeric     &   \tcode{numpunct<char>}, \tcode{numpunct<wchar_t>}               \\
-            &   \tcode{num_get<char>}, \tcode{num_get<wchar_t>}                 \\
-            &   \tcode{num_put<char>}, \tcode{num_put<wchar_t>}                 \\ \rowsep
-time        &   \tcode{time_get<char>}, \tcode{time_get<wchar_t>}               \\
-            &   \tcode{time_put<char>}, \tcode{time_put<wchar_t>}               \\ \rowsep
-messages    &   \tcode{messages<char>}, \tcode{messages<wchar_t>}               \\
-\end{floattable}
+%\begin{floattable}{Locale category facets}{tab:localization.category.facets}
+%{ml}
+%\topline
+%\lhdr{Category} &   \rhdr{Includes facets}                                      \\ \capsep
+%collate     &   \tcode{collate<char>}, \tcode{collate<wchar_t>}                 \\ \rowsep
+%ctype       &   \tcode{ctype<char>}, \tcode{ctype<wchar_t>}                     \\
+%            &   \tcode{codecvt<char,char,mbstate_t>}                            \\
+%            &   \tcode{codecvt<char16_t,char,mbstate_t>}        \\
+%            &   \tcode{codecvt<char32_t,char,mbstate_t>}        \\
+%            &   \tcode{codecvt<wchar_t,char,mbstate_t>}                         \\ \rowsep
+%monetary    &   \tcode{moneypunct<char>}, \tcode{moneypunct<wchar_t>}           \\
+%            &   \tcode{moneypunct<char,true>}, \tcode{moneypunct<wchar_t,true>} \\
+%            &   \tcode{money_get<char>}, \tcode{money_get<wchar_t>}             \\
+%            &   \tcode{money_put<char>}, \tcode{money_put<wchar_t>}             \\ \rowsep
+%numeric     &   \tcode{numpunct<char>}, \tcode{numpunct<wchar_t>}               \\
+%            &   \tcode{num_get<char>}, \tcode{num_get<wchar_t>}                 \\
+%            &   \tcode{num_put<char>}, \tcode{num_put<wchar_t>}                 \\ \rowsep
+%time        &   \tcode{time_get<char>}, \tcode{time_get<wchar_t>}               \\
+%            &   \tcode{time_put<char>}, \tcode{time_put<wchar_t>}               \\ \rowsep
+%messages    &   \tcode{messages<char>}, \tcode{messages<wchar_t>}               \\
+%\end{floattable}
 
 \pnum
 For any locale \tcode{loc}
@@ -381,32 +381,32 @@ An implementation is required to provide those specializations for
 facet templates identified as members of a category, and for those
 shown in Table~\ref{tab:localization.required.specializations}.
 
-\begin{floattable}{Required specializations}{tab:localization.required.specializations}
-{ml}
-\topline
-\lhdr{Category} &   \rhdr{Includes facets}                                          \\ \capsep
-collate     &   \tcode{collate_byname<char>}, \tcode{collate_byname<wchar_t>}       \\ \rowsep
-ctype       &   \tcode{ctype_byname<char>}, \tcode{ctype_byname<wchar_t>}           \\
-            &   \tcode{codecvt_byname<char,char,mbstate_t>}                         \\
-            &   \tcode{codecvt_byname<char16_t,char,mbstate_t>}     \\
-            &   \tcode{codecvt_byname<char32_t,char,mbstate_t>}     \\
-            &   \tcode{codecvt_byname<wchar_t,char,mbstate_t>}                      \\ \rowsep
-monetary    &   \tcode{moneypunct_byname<char,International>}                       \\
-            &   \tcode{moneypunct_byname<wchar_t,International>}                    \\
-            &   \tcode{money_get<C,InputIterator>}                                  \\
-            &   \tcode{money_put<C,OutputIterator>}                                 \\ \rowsep
-numeric     &   \tcode{numpunct_byname<char>}, \tcode{numpunct_byname<wchar_t>}     \\
-            &   \tcode{num_get<C,InputIterator>}, \tcode{num_put<C,OutputIterator>} \\ \rowsep
-time        &   \tcode{time_get<char,InputIterator>}                                \\
-            &   \tcode{time_get_byname<char,InputIterator>}                         \\
-            &   \tcode{time_get<wchar_t,InputIterator>}                             \\
-            &   \tcode{time_get_byname<wchar_t,InputIterator>}                      \\
-            &   \tcode{time_put<char,OutputIterator>}                               \\
-            &   \tcode{time_put_byname<char,OutputIterator>}                        \\
-            &   \tcode{time_put<wchar_t,OutputIterator>}                            \\
-            &   \tcode{time_put_byname<wchar_t,OutputIterator>}                     \\ \rowsep
-messages    &   \tcode{messages_byname<char>}, \tcode{messages_byname<wchar_t>}     \\
-\end{floattable}
+%\begin{floattable}{Required specializations}{tab:localization.required.specializations}
+%{ml}
+%\topline
+%\lhdr{Category} &   \rhdr{Includes facets}                                          \\ \capsep
+%collate     &   \tcode{collate_byname<char>}, \tcode{collate_byname<wchar_t>}       \\ \rowsep
+%ctype       &   \tcode{ctype_byname<char>}, \tcode{ctype_byname<wchar_t>}           \\
+%            &   \tcode{codecvt_byname<char,char,mbstate_t>}                         \\
+%            &   \tcode{codecvt_byname<char16_t,char,mbstate_t>}     \\
+%            &   \tcode{codecvt_byname<char32_t,char,mbstate_t>}     \\
+%            &   \tcode{codecvt_byname<wchar_t,char,mbstate_t>}                      \\ \rowsep
+%monetary    &   \tcode{moneypunct_byname<char,International>}                       \\
+%            &   \tcode{moneypunct_byname<wchar_t,International>}                    \\
+%            &   \tcode{money_get<C,InputIterator>}                                  \\
+%            &   \tcode{money_put<C,OutputIterator>}                                 \\ \rowsep
+%numeric     &   \tcode{numpunct_byname<char>}, \tcode{numpunct_byname<wchar_t>}     \\
+%            &   \tcode{num_get<C,InputIterator>}, \tcode{num_put<C,OutputIterator>} \\ \rowsep
+%time        &   \tcode{time_get<char,InputIterator>}                                \\
+%            &   \tcode{time_get_byname<char,InputIterator>}                         \\
+%            &   \tcode{time_get<wchar_t,InputIterator>}                             \\
+%            &   \tcode{time_get_byname<wchar_t,InputIterator>}                      \\
+%            &   \tcode{time_put<char,OutputIterator>}                               \\
+%            &   \tcode{time_put_byname<char,OutputIterator>}                        \\
+%            &   \tcode{time_put<wchar_t,OutputIterator>}                            \\
+%            &   \tcode{time_put_byname<wchar_t,OutputIterator>}                     \\ \rowsep
+%messages    &   \tcode{messages_byname<char>}, \tcode{messages_byname<wchar_t>}     \\
+%\end{floattable}
 
 
 \pnum
@@ -2577,19 +2577,19 @@ identify a cache of seek offsets.
 \returns
 An enumeration value, as summarized in Table~\ref{tab:localization.convert.result.values.out.in}.
 
-\begin{floattable}{\tcode{do_in/do_out} result values}{tab:localization.convert.result.values.out.in}
-{lp{3in}}
-\topline
-\lhdr{Value}    &   \rhdr{Meaning}                                  \\ \capsep
-\tcode{ok}                  &   completed the conversion            \\
-\tcode{partial}             &   not all source characters converted \\
-\tcode{error}               &
-encountered a character in \tcode{[from,from_end)}
-that it could not convert                                           \\
-\tcode{noconv}              &
-\tcode{internT} and \tcode{externT} are the same type, and input
-sequence is identical to converted sequence                         \\
-\end{floattable}
+%\begin{floattable}{\tcode{do_in/do_out} result values}{tab:localization.convert.result.values.out.in}
+%{lp{3in}}
+%\topline
+%\lhdr{Value}    &   \rhdr{Meaning}                                  \\ \capsep
+%\tcode{ok}                  &   completed the conversion            \\
+%\tcode{partial}             &   not all source characters converted \\
+%\tcode{error}               &
+%encountered a character in \tcode{[from,from_end)}
+%that it could not convert                                           \\
+%\tcode{noconv}              &
+%\tcode{internT} and \tcode{externT} are the same type, and input
+%sequence is identical to converted sequence                         \\
+%\end{floattable}
 
 A return value of
 \tcode{partial},
@@ -2631,17 +2631,17 @@ pointing one beyond the last element successfully stored.
 \returns
 An enumeration value, as summarized in Table~\ref{tab:localization.convert.result.values.unshift}.
 
-\begin{floattable}{\tcode{do_unshift} result values}{tab:localization.convert.result.values.unshift}
-{lp{.50\hsize}}
-\topline
-\lhdr{Value}                &   \rhdr{Meaning}                                          \\ \capsep
-\tcode{ok}                  &   completed the sequence                                  \\
-\tcode{partial}             &
-space for more than \tcode{to_end-to} destination elements was needed
-to terminate a sequence given the value of \tcode{state}\\
-\tcode{error}               &   an unspecified error has occurred \\
-\tcode{noconv}              &   no termination is needed for this \tcode{state_type}    \\
-\end{floattable}
+%\begin{floattable}{\tcode{do_unshift} result values}{tab:localization.convert.result.values.unshift}
+%{lp{.50\hsize}}
+%\topline
+%\lhdr{Value}                &   \rhdr{Meaning}                                          \\ \capsep
+%\tcode{ok}                  &   completed the sequence                                  \\
+%\tcode{partial}             &
+%space for more than \tcode{to_end-to} destination elements was needed
+%to terminate a sequence given the value of \tcode{state}\\
+%\tcode{error}               &   an unspecified error has occurred \\
+%\tcode{noconv}              &   no termination is needed for this \tcode{state_type}    \\
+%\end{floattable}
 \end{itemdescr}
 
 \indexlibrary{\idxcode{codecvt}!\idxcode{do_encoding}}%
@@ -2998,16 +2998,16 @@ Table~\ref{tab:localization.integer.conversions.in}.
 The table is ordered.
 That is, the first line whose condition is true applies.
 
-\begin{floattable}{Integer conversions}{tab:localization.integer.conversions.in}
-{lc}
-\topline
-\lhdr{State}                    &   \tcode{stdio} equivalent   \\ \capsep
-\tcode{basefield == oct}        &   \tcode{\%o}                 \\ \rowsep
-\tcode{basefield == hex}        &   \tcode{\%X}                 \\ \rowsep
-\tcode{basefield == 0}          &   \tcode{\%i}                 \\ \capsep
-\tcode{signed} integral type    &   \tcode{\%d}                 \\ \rowsep
-\tcode{unsigned} integral type  &   \tcode{\%u}                 \\
-\end{floattable}
+%\begin{floattable}{Integer conversions}{tab:localization.integer.conversions.in}
+%{lc}
+%\topline
+%\lhdr{State}                    &   \tcode{stdio} equivalent   \\ \capsep
+%\tcode{basefield == oct}        &   \tcode{\%o}                 \\ \rowsep
+%\tcode{basefield == hex}        &   \tcode{\%X}                 \\ \rowsep
+%\tcode{basefield == 0}          &   \tcode{\%i}                 \\ \capsep
+%\tcode{signed} integral type    &   \tcode{\%d}                 \\ \rowsep
+%\tcode{unsigned} integral type  &   \tcode{\%u}                 \\
+%\end{floattable}
 
 For conversions to a  floating type the specifier is
 \tcode{\%g}.
@@ -3020,19 +3020,19 @@ the specifier is
 A length modifier is added to the conversion specification, if needed,
 as indicated in Table~\ref{tab:localization.length.modifier.in}.
 
-\begin{floattable}{Length modifier}{tab:localization.length.modifier.in}
-{lc}
-\topline
-\lhdr{Type}                 &   Length modifier \\ \capsep
-\tcode{short}               &   \tcode{h}       \\ \rowsep
-\tcode{unsigned short}      &   \tcode{h}       \\ \rowsep
-\tcode{long}                &   \tcode{l}       \\ \rowsep
-\tcode{unsigned long}       &   \tcode{l}       \\ \rowsep
-\tcode{long long}           &   \tcode{ll}      \\ \rowsep
-\tcode{unsigned long long}  &   \tcode{ll}      \\ \rowsep
-\tcode{double}              &   \tcode{l}       \\ \rowsep
-\tcode{long double}         &   \tcode{L}       \\
-\end{floattable}
+%\begin{floattable}{Length modifier}{tab:localization.length.modifier.in}
+%{lc}
+%\topline
+%\lhdr{Type}                 &   Length modifier \\ \capsep
+%\tcode{short}               &   \tcode{h}       \\ \rowsep
+%\tcode{unsigned short}      &   \tcode{h}       \\ \rowsep
+%\tcode{long}                &   \tcode{l}       \\ \rowsep
+%\tcode{unsigned long}       &   \tcode{l}       \\ \rowsep
+%\tcode{long long}           &   \tcode{ll}      \\ \rowsep
+%\tcode{unsigned long long}  &   \tcode{ll}      \\ \rowsep
+%\tcode{double}              &   \tcode{l}       \\ \rowsep
+%\tcode{long double}         &   \tcode{L}       \\
+%\end{floattable}
 
 \stage{2}
 If
@@ -3402,61 +3402,61 @@ For conversion from an integral type other than a character type, the
 function determines the integral conversion specifier as indicated in
 Table~\ref{tab:localization.integer.conversions.out}.
 
-\begin{floattable}{Integer conversions}{tab:localization.integer.conversions.out}
-{lc}
-\topline
-\lhdr{State}                        &   \tcode{stdio} equivalent       \\ \capsep
-\tcode{basefield == ios_base::oct}                      &   \tcode{\%o} \\ \rowsep
-\tcode{(basefield == ios_base::hex) \&\& !uppercase}    &   \tcode{\%x} \\ \rowsep
-\tcode{(basefield == ios_base::hex)}                    &   \tcode{\%X} \\ \rowsep
-for a \tcode{signed} integral type                     &   \tcode{\%d} \\ \rowsep
-for an \tcode{unsigned} integral type                  &   \tcode{\%u} \\
-\end{floattable}
+%\begin{floattable}{Integer conversions}{tab:localization.integer.conversions.out}
+%{lc}
+%\topline
+%\lhdr{State}                        &   \tcode{stdio} equivalent       \\ \capsep
+%\tcode{basefield == ios_base::oct}                      &   \tcode{\%o} \\ \rowsep
+%\tcode{(basefield == ios_base::hex) \&\& !uppercase}    &   \tcode{\%x} \\ \rowsep
+%\tcode{(basefield == ios_base::hex)}                    &   \tcode{\%X} \\ \rowsep
+%for a \tcode{signed} integral type                     &   \tcode{\%d} \\ \rowsep
+%for an \tcode{unsigned} integral type                  &   \tcode{\%u} \\
+%\end{floattable}
 
 For conversion from a floating-point type, the function determines
 the floating-point conversion specifier as indicated in Table~\ref{tab:localization.fp.conversions.out}.
 
-\begin{floattable}{Floating-point conversions}{tab:localization.fp.conversions.out}
-{lc}
-\topline
-\lhdr{State}            &   \tcode{stdio} equivalent                       \\ \capsep
-\tcode{floatfield == ios_base::fixed}                       &   \tcode{\%f} \\ \rowsep
-\tcode{floatfield == ios_base::scientific \&\& !uppercase}  &   \tcode{\%e} \\ \rowsep
-\tcode{floatfield == ios_base::scientific}                  &   \tcode{\%E} \\ \rowsep
-\tcode{floatfield == (ios_base::fixed | ios_base::scientific) \&\& !uppercase} & \tcode{\%a} \\ \rowsep
-\tcode{floatfield == (ios_base::fixed | ios_base::scientific)} & \tcode{\%A} \\ \rowsep
-\tcode{!uppercase}                                          &   \tcode{\%g} \\ \rowsep
-\textit{otherwise}                                          &   \tcode{\%G} \\
-\end{floattable}
+%\begin{floattable}{Floating-point conversions}{tab:localization.fp.conversions.out}
+%{lc}
+%\topline
+%\lhdr{State}            &   \tcode{stdio} equivalent                       \\ \capsep
+%\tcode{floatfield == ios_base::fixed}                       &   \tcode{\%f} \\ \rowsep
+%\tcode{floatfield == ios_base::scientific \&\& !uppercase}  &   \tcode{\%e} \\ \rowsep
+%\tcode{floatfield == ios_base::scientific}                  &   \tcode{\%E} \\ \rowsep
+%\tcode{floatfield == (ios_base::fixed | ios_base::scientific) \&\& !uppercase} & \tcode{\%a} \\ \rowsep
+%\tcode{floatfield == (ios_base::fixed | ios_base::scientific)} & \tcode{\%A} \\ \rowsep
+%\tcode{!uppercase}                                          &   \tcode{\%g} \\ \rowsep
+%\textit{otherwise}                                          &   \tcode{\%G} \\
+%\end{floattable}
  
 For conversions from an integral or floating-point
 type a length modifier is added to the
 conversion specifier as indicated in  Table~\ref{tab:localization.length.modifier.out}.
 
-\begin{floattable}{Length modifier}{tab:localization.length.modifier.out}
-{lc}
-\topline
-\lhdr{Type}                 &   Length modifier \\ \capsep
-\tcode{long}                &   \tcode{l}       \\ \rowsep
-\tcode{long long}           &   \tcode{ll}      \\ \rowsep
-\tcode{unsigned long}       &   \tcode{l}       \\ \rowsep
-\tcode{unsigned long long}  &   \tcode{ll}      \\ \rowsep
-\tcode{long double}         &   \tcode{L}       \\ \rowsep
-\textit{otherwise}          &   \textit{none}   \\
-\end{floattable}
+%\begin{floattable}{Length modifier}{tab:localization.length.modifier.out}
+%{lc}
+%\topline
+%\lhdr{Type}                 &   Length modifier \\ \capsep
+%\tcode{long}                &   \tcode{l}       \\ \rowsep
+%\tcode{long long}           &   \tcode{ll}      \\ \rowsep
+%\tcode{unsigned long}       &   \tcode{l}       \\ \rowsep
+%\tcode{unsigned long long}  &   \tcode{ll}      \\ \rowsep
+%\tcode{long double}         &   \tcode{L}       \\ \rowsep
+%\textit{otherwise}          &   \textit{none}   \\
+%\end{floattable}
 
 The conversion specifier has the following optional additional qualifiers
 prepended as indicated in Table~\ref{tab:localization.numeric.conversions}.
 
-\begin{floattable}{Numeric conversions}{tab:localization.numeric.conversions}
-{llc}
-\topline
-\lhdr{Type(s)}                  &   \chdr{State}                &   \tcode{stdio} equivalent   \\ \capsep
-an integral type                &   \tcode{flags \& showpos}    &   \tcode{+}                   \\
-                                &   \tcode{flags \& showbase}   &   \tcode{\#}                  \\ \rowsep
-a floating-point type           &   \tcode{flags \& showpos}    &   \tcode{+}                   \\
-                                &   \tcode{flags \& showpoint}  &   \tcode{\#}                  \\
-\end{floattable}
+%\begin{floattable}{Numeric conversions}{tab:localization.numeric.conversions}
+%{llc}
+%\topline
+%\lhdr{Type(s)}                  &   \chdr{State}                &   \tcode{stdio} equivalent   \\ \capsep
+%an integral type                &   \tcode{flags \& showpos}    &   \tcode{+}                   \\
+%                                &   \tcode{flags \& showbase}   &   \tcode{\#}                  \\ \rowsep
+%a floating-point type           &   \tcode{flags \& showpos}    &   \tcode{+}                   \\
+%                                &   \tcode{flags \& showpoint}  &   \tcode{\#}                  \\
+%\end{floattable}
 
 For conversion from a floating-point type,
 if \tcode{floatfield != (ios_base::fixed | ios_base::\brk{}scientific)},
@@ -3511,18 +3511,18 @@ which is
 \textit{not}
 a padding character.} is determined according to Table~\ref{tab:localization.fill.padding}.
 
-\begin{floattable}{Fill padding}{tab:localization.fill.padding}
-{p{3in}l}
-\topline
-\lhdr{State}                            &   \rhdr{Location}                 \\ \capsep
-\tcode{adjustfield == ios_base::left}   &   pad after                       \\ \rowsep
-\tcode{adjustfield == ios_base::right}  &   pad before                      \\ \rowsep
-\tcode{adjustfield == internal} and a sign occurs in the representation
-                                        &   pad after the sign              \\ \rowsep
-\tcode{adjustfield == internal} and representation after stage 1
-began with 0x or 0X                     &   pad after x or X                \\ \rowsep
-\textit{otherwise}                      &   pad before                      \\
-\end{floattable}
+%\begin{floattable}{Fill padding}{tab:localization.fill.padding}
+%{p{3in}l}
+%\topline
+%\lhdr{State}                            &   \rhdr{Location}                 \\ \capsep
+%\tcode{adjustfield == ios_base::left}   &   pad after                       \\ \rowsep
+%\tcode{adjustfield == ios_base::right}  &   pad before                      \\ \rowsep
+%\tcode{adjustfield == internal} and a sign occurs in the representation
+%                                        &   pad after the sign              \\ \rowsep
+%\tcode{adjustfield == internal} and representation after stage 1
+%began with 0x or 0X                     &   pad after x or X                \\ \rowsep
+%\textit{otherwise}                      &   pad before                      \\
+%\end{floattable}
 
 If
 \tcode{str.width()}
@@ -4329,14 +4329,14 @@ or until it encounters an error. The format depends on the value returned
 by \tcode{date_order()} as shown in
 Table~\ref{tab:lib.locale.time.get.virtuals.dogetdate}.
 
-\begin{libtab2}{\tcode{do_get_date} effects}{tab:lib.locale.time.get.virtuals.dogetdate}
-{ll}{\tcode{date_order()}}{Format}
-\tcode{no_order}  & \tcode{"\%m\%d\%y"} \\
-\tcode{dmy}       & \tcode{"\%d\%m\%y"} \\
-\tcode{mdy}       & \tcode{"\%m\%d\%y"} \\
-\tcode{ymd}       & \tcode{"\%y\%m\%d"} \\
-\tcode{ydm}       & \tcode{"\%y\%d\%m"} \\
-\end{libtab2}
+%\begin{libtab2}{\tcode{do_get_date} effects}{tab:lib.locale.time.get.virtuals.dogetdate}
+%{ll}{\tcode{date_order()}}{Format}
+%\tcode{no_order}  & \tcode{"\%m\%d\%y"} \\
+%\tcode{dmy}       & \tcode{"\%d\%m\%y"} \\
+%\tcode{mdy}       & \tcode{"\%m\%d\%y"} \\
+%\tcode{ymd}       & \tcode{"\%y\%m\%d"} \\
+%\tcode{ydm}       & \tcode{"\%y\%d\%m"} \\
+%\end{libtab2}
 
 \pnum
 An implementation may also accept additional \impldef{additional formats for \tcode{time_get::do_get_date}} formats.
@@ -5894,28 +5894,28 @@ For the facet \tcode{codecvt_utf8_utf16}:
 Table~\ref{tab:localization.hdr.clocale} describes header
 \tcode{<clocale>}.
 
-\begin{libsyntab4}{clocale}{tab:localization.hdr.clocale}
-\macros             &
- \tcode{LC_ALL}     &
- \tcode{LC_COLLATE} &
- \tcode{LC_CTYPE}   \\
-                    &
- \tcode{LC_MONETARY}    &
- \tcode{LC_NUMERIC} &
- \tcode{LC_TIME}    \\
-                    &
- \tcode{NULL}       &
-                    &
-                    \\ \rowsep
-\struct             &
- \tcode{lconv}      &
-                    &
-                    \\ \rowsep
-\functions          &
- \tcode{localeconv} &
- \tcode{setlocale}  &
-                    \\
-\end{libsyntab4}
+%\begin{libsyntab4}{clocale}{tab:localization.hdr.clocale}
+%\macros             &
+% \tcode{LC_ALL}     &
+% \tcode{LC_COLLATE} &
+% \tcode{LC_CTYPE}   \\
+%                    &
+% \tcode{LC_MONETARY}    &
+% \tcode{LC_NUMERIC} &
+% \tcode{LC_TIME}    \\
+%                    &
+% \tcode{NULL}       &
+%                    &
+%                    \\ \rowsep
+%\struct             &
+% \tcode{lconv}      &
+%                    &
+%                    \\ \rowsep
+%\functions          &
+% \tcode{localeconv} &
+% \tcode{setlocale}  &
+%                    \\
+%\end{libsyntab4}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -5926,69 +5926,69 @@ Calls to the function \tcode{setlocale} may introduce a data
 race~(\ref{res.on.data.races}) with other calls to \tcode{setlocale} or with calls to
 the functions listed in Table~\ref{tab:setlocale.data.races}.
 
-\begin{floattable}
-{Potential \tcode{setlocale} data races}
-{tab:setlocale.data.races}
-{lllll}
-\topline
-
-\tcode{fprintf}     &
-\tcode{isprint}     &
-\tcode{iswdigit}    &
-\tcode{localeconv}  &
-\tcode{tolower}     \\
-
-\tcode{fscanf}      &
-\tcode{ispunct}     &
-\tcode{iswgraph}    &
-\tcode{mblen}       &
-\tcode{toupper}     \\
-
-\tcode{isalnum}     &
-\tcode{isspace}     &
-\tcode{iswlower}    &
-\tcode{mbstowcs}    &
-\tcode{towlower}    \\
-
-\tcode{isalpha}     &
-\tcode{isupper}     &
-\tcode{iswprint}    &
-\tcode{mbtowc}      &
-\tcode{towupper}    \\
-
-\tcode{isblank}     &
-\tcode{iswalnum}    &
-\tcode{iswpunct}    &
-\tcode{setlocale}   &
-\tcode{wcscoll}     \\
-
-\tcode{iscntrl}     &
-\tcode{iswalpha}    &
-\tcode{iswspace}    &
-\tcode{strcoll}     &
-\tcode{wcstod}      \\
-
-\tcode{isdigit}     &
-\tcode{iswblank}    &
-\tcode{iswupper}    &
-\tcode{strerror}    &
-\tcode{wcstombs}    \\
-
-\tcode{isgraph}     &
-\tcode{iswcntrl}    &
-\tcode{iswxdigit}   &
-\tcode{strtod}      &
-\tcode{wcsxfrm}     \\
-
-\tcode{islower}     &
-\tcode{iswctype}    &
-\tcode{isxdigit}    &
-\tcode{strxfrm}     &
-\tcode{wctomb}      \\
-
-
-
-\end{floattable}
+%\begin{floattable}
+%{Potential \tcode{setlocale} data races}
+%{tab:setlocale.data.races}
+%{lllll}
+%\topline
+%
+%\tcode{fprintf}     &
+%\tcode{isprint}     &
+%\tcode{iswdigit}    &
+%\tcode{localeconv}  &
+%\tcode{tolower}     \\
+%
+%\tcode{fscanf}      &
+%\tcode{ispunct}     &
+%\tcode{iswgraph}    &
+%\tcode{mblen}       &
+%\tcode{toupper}     \\
+%
+%\tcode{isalnum}     &
+%\tcode{isspace}     &
+%\tcode{iswlower}    &
+%\tcode{mbstowcs}    &
+%\tcode{towlower}    \\
+%
+%\tcode{isalpha}     &
+%\tcode{isupper}     &
+%\tcode{iswprint}    &
+%\tcode{mbtowc}      &
+%\tcode{towupper}    \\
+%
+%\tcode{isblank}     &
+%\tcode{iswalnum}    &
+%\tcode{iswpunct}    &
+%\tcode{setlocale}   &
+%\tcode{wcscoll}     \\
+%
+%\tcode{iscntrl}     &
+%\tcode{iswalpha}    &
+%\tcode{iswspace}    &
+%\tcode{strcoll}     &
+%\tcode{wcstod}      \\
+%
+%\tcode{isdigit}     &
+%\tcode{iswblank}    &
+%\tcode{iswupper}    &
+%\tcode{strerror}    &
+%\tcode{wcstombs}    \\
+%
+%\tcode{isgraph}     &
+%\tcode{iswcntrl}    &
+%\tcode{iswxdigit}   &
+%\tcode{strtod}      &
+%\tcode{wcsxfrm}     \\
+%
+%\tcode{islower}     &
+%\tcode{iswctype}    &
+%\tcode{isxdigit}    &
+%\tcode{strxfrm}     &
+%\tcode{wctomb}      \\
+%
+%
+%
+%\end{floattable}
 
 \xref
 ISO C Clause 7.4.

@@ -81,6 +81,7 @@ naming a class is also a
 \end{bnf}
 
 \begin{bnf}
+\indextext{token!preprocessing|(}%
 \nontermdef{preprocessing-token}\br
     header-name\br
     identifier\br
@@ -168,18 +169,18 @@ naming a class is also a
     \terminal{0 1 2 3 4 5 6 7 8 9}
 \end{bnf}
 
-\begin{bnfkeywordtab}
-\nontermdef{preprocessing-op-or-punc} \textnormal{one of}\br
-\>\{ \>\} \>[ \>] \>\# \>\#\# \>( \>)\br
-\><: \>:> \><\% \>\%> \>\%: \>\%:\%: \>; \>: \>.{..}\br
-\>new \>delete \>? \>:: \>. \>.*\br
-\>+ \>- \>* \>/ \>\% \>\^{} \>\& \>| \>\tilde\br
-\>! \>= \>< \>> \>+= \>-= \>*= \>/= \>\%=\br
-\>\^{}= \>\&= \>|= \>\shl \>\shr \>\shr= \>\shl= \>== \>!=\br
-\><= \>>= \>\&\& \>|| \>++ \>-{-} \>, \>->* \>->\br
-\>and \>and_eq \>bitand \>bitor \>compl \>not \>not_eq\br
-\>or \>or_eq \>xor \>xor_eq
-\end{bnfkeywordtab}
+%\begin{bnfkeywordtab}
+%\nontermdef{preprocessing-op-or-punc} \textnormal{one of}\br
+%\>\{ \>\} \>[ \>] \>\# \>\#\# \>( \>)\br
+%\><: \>:> \><\% \>\%> \>\%: \>\%:\%: \>; \>: \>.{..}\br
+%\>new \>delete \>? \>:: \>. \>.*\br
+%\>+ \>- \>* \>/ \>\% \>\^{} \>\& \>| \>\tilde\br
+%\>! \>= \>< \>> \>+= \>-= \>*= \>/= \>\%=\br
+%\>\^{}= \>\&= \>|= \>\shl \>\shr \>\shr= \>\shl= \>== \>!=\br
+%\><= \>>= \>\&\& \>|| \>++ \>-{-} \>, \>->* \>->\br
+%\>and \>and_eq \>bitand \>bitor \>compl \>not \>not_eq\br
+%\>or \>or_eq \>xor \>xor_eq
+%\end{bnfkeywordtab}
 
 \begin{bnf}
 \nontermdef{literal}\br
@@ -471,16 +472,16 @@ naming a class is also a
     qualified-id
 \end{bnf}
 
-\begin{bnf}
-\nontermdef{unqualified-id}\br
-    identifier\br
-    operator-function-id\br
-    conversion-function-id\br
-    literal-operator-id\br
-    \terminal{\tilde} class-name\br
-    \terminal{\tilde} decltype-specifier\br
-    template-id
-\end{bnf}
+%\begin{bnf}
+%\nontermdef{unqualified-id}\br
+%    identifier\br
+%    operator-function-id\br
+%    conversion-function-id\br
+%    literal-operator-id\br
+%    \terminal{\tilde} class-name\br
+%    \terminal{\tilde} decltype-specifier\br
+%    template-id
+%\end{bnf}
 
 \begin{bnf}
 \nontermdef{qualified-id}\br
@@ -571,13 +572,13 @@ naming a class is also a
     initializer-list
 \end{bnf}
 
-\begin{bnf}
-\nontermdef{pseudo-destructor-name}\br
-    nested-name-specifier\opt type-name \terminal{::\,\tilde} type-name\br
-    nested-name-specifier \terminal{template} simple-template-id \terminal{::\,\tilde} type-name\br
-    nested-name-specifier\opt \terminal{\tilde} type-name\br
-    \terminal{\tilde} decltype-specifier
-\end{bnf}
+%\begin{bnf}
+%\nontermdef{pseudo-destructor-name}\br
+%    nested-name-specifier\opt type-name \terminal{::\,\tilde} type-name\br
+%    nested-name-specifier \terminal{template} simple-template-id \terminal{::\,\tilde} type-name\br
+%    nested-name-specifier\opt \terminal{\tilde} type-name\br
+%    \terminal{\tilde} decltype-specifier
+%\end{bnf}
 
 \begin{bnf}
 \nontermdef{unary-expression}\br
@@ -594,10 +595,10 @@ naming a class is also a
     delete-expression\br
 \end{bnf}
 
-\begin{bnf}
-\nontermdef{unary-operator} \textnormal{one of}\br
-    \terminal{*  \&  +  -  !  \tilde}
-\end{bnf}
+%\begin{bnf}
+%\nontermdef{unary-operator} \textnormal{one of}\br
+%    \terminal{*  \&  +  -  !  \tilde}
+%\end{bnf}
 
 \begin{bnf}
 \nontermdef{new-expression}\br
@@ -1154,7 +1155,7 @@ naming a class is also a
 \begin{bnf}
 \nontermdef{alignment-specifier}\br
   \terminal{alignas (} type-id \terminal{...}\opt \terminal{)}\br
-  \terminal{alignas (} alignment-expression \terminal{...}\opt \terminal{)}
+  \terminal{alignas (} assignment-expression \terminal{...}\opt \terminal{)}
 \end{bnf}
 
 \begin{bnf}
@@ -1240,8 +1241,8 @@ naming a class is also a
 
 \begin{bnf}
 \nontermdef{parameters-and-qualifiers}\br
-    \terminal{(} parameter-declaration-clause \terminal{)} attribute-specifier-seq\opt cv-qualifier-seq\opt\br
-\hspace*{\bnfindentinc}ref-qualifier\opt exception-specification\opt
+    \terminal{(} parameter-declaration-clause \terminal{)} cv-qualifier-seq\opt\br
+\hspace*{\bnfindentinc}ref-qualifier\opt exception-specification\opt attribute-specifier-seq\opt
 \end{bnf}
 
 \begin{bnf}
@@ -1276,8 +1277,7 @@ naming a class is also a
 
 \begin{bnf}
 \nontermdef{declarator-id}\br
-    \terminal{...}\opt id-expression\br
-    nested-name-specifier\opt class-name
+    \terminal{...}\opt id-expression
 \end{bnf}
 
 \begin{bnf}

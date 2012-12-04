@@ -262,8 +262,9 @@ and~\ref{expr.ass}.}
     operator-function-id\br
     conversion-function-id\br
     literal-operator-id\br
-    \terminal{\tilde} class-name\br
-    \terminal{\tilde} decltype-specifier\br
+% html-comment
+%    \terminal{\tilde} class-name\br
+%    \terminal{\tilde} decltype-specifier\br
     template-id
 \end{bnf}
 
@@ -945,10 +946,11 @@ Postfix expressions group left-to-right.
 
 \begin{bnf}
 \nontermdef{pseudo-destructor-name}\br
-    nested-name-specifier\opt type-name \terminal{::\,\tilde} type-name\br
-    nested-name-specifier \terminal{template} simple-template-id \terminal{::\,\tilde} type-name\br
-    nested-name-specifier\opt \terminal{\tilde} type-name\br
-    \terminal{\tilde} decltype-specifier
+% html-comment
+%    nested-name-specifier\opt type-name \terminal{::\,\tilde} type-name\br
+%    nested-name-specifier \terminal{template} simple-template-id \terminal{::\,\tilde} type-name\br
+%    nested-name-specifier\opt \terminal{\tilde} type-name\br
+%    \terminal{\tilde} decltype-specifier
 \end{bnf}
 
 \pnum
@@ -1272,7 +1274,8 @@ the two \grammarterm{type-name}{s} in a \grammarterm{pseudo-destructor-name} of
 the form
 
 \begin{ncbnf}
-nested-name-specifier\opt type-name \terminal{::\,\tilde} type-name
+/% html-comment
+%nested-name-specifier\opt type-name \terminal{::\,\tilde} type-name
 \end{ncbnf}
 
 shall designate the same scalar type.
@@ -2229,7 +2232,8 @@ Expressions with unary operators group right-to-left.
 %
 \begin{bnf}
 \nontermdef{unary-operator} \textnormal{one of}\br
-    \terminal{*  \&  +  -  !  \tilde}
+% html-comment	
+%    \terminal{*  \&  +  -  !  \tilde}
 \end{bnf}
 
 \rSec2[expr.unary.op]{Unary operators}
@@ -3482,9 +3486,11 @@ than or equal to the length in bits of the promoted left operand.
 \pnum
 The value of \tcode{E1 \shl\ E2} is \tcode{E1} left-shifted \tcode{E2} bit positions; vacated bits are
 zero-filled. If \tcode{E1} has an unsigned type, the value of the result
-is $\mathrm{E1}\times2^\mathrm{E2}$, reduced modulo
+% html-comment
+%is $\mathrm{E1}\times2^\mathrm{E2}$, reduced modulo
 one more than the maximum value representable in the result type. Otherwise, if
-\tcode{E1} has a signed type and non-negative value, and $\mathrm{E1}\times2^\mathrm{E2}$ is
+% html-comment
+%\tcode{E1} has a signed type and non-negative value, and $\mathrm{E1}\times2^\mathrm{E2}$ is
 representable in the corresponding unsigned type of the result type, then
 that value, converted to the result type, is the resulting value; otherwise, the
 behavior is undefined.
@@ -3493,7 +3499,8 @@ behavior is undefined.
 The value of \tcode{E1 \shr\ E2} is \tcode{E1} right-shifted \tcode{E2}
 bit positions. If \tcode{E1} has an unsigned type or if \tcode{E1} has a
 signed type and a non-negative value, the value of the result is the
-integral part of the quotient of $\mathrm{E1}/2^\mathrm{E2}$. If \tcode{E1}
+% html-comment
+%integral part of the quotient of $\mathrm{E1}/2^\mathrm{E2}$. If \tcode{E1}
 \indextext{right~shift!implementation~defined}%
 has a signed type and a negative value, the resulting value is
 \impldef{result of right shift of negative value}.
