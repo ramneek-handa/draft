@@ -1,0 +1,35 @@
+\documentclass[ebook,10pt,oneside,openany,final]{article}
+
+\usepackage[american]
+           {babel}        % needed for iso dates
+\usepackage[iso,american]
+           {isodate}      % use iso format for dates
+\usepackage[final]
+           {listings}     % code listings
+
+\usepackage[dvips]{color,graphicx}
+\usepackage[tex4ht]{hyperref}
+
+\usepackage{ramneek}
+
+\begin{document}
+\begin{floattable}
+{Potential \tcode{setlocale} data races}
+{tab:setlocale.data.races}
+{lllll}
+\topline
+
+\tcode{fprintf}     &
+\tcode{isprint}     &
+\tcode{iswdigit}    &
+\tcode{localeconv}  &
+\tcode{tolower}     \\ 
+\tcode{fprintf}     &
+\tcode{isprint}     &
+\tcode{iswdigit}    &
+\tcode{localeconv}  &
+\tcode{tolower}     \\ 
+
+\end{floattable}
+
+\end{document}

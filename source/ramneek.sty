@@ -1,0 +1,74 @@
+\setcounter{totalnumber}{10}
+
+% Base definitions for tables
+\newenvironment{TableBase}
+{
+ \renewcommand{\tcode}[1]{{\CodeStylex{##1}}}
+ \newcommand{\topline}{\hline}
+ \newcommand{\capsep}{\hline\hline}
+ \newcommand{\rowsep}{\hline}
+ \newcommand{\bottomline}{\hline}
+
+%% vertical alignment
+ \newcommand{\rb}[1]{\raisebox{1.5ex}[0pt]{##1}}    % move argument up half a row
+
+%% header helpers
+ \newcommand{\hdstyle}[1]{\textbf{##1}}             % set header style
+ \newcommand{\Head}[3]{\multicolumn{##1}{##2}{\hdstyle{##3}}}   % add title spanning multiple columns
+ \newcommand{\lhdrx}[2]{\Head{##1}{|c}{##2}}        % set header for left column spanning #1 columns
+ \newcommand{\chdrx}[2]{\Head{##1}{c}{##2}}         % set header for center column spanning #1 columns
+ \newcommand{\rhdrx}[2]{\Head{##1}{c|}{##2}}        % set header for right column spanning #1 columns
+ \newcommand{\ohdrx}[2]{\Head{##1}{|c|}{##2}}       % set header for only column spanning #1 columns
+ \newcommand{\lhdr}[1]{\lhdrx{1}{##1}}              % set header for single left column
+ \newcommand{\chdr}[1]{\chdrx{1}{##1}}              % set header for single center column
+ \newcommand{\rhdr}[1]{\rhdrx{1}{##1}}              % set header for single right column
+ \newcommand{\ohdr}[1]{\ohdrx{1}{##1}}
+ \newcommand{\br}{\hfill\break}                     % force newline within table entry
+
+%% column styles
+ \newcolumntype{x}[1]{>{\raggedright\let\\=\tabularnewline}p{##1}}  % word-wrapped ragged-right
+                                                                    % column, width specified by #1
+ % \newcolumntype{m}[1]{>{\CodeStyle}l{##1}}              % variable width column, all entries in CodeStyle
+ \newcolumntype{m}[1]{l{##1}}                           % variable width column, all entries in CodeStyle
+}
+{
+}
+
+% General Usage: TITLE is the title of the table, XREF is the
+% cross-reference for the table. LAYOUT is a sequence of column
+% type specifiers (e.g. cp{1.0}c), without '|' for the left edge
+% or right edge.
+
+% usage: \begin{floattablebase}{TITLE}{XREF}{COLUMNS}{PLACEMENT}
+% produces floating table, location determined within limits
+% by LaTeX.
+\newenvironment{floattablebase}[4]
+{
+ \begin{TableBase}
+ \begin{table}[#4]
+ \caption{\label{#2}#1}
+ \begin{center}
+ \begin{tabular}{|#3|}
+}
+{
+% \bottomline
+ \end{tabular}
+ \end{center}
+ \end{table}
+ \end{TableBase}
+}
+
+% usage: \begin{floattable}{TITLE}{XREF}{COLUMNS}
+% produces floating table, location determined within limits
+% by LaTeX.
+\newenvironment{floattable}[3]
+{
+ \begin{floattablebase}{#1}{#2}{#3}{htbp}
+}
+{
+ \end{floattablebase}
+}
+
+
+\newcommand{\CodeStylex}[1]{\texttt{#1}}
+\newcommand{\tcode}[1]{\CodeStylex{#1}}
