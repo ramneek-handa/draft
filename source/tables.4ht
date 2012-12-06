@@ -1,0 +1,16 @@
+\NewConfigure{TableBase}{2}
+\ConfigureEnv{TableBase}{%
+\a:TableBase
+}{\b:TableBase}{
+\renewcommand\topline{}
+\renewcommand\bottomline{}
+}{}
+
+\Configure{TableBase}{\HCode{<div class="TableBase">\Hnewline}}{\HCode{</div>\Hnewline}}
+
+\Css{
+.TableBase .tabular td{
+  border-top:1px solid black;
+  border-bottom:1px solid black;
+}
+}

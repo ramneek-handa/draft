@@ -1613,9 +1613,9 @@ up as types in the scope designated by the
 \grammarterm{qualified-id} of the form:
 
 % html-comment
-%\begin{ncbnf}
-%nested-name-specifier\opt class-name \terminal{::} \terminal{\tilde} class-name
-%\end{ncbnf}
+\begin{ncbnf}
+nested-name-specifier\opt class-name \terminal{::} \terminal{\tilde} class-name
+\end{ncbnf}
 
 the second \grammarterm{class-name} is looked up in the same scope as the
 first. \enterexample
@@ -3959,16 +3959,16 @@ There is a partial ordering on cv-qualifiers, so that a type can be
 said to be \grammarterm{more cv-qualified} than another.
 Table~\ref{tab:relations.on.const.and.volatile} shows the relations that
 constitute this ordering.
-% html-comment
-%\begin{floattable}{Relations on \tcode{const} and \tcode{volatile}}{tab:relations.on.const.and.volatile}
-%{ccc}
-%\topline
-%\cvqual{no cv-qualifier}    &<& \tcode{const}           \\
-%\cvqual{no cv-qualifier}    &<& \tcode{volatile}        \\
-%\cvqual{no cv-qualifier}    &<& \tcode{const volatile}  \\
-%\tcode{const}               &<& \tcode{const volatile}  \\
-%\tcode{volatile}            &<& \tcode{const volatile}  \\
-%\end{floattable}
+
+\begin{floattable}{Relations on \tcode{const} and \tcode{volatile}}{tab:relations.on.const.and.volatile}
+{ccc}
+\topline
+\cvqual{no cv-qualifier}    &<& \tcode{const}           \\
+\cvqual{no cv-qualifier}    &<& \tcode{volatile}        \\
+\cvqual{no cv-qualifier}    &<& \tcode{const volatile}  \\
+\tcode{const}               &<& \tcode{const volatile}  \\
+\tcode{volatile}            &<& \tcode{const volatile}  \\
+\end{floattable}
 
 \pnum
 In this International Standard, the notation \term{cv} (or
