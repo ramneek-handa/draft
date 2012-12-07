@@ -20,26 +20,25 @@ support for exception processing, support for initializer lists,
 and other runtime support,
 as summarized in Table~\ref{tab:lang.sup.lib.summary}.
 
-% html-comment
-%\begin{libsumtab}{Language support library summary}{tab:lang.sup.lib.summary}
-%\ref{support.types}       & Types                     &   \tcode{<cstddef>}   \\ \rowsep
-%                          &                           &   \tcode{<limits>}    \\
-%\ref{support.limits}      & Implementation properties &   \tcode{<climits>}   \\
-%                          &                           &   \tcode{<cfloat>}    \\ \rowsep
-%\ref{cstdint}             & Integer types             & \tcode{<cstdint>}     \\ \rowsep
-%\ref{support.start.term}  & Start and termination     &   \tcode{<cstdlib>}   \\ \rowsep
-%\ref{support.dynamic}     & Dynamic memory management &   \tcode{<new>}       \\ \rowsep
-%\ref{support.rtti}        & Type identification       &   \tcode{<typeinfo>}  \\ \rowsep
-%\ref{support.exception}   & Exception handling        &   \tcode{<exception>} \\ \rowsep
-%\ref{support.initlist}    & Initializer lists & \tcode{<initializer_list>}    \\ \rowsep
-%                          &                           &   \tcode{<csignal>}   \\
-%                          &                           &   \tcode{<csetjmp>}   \\
-%                          &                           &   \tcode{<cstdalign>} \\
-%\ref{support.runtime}     & Other runtime support     &   \tcode{<cstdarg>}   \\
-%                          &                           &   \tcode{<cstdbool>}  \\
-%                          &                           &   \tcode{<cstdlib>}   \\
-%                          &                           &   \tcode{<ctime>}     \\
-%\end{libsumtab}
+\begin{libsumtab}{Language support library summary}{tab:lang.sup.lib.summary}
+\ref{support.types}       & Types                     &   \tcode{<cstddef>}   \\ \rowsep
+                          &                           &   \tcode{<limits>}    \\
+\ref{support.limits}      & Implementation properties &   \tcode{<climits>}   \\
+                          &                           &   \tcode{<cfloat>}    \\ \rowsep
+\ref{cstdint}             & Integer types             & \tcode{<cstdint>}     \\ \rowsep
+\ref{support.start.term}  & Start and termination     &   \tcode{<cstdlib>}   \\ \rowsep
+\ref{support.dynamic}     & Dynamic memory management &   \tcode{<new>}       \\ \rowsep
+\ref{support.rtti}        & Type identification       &   \tcode{<typeinfo>}  \\ \rowsep
+\ref{support.exception}   & Exception handling        &   \tcode{<exception>} \\ \rowsep
+\ref{support.initlist}    & Initializer lists & \tcode{<initializer_list>}    \\ \rowsep
+                          &                           &   \tcode{<csignal>}   \\
+                          &                           &   \tcode{<csetjmp>}   \\
+                          &                           &   \tcode{<cstdalign>} \\
+\ref{support.runtime}     & Other runtime support     &   \tcode{<cstdarg>}   \\
+                          &                           &   \tcode{<cstdbool>}  \\
+                          &                           &   \tcode{<cstdlib>}   \\
+                          &                           &   \tcode{<ctime>}     \\
+\end{libsumtab}
 
 \rSec1[support.types]{Types}
 
@@ -53,12 +52,11 @@ Table~\ref{tab:support.hdr.cstddef} describes the header
 \indexlibrary{\idxcode{size_t}}%
 \indexlibrary{\idxcode{max_align_t}}%
 \indexlibrary{\idxcode{nullptr_t}}%
-% html-comment
-%\begin{libsyntab3}{cstddef}{tab:support.hdr.cstddef}
-%\macros &   \tcode{NULL}        &   \tcode{offsetof}        \\ \rowsep
-%\types  &   \tcode{ptrdiff_t}   &   \tcode{size_t}          \\
-%        &   \tcode{max_align_t} &  \tcode{nullptr_t}        \\
-%\end{libsyntab3}
+\begin{libsyntab3}{cstddef}{tab:support.hdr.cstddef}
+\macros &   \tcode{NULL}        &   \tcode{offsetof}        \\ \rowsep
+\types  &   \tcode{ptrdiff_t}   &   \tcode{size_t}          \\
+        &   \tcode{max_align_t} &  \tcode{nullptr_t}        \\
+\end{libsyntab3}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -1052,34 +1050,34 @@ Table~\ref{tab:support.hdr.climits} describes the header
 \indexlibrary{\idxcode{UINT_MAX}}%
 \indexlibrary{\idxcode{USHRT_MAX}}%
 \indexlibrary{\idxcode{INT_MIN}}%
-% html-comment
-%\begin{libsyntab6}{climits}{tab:support.hdr.climits}
-%\cspan{\values}     \\
-%
-%\tcode{CHAR_BIT}    &
-%\tcode{INT_MAX}     &
-%\tcode{LONG_MAX}    &
-%\tcode{SCHAR_MIN}   &
-%\tcode{SHRT_MIN}    &
-%\tcode{ULLONG_MAX}  \\
-%
-%\tcode{CHAR_MAX}    &
-%\tcode{LLONG_MAX}   &
-%\tcode{LONG_MIN}    &
-%\tcode{SCHAR_MAX}   &
-%\tcode{UCHAR_MAX}   &
-%\tcode{ULONG_MAX}   \\
-%
-%\tcode{CHAR_MIN}    &
-%\tcode{LLONG_MIN}   &
-%\tcode{MB_LEN_MAX}  &
-%\tcode{SHRT_MAX}    &
-%\tcode{UINT_MAX}    &
-%\tcode{USHRT_MAX}   \\
-%
-%\tcode{INT_MIN} &&&&&\\
-%
-%\end{libsyntab6}
+
+\begin{libsyntab6}{climits}{tab:support.hdr.climits}
+\cspan{\values}     \\
+
+\tcode{CHAR_BIT}    &
+\tcode{INT_MAX}     &
+\tcode{LONG_MAX}    &
+\tcode{SCHAR_MIN}   &
+\tcode{SHRT_MIN}    &
+\tcode{ULLONG_MAX}  \\
+
+\tcode{CHAR_MAX}    &
+\tcode{LLONG_MAX}   &
+\tcode{LONG_MIN}    &
+\tcode{SCHAR_MAX}   &
+\tcode{UCHAR_MAX}   &
+\tcode{ULONG_MAX}   \\
+
+\tcode{CHAR_MIN}    &
+\tcode{LLONG_MIN}   &
+\tcode{MB_LEN_MAX}  &
+\tcode{SHRT_MAX}    &
+\tcode{UINT_MAX}    &
+\tcode{USHRT_MAX}   \\
+
+\tcode{INT_MIN} &&&&&\\
+
+\end{libsyntab6}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -1122,50 +1120,49 @@ Table~\ref{tab:support.hdr.cfloat} describes the header
 \indexlibrary{\idxcode{DBL_MIN_10_EXP}}%
 \indexlibrary{\idxcode{FLT_MAX_10_EXP}}%
 \indexlibrary{\idxcode{LDBL_EPSILON}}%
-% html-comment
-%\begin{libsyntab4}{cfloat}{tab:support.hdr.cfloat}
-%\cspan{\values}         \\
-%
-%\tcode{DBL_DIG}         &
-%\tcode{DBL_MIN_EXP} &
-%\tcode{FLT_MAX_EXP} &
-%\tcode{LDBL_MANT_DIG}   \\
-%
-%\tcode{DBL_EPSILON}     &
-%\tcode{DECIMAL_DIG}     &
-%\tcode{FLT_MIN}     &
-%\tcode{LDBL_MAX_10_EXP}\\
-%
-%\tcode{DBL_MANT_DIG}    &
-%\tcode{FLT_DIG}     &
-%\tcode{FLT_MIN_10_EXP}  &
-%\tcode{LDBL_MAX_EXP}    \\
-%
-%\tcode{DBL_MAX} &
-%\tcode{FLT_EPSILON} &
-%\tcode{FLT_MIN_EXP} &
-%\tcode{LDBL_MAX}        \\
-%
-%\tcode{DBL_MAX_10_EXP}  &
-%\tcode{FLT_EVAL_METHOD} &
-%\tcode{FLT_RADIX}       &
-%\tcode{LDBL_MIN}        \\
-%
-%\tcode{DBL_MAX_EXP} &
-%\tcode{FLT_MANT_DIG}    &
-%\tcode{FLT_ROUNDS}      &
-%\tcode{LDBL_MIN_10_EXP}\\
-%
-%\tcode{DBL_MIN}         &
-%\tcode{FLT_MAX}     &
-%\tcode{LDBL_DIG}        &
-%\tcode{LDBL_MIN_EXP}    \\
-%
-%\tcode{DBL_MIN_10_EXP}  &
-%\tcode{FLT_MAX_10_EXP}  &
-%\tcode{LDBL_EPSILON}    &   \\
-%
-%\end{libsyntab4}
+\begin{libsyntab4}{cfloat}{tab:support.hdr.cfloat}
+\cspan{\values}         \\
+
+\tcode{DBL_DIG}         &
+\tcode{DBL_MIN_EXP} &
+\tcode{FLT_MAX_EXP} &
+\tcode{LDBL_MANT_DIG}   \\
+
+\tcode{DBL_EPSILON}     &
+\tcode{DECIMAL_DIG}     &
+\tcode{FLT_MIN}     &
+\tcode{LDBL_MAX_10_EXP}\\
+
+\tcode{DBL_MANT_DIG}    &
+\tcode{FLT_DIG}     &
+\tcode{FLT_MIN_10_EXP}  &
+\tcode{LDBL_MAX_EXP}    \\
+
+\tcode{DBL_MAX} &
+\tcode{FLT_EPSILON} &
+\tcode{FLT_MIN_EXP} &
+\tcode{LDBL_MAX}        \\
+
+\tcode{DBL_MAX_10_EXP}  &
+\tcode{FLT_EVAL_METHOD} &
+\tcode{FLT_RADIX}       &
+\tcode{LDBL_MIN}        \\
+
+\tcode{DBL_MAX_EXP} &
+\tcode{FLT_MANT_DIG}    &
+\tcode{FLT_ROUNDS}      &
+\tcode{LDBL_MIN_10_EXP}\\
+
+\tcode{DBL_MIN}         &
+\tcode{FLT_MAX}     &
+\tcode{LDBL_DIG}        &
+\tcode{LDBL_MIN_EXP}    \\
+
+\tcode{DBL_MIN_10_EXP}  &
+\tcode{FLT_MAX_10_EXP}  &
+\tcode{LDBL_EPSILON}    &   \\
+
+\end{libsyntab4}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -1287,17 +1284,16 @@ Table~\ref{tab:support.hdr.cstdlib} describes some of the contents of the header
 \indexlibrary{\idxcode{at_quick_exit}}%
 \indexlibrary{\idxcode{exit}}%
 \indexlibrary{\idxcode{quick_exit}}%
-% html-comment
-%\begin{libsyntab4}{cstdlib}{tab:support.hdr.cstdlib}
-%\macros     &   \tcode{EXIT_FAILURE}    &   \tcode{EXIT_SUCCESS}    &             \\ \rowsep
-%\functions
-%&   \tcode{_Exit}
-%&   \tcode{abort}
-%&   \tcode{atexit}  \\
-%&   \tcode{at_quick_exit}
-%&   \tcode{exit}
-%&   \tcode{quick_exit}  \\
-%\end{libsyntab4}
+\begin{libsyntab4}{cstdlib}{tab:support.hdr.cstdlib}
+\macros     &   \tcode{EXIT_FAILURE}    &   \tcode{EXIT_SUCCESS}    &             \\ \rowsep
+\functions
+&   \tcode{_Exit}
+&   \tcode{abort}
+&   \tcode{atexit}  \\
+&   \tcode{at_quick_exit}
+&   \tcode{exit}
+&   \tcode{quick_exit}  \\
+\end{libsyntab4}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -3265,12 +3261,11 @@ undefined behavior in a signal handler (see~\ref{intro.execution}).}
 \indexlibrary{\idxcode{setjmp}}%
 \indexlibrary{\idxcode{jmp_buf}}%
 \indexlibrary{\idxcode{longjmp}}%
-% html-comment
-%\begin{libsyntabf2}{csetjmp}{tab:support.hdr.csetjmp}
-%\macro      &   \tcode{setjmp}  \\ \rowsep
-%\type       &   \tcode{jmp_buf} \\ \rowsep
-%\function   &   \tcode{longjmp} \\
-%\end{libsyntabf2}
+\begin{libsyntabf2}{csetjmp}{tab:support.hdr.csetjmp}
+\macro      &   \tcode{setjmp}  \\ \rowsep
+\type       &   \tcode{jmp_buf} \\ \rowsep
+\function   &   \tcode{longjmp} \\
+\end{libsyntabf2}
 
 \indexlibrary{\idxhdr{csignal}}%
 \indexlibrary{\idxcode{SIG_IGN}}%
@@ -3285,20 +3280,18 @@ undefined behavior in a signal handler (see~\ref{intro.execution}).}
 \indexlibrary{\idxcode{SIGTERM}}%
 \indexlibrary{\idxcode{SIG_DFL}}%
 \indexlibrary{\idxcode{SIG_ERR}}%
-% html-comment
-%\begin{libsyntabf5}{csignal}{tab:support.hdr.csignal}
-%\macros             &   \tcode{SIGABRT} &   \tcode{SIGILL}  &   \tcode{SIGSEGV} &   \tcode{SIG_DFL} \\
-%\tcode{SIG_IGN}     &   \tcode{SIGFPE}  &   \tcode{SIGINT}  &   \tcode{SIGTERM} &   \tcode{SIG_ERR} \\ \rowsep
-%\type               &   \tcode{sig_atomic_t}    &           &                   &                   \\ \rowsep
-%\functions          &   \tcode{raise}   &   \tcode{signal}  &                   &                   \\
-%\end{libsyntabf5}
+\begin{libsyntabf5}{csignal}{tab:support.hdr.csignal}
+\macros             &   \tcode{SIGABRT} &   \tcode{SIGILL}  &   \tcode{SIGSEGV} &   \tcode{SIG_DFL} \\
+\tcode{SIG_IGN}     &   \tcode{SIGFPE}  &   \tcode{SIGINT}  &   \tcode{SIGTERM} &   \tcode{SIG_ERR} \\ \rowsep
+\type               &   \tcode{sig_atomic_t}    &           &                   &                   \\ \rowsep
+\functions          &   \tcode{raise}   &   \tcode{signal}  &                   &                   \\
+\end{libsyntabf5}
 
 \indexlibrary{\idxhdr{cstdalign}}%
 \indexlibrary{\idxcode{__alignas_is_defined}}%
-% html-comment
-%\begin{libsyntabf2}{cstdalign}{tab:support.hdr.cstdalign}
-%\macro  & \tcode{__alignas_is_defined} \\
-%\end{libsyntabf2}
+\begin{libsyntabf2}{cstdalign}{tab:support.hdr.cstdalign}
+\macro  & \tcode{__alignas_is_defined} \\
+\end{libsyntabf2}
 
 \indexlibrary{\idxhdr{cstdarg}}%
 \indexlibrary{\idxcode{va_arg}}%
@@ -3306,37 +3299,33 @@ undefined behavior in a signal handler (see~\ref{intro.execution}).}
 \indexlibrary{\idxcode{va_start}}%
 \indexlibrary{\idxcode{va_copy}}%
 \indexlibrary{\idxcode{va_list}}%
-% html-comment
-%\begin{libsyntabf4}{cstdarg}{tab:support.hdr.cstdarg}
-%\macros &   \tcode{va_arg}      &   \tcode{va_end}  &   \tcode{va_start}    \\
-%\tcode{va_copy} &            &                   &                       \\
-%\rowsep
-%\type   &   \tcode{va_list}       &                     &                       \\
-%\end{libsyntabf4}
+\begin{libsyntabf4}{cstdarg}{tab:support.hdr.cstdarg}
+\macros &   \tcode{va_arg}      &   \tcode{va_end}  &   \tcode{va_start}    \\
+\tcode{va_copy} &            &                   &                       \\
+\rowsep
+\type   &   \tcode{va_list}       &                     &                       \\
+\end{libsyntabf4}
 
 \indexlibrary{\idxhdr{cstdbool}}%
 \indexlibrary{\idxcode{__bool_true_false_are_defined}}%
-% html-comment
-%\begin{libsyntabf2}{cstdbool}{tab:support.hdr.cstdbool}
-%\macro  & \tcode{__bool_true_false_are_defined} \\
-%\end{libsyntabf2}
+\begin{libsyntabf2}{cstdbool}{tab:support.hdr.cstdbool}
+\macro  & \tcode{__bool_true_false_are_defined} \\
+\end{libsyntabf2}
 
 \indexlibrary{\idxhdr{cstdlib}}%
 \indexlibrary{\idxcode{getenv}}%
 \indexlibrary{\idxcode{system}}%
-% html-comment
-%\begin{libsyntabf3}{cstdlib}{tab:support.hdr.cstdlib1}
-%\functions  &   \tcode{getenv}  &   \tcode{system}  \\
-%\end{libsyntabf3}
+\begin{libsyntabf3}{cstdlib}{tab:support.hdr.cstdlib1}
+\functions  &   \tcode{getenv}  &   \tcode{system}  \\
+\end{libsyntabf3}
 
 \indexlibrary{\idxhdr{ctime}}%
 \indexlibrary{\idxcode{CLOCKS_PER_SEC}}%
 \indexlibrary{\idxcode{clock_t}}%
 \indexlibrary{\idxcode{clock}}%
-% html-comment
-%\begin{libsyntabf2}{ctime}{tab:support.hdr.ctime}
-%\macro      &   \tcode{CLOCKS_PER_SEC}  \\ \rowsep
-%\type       &   \tcode{clock_t}         \\ \rowsep
-%\function   &   \tcode{clock}           \\
-%\end{libsyntabf2}
+\begin{libsyntabf2}{ctime}{tab:support.hdr.ctime}
+\macro      &   \tcode{CLOCKS_PER_SEC}  \\ \rowsep
+\type       &   \tcode{clock_t}         \\ \rowsep
+\function   &   \tcode{clock}           \\
+\end{libsyntabf2}
 \vfill\pagebreak

@@ -19,19 +19,19 @@ sequence to be operated upon by a regular expression,
 and two iterator types for
 enumerating regular expression matches, as described in Table~\ref{tab:re.lib.summary}.
 
-%\begin{libsumtab}{Regular expressions library summary}{tab:re.lib.summary}
-%\ref{re.def}        &   Definitions                 &                       \\
-%\ref{re.req}        &   Requirements                &                       \\ \rowsep
-%\ref{re.const}      &   Constants                   &                       \\
-%\ref{re.badexp}     &   Exception type              &                       \\
-%\ref{re.traits}     &   Traits                      &                       \\
-%\ref{re.regex}      &   Regular expression template &   \tcode{<regex>}     \\
-%\ref{re.submatch}   &   Submatches                  &                       \\
-%\ref{re.results}    &   Match results               &                       \\
-%\ref{re.alg}        &   Algorithms                  &                       \\
-%\ref{re.iter}       &   Iterators                   &                       \\ \rowsep
-%\ref{re.grammar}    &   Grammar                     &                       \\
-%\end{libsumtab}
+\begin{libsumtab}{Regular expressions library summary}{tab:re.lib.summary}
+\ref{re.def}        &   Definitions                 &                       \\
+\ref{re.req}        &   Requirements                &                       \\ \rowsep
+\ref{re.const}      &   Constants                   &                       \\
+\ref{re.badexp}     &   Exception type              &                       \\
+\ref{re.traits}     &   Traits                      &                       \\
+\ref{re.regex}      &   Regular expression template &   \tcode{<regex>}     \\
+\ref{re.submatch}   &   Submatches                  &                       \\
+\ref{re.results}    &   Match results               &                       \\
+\ref{re.alg}        &   Algorithms                  &                       \\
+\ref{re.iter}       &   Iterators                   &                       \\ \rowsep
+\ref{re.grammar}    &   Grammar                     &                       \\
+\end{libsumtab}
 
 
 \rSec1[re.def]{Definitions}
@@ -670,85 +670,85 @@ table~\ref{tab:re:syntaxoption}.  A valid value of type
 \tcode{syntax_option_type} shall have exactly one of the elements
 \tcode{ECMAScript}, \tcode{basic}, \tcode{extended}, \tcode{awk}, \tcode{grep}, \tcode{egrep}, set.
 
-%\begin{libefftab}
-%  {\tcode{syntax_option_type} effects}
-%  {tab:re:syntaxoption}
-%%
-%icase &
-%Specifies that matching of regular expressions against a character
-%container sequence shall be performed without regard to case. 
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{icase}}%
-%\\ \rowsep
-%%
-%nosubs &
-%Specifies that when a regular expression is matched against a
-%character container sequence, no sub-expression matches shall be
-%stored in the supplied match_results structure. 
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{nosubs}}%
-%\\ \rowsep
-%%
-%optimize &
-%Specifies that the regular expression engine should pay more attention
-%to the speed with which regular expressions are matched, and less to
-%the speed with which regular expression objects are
-%constructed. Otherwise it has no detectable effect on the program
-%output. 
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{optimize}}%
-%\\ \rowsep
-%%
-%collate &
-%Specifies that character ranges of the form \tcode{"[a-b]"} shall be locale
-%sensitive. 
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{collate}}%
-%\indextext{locale}%
-%\\ \rowsep
-%%
-%ECMAScript &
-%Specifies that the grammar recognized by the regular expression engine
-%shall be that used by ECMAScript in ECMA-262, as modified in~\ref{re.grammar}.
-%\indextext{ECMAScript}%
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{ECMAScript}}%
-%\\ \rowsep
-%%
-%basic &
-%Specifies that the grammar recognized by the regular expression engine
-%shall be that used by basic regular expressions in POSIX, Base Definitions and
-%Headers, Section 9, Regular Expressions.
-%\indextext{POSIX!regular expressions}%
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{basic}}%
-%\\ \rowsep
-%%
-%extended &
-%Specifies that the grammar recognized by the regular expression engine
-%shall be that used by extended regular expressions in POSIX, Base Definitions and
-%Headers, Section 9, Regular Expressions.
-%\indextext{POSIX!extended regular expressions}%
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{extended}}%
-%\\ \rowsep
-%%
-%awk &
-%Specifies that the grammar recognized by the regular expression engine
-%shall be that used by the utility awk in POSIX.
-%\indextext{\idxcode{awk}}%
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{awk}}%
-%\\ \rowsep
-%%
-%grep &
-%Specifies that the grammar recognized by the regular expression engine
-%shall be that used by the utility grep in POSIX.
-%\indextext{\idxcode{grep}}%
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{grep}}%
-%\\ \rowsep
-%%
-%egrep &
-%Specifies that the grammar recognized by the regular expression engine
-%shall be that used by the utility grep when given the -E
-%option in POSIX.
-%\indextext{\idxcode{egrep}}%
-%\indexlibrary{\idxcode{syntax_option_type}!\idxcode{egrep}}%
-%\\ 
-%%
-%\end{libefftab}
+\begin{libefftab}
+  {\tcode{syntax_option_type} effects}
+  {tab:re:syntaxoption}
+%
+icase &
+Specifies that matching of regular expressions against a character
+container sequence shall be performed without regard to case. 
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{icase}}%
+\\ \rowsep
+%
+nosubs &
+Specifies that when a regular expression is matched against a
+character container sequence, no sub-expression matches shall be
+stored in the supplied match_results structure. 
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{nosubs}}%
+\\ \rowsep
+%
+optimize &
+Specifies that the regular expression engine should pay more attention
+to the speed with which regular expressions are matched, and less to
+the speed with which regular expression objects are
+constructed. Otherwise it has no detectable effect on the program
+output. 
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{optimize}}%
+\\ \rowsep
+%
+collate &
+Specifies that character ranges of the form \tcode{"[a-b]"} shall be locale
+sensitive. 
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{collate}}%
+\indextext{locale}%
+\\ \rowsep
+%
+ECMAScript &
+Specifies that the grammar recognized by the regular expression engine
+shall be that used by ECMAScript in ECMA-262, as modified in~\ref{re.grammar}.
+\indextext{ECMAScript}%
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{ECMAScript}}%
+\\ \rowsep
+%
+basic &
+Specifies that the grammar recognized by the regular expression engine
+shall be that used by basic regular expressions in POSIX, Base Definitions and
+Headers, Section 9, Regular Expressions.
+\indextext{POSIX!regular expressions}%
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{basic}}%
+\\ \rowsep
+%
+extended &
+Specifies that the grammar recognized by the regular expression engine
+shall be that used by extended regular expressions in POSIX, Base Definitions and
+Headers, Section 9, Regular Expressions.
+\indextext{POSIX!extended regular expressions}%
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{extended}}%
+\\ \rowsep
+%
+awk &
+Specifies that the grammar recognized by the regular expression engine
+shall be that used by the utility awk in POSIX.
+\indextext{\idxcode{awk}}%
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{awk}}%
+\\ \rowsep
+%
+grep &
+Specifies that the grammar recognized by the regular expression engine
+shall be that used by the utility grep in POSIX.
+\indextext{\idxcode{grep}}%
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{grep}}%
+\\ \rowsep
+%
+egrep &
+Specifies that the grammar recognized by the regular expression engine
+shall be that used by the utility grep when given the -E
+option in POSIX.
+\indextext{\idxcode{egrep}}%
+\indexlibrary{\idxcode{syntax_option_type}!\idxcode{egrep}}%
+\\ 
+%
+\end{libefftab}
 
 \rSec2[re.matchflag]{Bitmask type \tcode{regex_constants::match_flag_type}}
 
@@ -2662,18 +2662,18 @@ match_results& operator=(match_results&& m);
 are indicated in Table~\ref{tab:re:results:assign}.
 \end{itemdescr}
 
-%\begin{libefftabvalue}
-%  {\tcode{match_results} assignment operator effects}
-%  {tab:re:results:assign}
-%\tcode{ready()}         & \tcode{m.ready()}       \\ \rowsep
-%\tcode{size()}          & \tcode{m.size()}        \\ \rowsep
-%\tcode{str(n)}          & \tcode{m.str(n)} for all integers \tcode{n < m.size()} \\ \rowsep
-%\tcode{prefix()}        & \tcode{m.prefix()} \\ \rowsep
-%\tcode{suffix()}        & \tcode{m.suffix()} \\ \rowsep
-%\tcode{(*this)[n]}      & \tcode{m[n]} for all integers \tcode{n < m.size()} \\ \rowsep
-%\tcode{length(n)}       & \tcode{m.length(n)} for all integers \tcode{n < m.size()} \\ \rowsep
-%\tcode{position(n)}     & \tcode{m.position(n)} for all integers \tcode{n < m.size()} \\ 
-%\end{libefftabvalue}
+\begin{libefftabvalue}
+  {\tcode{match_results} assignment operator effects}
+  {tab:re:results:assign}
+\tcode{ready()}         & \tcode{m.ready()}       \\ \rowsep
+\tcode{size()}          & \tcode{m.size()}        \\ \rowsep
+\tcode{str(n)}          & \tcode{m.str(n)} for all integers \tcode{n < m.size()} \\ \rowsep
+\tcode{prefix()}        & \tcode{m.prefix()} \\ \rowsep
+\tcode{suffix()}        & \tcode{m.suffix()} \\ \rowsep
+\tcode{(*this)[n]}      & \tcode{m[n]} for all integers \tcode{n < m.size()} \\ \rowsep
+\tcode{length(n)}       & \tcode{m.length(n)} for all integers \tcode{n < m.size()} \\ \rowsep
+\tcode{position(n)}     & \tcode{m.position(n)} for all integers \tcode{n < m.size()} \\ 
+\end{libefftabvalue}
 
 \rSec2[re.results.state]{\tcode{match_results} state}
 

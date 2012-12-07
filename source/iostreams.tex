@@ -19,20 +19,20 @@ string streams,
 and file streams,
 as summarized in Table~\ref{tab:iostreams.lib.summary}.
 
-%\begin{libsumtab}{Input/output library summary}{tab:iostreams.lib.summary}
-%\ref{iostreams.requirements}  & Requirements     &           \\ \rowsep
-%\ref{iostream.forward}  & Forward declarations     & \tcode{<iosfwd>}  \\ \rowsep
-%\ref{iostream.objects}  & Standard iostream objects  & \tcode{<iostream>}  \\ \rowsep
-%\ref{iostreams.base}    & Iostreams base classes     & \tcode{<ios>}   \\ \rowsep
-%\ref{stream.buffers}    & Stream buffers         & \tcode{<streambuf>} \\ \rowsep
-%\ref{iostream.format}   & Formatting and manipulators & \tcode{<istream>} \\
-%                        &    & \tcode{<ostream>} \\
-%                        &    & \tcode{<iomanip>} \\ \rowsep
-%\ref{string.streams}    & String streams         & \tcode{<sstream>} \\ \rowsep
-%\ref{file.streams}      & File streams           & \tcode{<fstream>} \\
-%                        &    & \tcode{<cstdio>}  \\
-%                        &    & \tcode{<cinttypes>} \\
-%\end{libsumtab}
+\begin{libsumtab}{Input/output library summary}{tab:iostreams.lib.summary}
+\ref{iostreams.requirements}  & Requirements     &           \\ \rowsep
+\ref{iostream.forward}  & Forward declarations     & \tcode{<iosfwd>}  \\ \rowsep
+\ref{iostream.objects}  & Standard iostream objects  & \tcode{<iostream>}  \\ \rowsep
+\ref{iostreams.base}    & Iostreams base classes     & \tcode{<ios>}   \\ \rowsep
+\ref{stream.buffers}    & Stream buffers         & \tcode{<streambuf>} \\ \rowsep
+\ref{iostream.format}   & Formatting and manipulators & \tcode{<istream>} \\
+                        &    & \tcode{<ostream>} \\
+                        &    & \tcode{<iomanip>} \\ \rowsep
+\ref{string.streams}    & String streams         & \tcode{<sstream>} \\ \rowsep
+\ref{file.streams}      & File streams           & \tcode{<fstream>} \\
+                        &    & \tcode{<cstdio>}  \\
+                        &    & \tcode{<cinttypes>} \\
+\end{libsumtab}
 
 \pnum
 Figure~\ref{fig:streampos} illustrates relationships among various types
@@ -927,53 +927,53 @@ The type
 is a bitmask type~(\ref{bitmask.types}).
 Setting its elements has the effects indicated in Table~\ref{tab:iostreams.fmtflags.effects}.
 
-%\begin{libefftab}{\tcode{fmtflags} effects}{tab:iostreams.fmtflags.effects}
-%\tcode{boolalpha} &
-% insert and extract \tcode{bool} type in alphabetic format\\
-%\tcode{dec}     &
-% converts integer input or generates integer output in decimal base\\
-%\tcode{fixed}   &
-% generate floating-point output in fixed-point notation\\
-%\tcode{hex}     &
-% converts integer input or generates integer output in hexadecimal base\\
-%\tcode{internal}  &
-% adds fill characters at a designated internal point in certain generated output,
-% or identical to \tcode{right} if no such point is designated\\
-%\tcode{left}    &
-% adds fill characters on the right (final positions) of certain generated output\\
-%\tcode{oct}     &
-% converts integer input or generates integer output in octal base\\
-%\tcode{right}   &
-% adds fill characters on the left (initial positions) of certain generated output\\
-%\tcode{scientific}  &
-% generates floating-point output in scientific notation\\
-%\tcode{showbase}  &
-% generates a prefix indicating the numeric base of generated integer output\\
-%\tcode{showpoint} &
-% generates a decimal-point character unconditionally in generated floating-point output\\
-%\tcode{showpos}   &
-% generates a \tcode{+} sign in non-negative generated numeric output\\
-%\tcode{skipws}    &
-% skips leading whitespace before certain input operations\\
-%\tcode{unitbuf}   &
-% flushes output after each output operation\\
-%\tcode{uppercase} &
-% replaces certain lowercase letters with their uppercase equivalents in generated output\\
-%\end{libefftab}
+\begin{libefftab}{\tcode{fmtflags} effects}{tab:iostreams.fmtflags.effects}
+\tcode{boolalpha} &
+ insert and extract \tcode{bool} type in alphabetic format\\
+\tcode{dec}     &
+ converts integer input or generates integer output in decimal base\\
+\tcode{fixed}   &
+ generate floating-point output in fixed-point notation\\
+\tcode{hex}     &
+ converts integer input or generates integer output in hexadecimal base\\
+\tcode{internal}  &
+ adds fill characters at a designated internal point in certain generated output,
+ or identical to \tcode{right} if no such point is designated\\
+\tcode{left}    &
+ adds fill characters on the right (final positions) of certain generated output\\
+\tcode{oct}     &
+ converts integer input or generates integer output in octal base\\
+\tcode{right}   &
+ adds fill characters on the left (initial positions) of certain generated output\\
+\tcode{scientific}  &
+ generates floating-point output in scientific notation\\
+\tcode{showbase}  &
+ generates a prefix indicating the numeric base of generated integer output\\
+\tcode{showpoint} &
+ generates a decimal-point character unconditionally in generated floating-point output\\
+\tcode{showpos}   &
+ generates a \tcode{+} sign in non-negative generated numeric output\\
+\tcode{skipws}    &
+ skips leading whitespace before certain input operations\\
+\tcode{unitbuf}   &
+ flushes output after each output operation\\
+\tcode{uppercase} &
+ replaces certain lowercase letters with their uppercase equivalents in generated output\\
+\end{libefftab}
 
 \pnum
 Type
 \tcode{fmtflags}
 also defines the constants indicated in Table~\ref{tab:iostreams.fmtflags.constants}.
 
-%\begin{floattable}{\tcode{fmtflags} constants}{tab:iostreams.fmtflags.constants}
-%{ll}
-%\topline
-%\lhdr{Constant}   & \rhdr{Allowable values}       \\ \capsep
-%\tcode{adjustfield} & \tcode{left | right | internal}   \\
-%\tcode{basefield} & \tcode{dec | oct | hex}       \\
-%\tcode{floatfield}  & \tcode{scientific | fixed}      \\
-%\end{floattable}
+\begin{floattable}{\tcode{fmtflags} constants}{tab:iostreams.fmtflags.constants}
+{ll}
+\topline
+\lhdr{Constant}   & \rhdr{Allowable values}       \\ \capsep
+\tcode{adjustfield} & \tcode{left | right | internal}   \\
+\tcode{basefield} & \tcode{dec | oct | hex}       \\
+\tcode{floatfield}  & \tcode{scientific | fixed}      \\
+\end{floattable}
 \end{itemdescr}
 
 \rSec4[ios::iostate]{Type \tcode{ios_base::iostate}}
@@ -991,16 +991,16 @@ The type
 is a bitmask type~(\ref{bitmask.types})
 that contains the elements indicated in Table~\ref{tab:iostreams.iostate.effects}.
 
-%\begin{libefftab}{\tcode{iostate} effects}{tab:iostreams.iostate.effects}
-%\tcode{badbit}    &
-% indicates a loss of integrity in an input or output sequence
-% (such as an irrecoverable read error from a file); \\
-%\tcode{eofbit}    &
-% indicates that an input operation reached the end of an input sequence;  \\
-%\tcode{failbit}   &
-% indicates that an input operation failed to read the expected characters,
-% or that an output operation failed to generate the desired characters. \\
-%\end{libefftab}
+\begin{libefftab}{\tcode{iostate} effects}{tab:iostreams.iostate.effects}
+\tcode{badbit}    &
+ indicates a loss of integrity in an input or output sequence
+ (such as an irrecoverable read error from a file); \\
+\tcode{eofbit}    &
+ indicates that an input operation reached the end of an input sequence;  \\
+\tcode{failbit}   &
+ indicates that an input operation failed to read the expected characters,
+ or that an output operation failed to generate the desired characters. \\
+\end{libefftab}
 
 \pnum
 Type
@@ -1027,20 +1027,20 @@ The type
 is a bitmask type~(\ref{bitmask.types}).
 It contains the elements indicated in Table~\ref{tab:iostreams.openmode.effects}.
 
-%\begin{libefftab}{\tcode{openmode} effects}{tab:iostreams.openmode.effects}
-%\tcode{app}     &
-% seek to end before each write  \\
-%\tcode{ate}     &
-% open and seek to end immediately after opening \\
-%\tcode{binary}    &
-% perform input and output in binary mode (as opposed to text mode)  \\
-%\tcode{in}      &
-% open for input \\
-%\tcode{out}     &
-% open for output  \\
-%\tcode{trunc}   &
-% truncate an existing stream when opening \\
-%\end{libefftab}
+\begin{libefftab}{\tcode{openmode} effects}{tab:iostreams.openmode.effects}
+\tcode{app}     &
+ seek to end before each write  \\
+\tcode{ate}     &
+ open and seek to end immediately after opening \\
+\tcode{binary}    &
+ perform input and output in binary mode (as opposed to text mode)  \\
+\tcode{in}      &
+ open for input \\
+\tcode{out}     &
+ open for output  \\
+\tcode{trunc}   &
+ truncate an existing stream when opening \\
+\end{libefftab}
 \end{itemdescr}
 
 \rSec4[ios::seekdir]{Type \tcode{ios_base::seekdir}}
@@ -1057,14 +1057,14 @@ The type
 is an enumerated type~(\ref{enumerated.types})
 that contains the elements indicated in Table~\ref{tab:iostreams.seekdir.effects}.
 
-%\begin{libefftabmean}{\tcode{seekdir} effects}{tab:iostreams.seekdir.effects}
-%\tcode{beg}     &
-% request a seek (for subsequent input or output) relative to the beginning of the stream  \\
-%\tcode{cur}     &
-% request a seek relative to the current position within the sequence  \\
-%\tcode{end}     &
-% request a seek relative to the current end of the sequence \\
-%\end{libefftabmean}
+\begin{libefftabmean}{\tcode{seekdir} effects}{tab:iostreams.seekdir.effects}
+\tcode{beg}     &
+ request a seek (for subsequent input or output) relative to the beginning of the stream  \\
+\tcode{cur}     &
+ request a seek relative to the current position within the sequence  \\
+\tcode{end}     &
+ request a seek relative to the current end of the sequence \\
+\end{libefftabmean}
 \end{itemdescr}
 
 \rSec4[ios::Init]{Class \tcode{ios_base::Init}}
@@ -1837,30 +1837,30 @@ void init(basic_streambuf<charT,traits>* sb);
 \postconditions
 The postconditions of this function are indicated in Table~\ref{tab:iostreams.basicios.init.effects}.
 
-%\begin{libefftabvalue}{\tcode{basic_ios::init()} effects}{tab:iostreams.basicios.init.effects}
-%\tcode{rdbuf()}   &
-% \tcode{sb}     \\
-%\tcode{tie()}   &
-% \tcode{0}      \\
-%\tcode{rdstate()} &
-% \tcode{goodbit} if \tcode{sb} is not a null pointer, otherwise \tcode{badbit}. \\
-%\tcode{exceptions()}  &
-% \tcode{goodbit}  \\
-%\tcode{flags()}   &
-% \tcode{skipws | dec} \\
-%\tcode{width()}   &
-% \tcode{0}      \\
-%\tcode{precision()} &
-% \tcode{6}      \\
-%\tcode{fill()}    &
-% \tcode{widen(' ');}  \\
-%\tcode{getloc()}  &
-% a copy of the value returned by \tcode{locale()} \\
-%\tcode{\textit{iarray}} &
-% a null pointer   \\
-%\tcode{\textit{parray}} &
-% a null pointer   \\
-%\end{libefftabvalue}
+\begin{libefftabvalue}{\tcode{basic_ios::init()} effects}{tab:iostreams.basicios.init.effects}
+\tcode{rdbuf()}   &
+ \tcode{sb}     \\
+\tcode{tie()}   &
+ \tcode{0}      \\
+\tcode{rdstate()} &
+ \tcode{goodbit} if \tcode{sb} is not a null pointer, otherwise \tcode{badbit}. \\
+\tcode{exceptions()}  &
+ \tcode{goodbit}  \\
+\tcode{flags()}   &
+ \tcode{skipws | dec} \\
+\tcode{width()}   &
+ \tcode{0}      \\
+\tcode{precision()} &
+ \tcode{6}      \\
+\tcode{fill()}    &
+ \tcode{widen(' ');}  \\
+\tcode{getloc()}  &
+ a copy of the value returned by \tcode{locale()} \\
+\tcode{\textit{iarray}} &
+ a null pointer   \\
+\tcode{\textit{parray}} &
+ a null pointer   \\
+\end{libefftabvalue}
 \end{itemdescr}
 
 \rSec3[basic.ios.members]{Member functions}
@@ -2062,27 +2062,27 @@ other special action taken.
 The postconditions of this function are indicated in Table~\ref{tab:iostreams.copyfmt.effects}.
 
 
-%\begin{LibEffTab}{\tcode{basic_ios::copyfmt()} effects}
-%{tab:iostreams.copyfmt.effects}{Value}{1.2in}
-%\tcode{rdbuf()}             &
-%  \textit{unchanged}        \\
-%\tcode{tie()}               &
-%  \tcode{rhs.tie()}         \\
-%\tcode{rdstate()}           &
-%  \textit{unchanged}        \\
-%\tcode{exceptions()}        &
-%  \tcode{rhs.exceptions()}  \\
-%\tcode{flags()}             &
-%  \tcode{rhs.flags()}       \\
-%\tcode{width()}             &
-%  \tcode{rhs.width()}       \\
-%\tcode{precision()}         &
-%  \tcode{rhs.precision()}   \\
-%\tcode{fill()}              &
-%  \tcode{rhs.fill()}        \\
-%\tcode{getloc()}            &
-%  \tcode{rhs.getloc()}      \\
-%\end{LibEffTab}
+\begin{LibEffTab}{\tcode{basic_ios::copyfmt()} effects}
+{tab:iostreams.copyfmt.effects}{Value}{1.2in}
+\tcode{rdbuf()}             &
+  \textit{unchanged}        \\
+\tcode{tie()}               &
+  \tcode{rhs.tie()}         \\
+\tcode{rdstate()}           &
+  \textit{unchanged}        \\
+\tcode{exceptions()}        &
+  \tcode{rhs.exceptions()}  \\
+\tcode{flags()}             &
+  \tcode{rhs.flags()}       \\
+\tcode{width()}             &
+  \tcode{rhs.width()}       \\
+\tcode{precision()}         &
+  \tcode{rhs.precision()}   \\
+\tcode{fill()}              &
+  \tcode{rhs.fill()}        \\
+\tcode{getloc()}            &
+  \tcode{rhs.getloc()}      \\
+\end{LibEffTab}
 
 \pnum
 \returns
@@ -7621,23 +7621,23 @@ pos_type seekoff(off_type off, ios_base::seekdir way,
 Alters the stream position within one of the
 controlled sequences, if possible, as indicated in Table~\ref{tab:iostreams.seekoff.positioning}.
 
-%\begin{libtab2}{\tcode{seekoff} positioning}{tab:iostreams.seekoff.positioning}
-%{p{2.5in}l}{Conditions}{Result}
-%\tcode{(which \& ios_base\colcol{}in)}\tcode{ == ios_base::in}  &
-% positions the input sequence \\ \rowsep
-%\tcode{(which \& ios_base\colcol{}out)}\tcode{ == ios_base::out}  &
-% positions the output sequence  \\ \rowsep
-%\tcode{(which \& (ios_base::in |}\br
-%\tcode{ios_base::out)) ==}\br
-%\tcode{(ios_base::in) |}\br
-%\tcode{ios_base::out))}\br
-%and \tcode{way ==} either\br
-%\tcode{ios_base::beg} or\br
-%\tcode{ios_base::end}     &
-% positions both the input and the output sequences  \\ \rowsep
-%Otherwise &
-% the positioning operation fails. \\
-%\end{libtab2}
+\begin{libtab2}{\tcode{seekoff} positioning}{tab:iostreams.seekoff.positioning}
+{p{2.5in}l}{Conditions}{Result}
+\tcode{(which \& ios_base\colcol{}in)}\tcode{ == ios_base::in}  &
+ positions the input sequence \\ \rowsep
+\tcode{(which \& ios_base\colcol{}out)}\tcode{ == ios_base::out}  &
+ positions the output sequence  \\ \rowsep
+\tcode{(which \& (ios_base::in |}\br
+\tcode{ios_base::out)) ==}\br
+\tcode{(ios_base::in) |}\br
+\tcode{ios_base::out))}\br
+and \tcode{way ==} either\br
+\tcode{ios_base::beg} or\br
+\tcode{ios_base::end}     &
+ positions both the input and the output sequences  \\ \rowsep
+Otherwise &
+ the positioning operation fails. \\
+\end{libtab2}
 
 \pnum
 For a sequence to be positioned, if its next pointer
@@ -7649,15 +7649,15 @@ is a null pointer and the new offset \tcode{newoff} is nonzero, the positioning
 operation fails. Otherwise, the function determines \tcode{newoff} as indicated in
 Table~\ref{tab:iostreams.newoff.values}.
 
-%\begin{libtab2}{\tcode{newoff} values}{tab:iostreams.newoff.values}
-%{lp{2.0in}}{Condition}{\tcode{newoff} Value}
-%\tcode{way == ios_base::beg}  &
-% 0  \\ \rowsep
-%\tcode{way == ios_base::cur}  &
-% the next pointer minus the beginning pointer (\tcode{xnext - xbeg}). \\ \rowsep
-%\tcode{way == ios_base::end}  &
-% the high mark pointer minus the beginning pointer (\tcode{high_mark - xbeg}).   \\
-%\end{libtab2}
+\begin{libtab2}{\tcode{newoff} values}{tab:iostreams.newoff.values}
+{lp{2.0in}}{Condition}{\tcode{newoff} Value}
+\tcode{way == ios_base::beg}  &
+ 0  \\ \rowsep
+\tcode{way == ios_base::cur}  &
+ the next pointer minus the beginning pointer (\tcode{xnext - xbeg}). \\ \rowsep
+\tcode{way == ios_base::end}  &
+ the high mark pointer minus the beginning pointer (\tcode{high_mark - xbeg}).   \\
+\end{libtab2}
 
 \pnum
 If
@@ -8635,30 +8635,30 @@ as indicated in Table~\ref{tab:iostreams.file.open.modes}.
 If \tcode{mode} is not some combination of flags shown in the table then
 the open fails.
 
-%\begin{floattable}{File open modes}{tab:iostreams.file.open.modes}
-%{cccccl}
-%\topline
-%\multicolumn{5}{|c}{\tcode{ios_base} flag combination} & \tcode{stdio} equivalent \\
-%\tcode{binary}  & \tcode{in}  & \tcode{out} & \tcode{trunc} & \tcode{app} &     \\ \capsep
-%    &   & + &   &   & \tcode{"w"}   \\ \rowsep
-%    &   & + &   & + & \tcode{"a"}   \\ \rowsep
-%    &   &   &   & + & \tcode{"a"}   \\ \rowsep
-%    &   & + & + &   & \tcode{"w"}   \\ \rowsep
-%    & + &   &   &   & \tcode{"r"}   \\ \rowsep
-%    & + & + &   &   & \tcode{"r+"}  \\ \rowsep
-%    & + & + & + &   & \tcode{"w+"}  \\ \rowsep
-%    & + & + &   & + & \tcode{"a+"}  \\ \rowsep
-%    & + &   &   & + & \tcode{"a+"}  \\ \capsep
-%  + &   & + &   &   & \tcode{"wb"}  \\ \rowsep
-%  + &   & + &   & + & \tcode{"ab"}  \\ \rowsep
-%  + &   &   &   & + & \tcode{"ab"}  \\ \rowsep
-%  + &   & + & + &   & \tcode{"wb"}  \\ \rowsep
-%  + & + &   &   &   & \tcode{"rb"}  \\ \rowsep
-%  + & + & + &   &   & \tcode{"r+b"} \\ \rowsep
-%  + & + & + & + &   & \tcode{"w+b"} \\ \rowsep
-%  + & + & + &   & + & \tcode{"a+b"} \\ \rowsep
-%  + & + &   &   & + & \tcode{"a+b"} \\
-%\end{floattable}
+\begin{floattable}{File open modes}{tab:iostreams.file.open.modes}
+{cccccl}
+\topline
+\multicolumn{5}{|c}{\tcode{ios_base} flag combination} & \tcode{stdio} equivalent \\
+\tcode{binary}  & \tcode{in}  & \tcode{out} & \tcode{trunc} & \tcode{app} &     \\ \capsep
+    &   & + &   &   & \tcode{"w"}   \\ \rowsep
+    &   & + &   & + & \tcode{"a"}   \\ \rowsep
+    &   &   &   & + & \tcode{"a"}   \\ \rowsep
+    &   & + & + &   & \tcode{"w"}   \\ \rowsep
+    & + &   &   &   & \tcode{"r"}   \\ \rowsep
+    & + & + &   &   & \tcode{"r+"}  \\ \rowsep
+    & + & + & + &   & \tcode{"w+"}  \\ \rowsep
+    & + & + &   & + & \tcode{"a+"}  \\ \rowsep
+    & + &   &   & + & \tcode{"a+"}  \\ \capsep
+  + &   & + &   &   & \tcode{"wb"}  \\ \rowsep
+  + &   & + &   & + & \tcode{"ab"}  \\ \rowsep
+  + &   &   &   & + & \tcode{"ab"}  \\ \rowsep
+  + &   & + & + &   & \tcode{"wb"}  \\ \rowsep
+  + & + &   &   &   & \tcode{"rb"}  \\ \rowsep
+  + & + & + &   &   & \tcode{"r+b"} \\ \rowsep
+  + & + & + & + &   & \tcode{"w+b"} \\ \rowsep
+  + & + & + &   & + & \tcode{"a+b"} \\ \rowsep
+  + & + &   &   & + & \tcode{"a+b"} \\
+\end{floattable}
 
 \pnum
 If the open operation succeeds and
@@ -9026,12 +9026,12 @@ argument \tcode{whence}, of type
 \tcode{int},
 as indicated in Table~\ref{tab:iostreams.seekoff.effects}.
 
-%\begin{libtab2}{\tcode{seekoff} effects}{tab:iostreams.seekoff.effects}
-%{ll}{\tcode{way} Value}{\tcode{stdio} Equivalent}
-%\tcode{basic_ios::beg}  & \tcode{SEEK_SET}  \\
-%\tcode{basic_ios::cur}  & \tcode{SEEK_CUR}  \\
-%\tcode{basic_ios::end}  & \tcode{SEEK_END}  \\
-%\end{libtab2}
+\begin{libtab2}{\tcode{seekoff} effects}{tab:iostreams.seekoff.effects}
+{ll}{\tcode{way} Value}{\tcode{stdio} Equivalent}
+\tcode{basic_ios::beg}  & \tcode{SEEK_SET}  \\
+\tcode{basic_ios::cur}  & \tcode{SEEK_CUR}  \\
+\tcode{basic_ios::end}  & \tcode{SEEK_END}  \\
+\end{libtab2}
 
 \pnum
 \returns
@@ -9864,85 +9864,85 @@ calls
 \pnum
 Table~\ref{tab:iostreams.hdr.cstdio} describes header \tcode{<cstdio>}.
 
-%\begin{libsyntab6}{cstdio}{tab:iostreams.hdr.cstdio}
-%\cspan{\macros}   \\
-%\tcode{BUFSIZ}    &
-%\tcode{FOPEN_MAX} &
-%\tcode{SEEK_CUR}  &
-%\tcode{TMP_MAX} &
-%\tcode{_IONBF}    &
-%\tcode{stdout}    \\
-%\tcode{EOF}     &
-%\tcode{L_tmpnam}  &
-%\tcode{SEEK_END}  &
-%\tcode{_IOFBF}    &
-%\tcode{stderr}    & \\
-%\tcode{FILENAME_MAX}  &
-%\tcode{NULL <cstdio>} &
-%\tcode{SEEK_SET}  &
-%\tcode{_IOLBF}    &
-%\tcode{stdin}   & \\ \rowsep
-%\types        &
-% \tcode{FILE}   &
-% \tcode{fpos_t}   &
-% \tcode{size_t <cstdio>}  &&  \\ \rowsep
-%
-%\cspan{\functions}  \\
-%
-%\tcode{clearerr}  &
-%\tcode{fopen}   &
-%\tcode{fsetpos} &
-%\tcode{putc}    &
-%\tcode{setbuf}    &
-%\tcode{vprintf} \\
-%
-%\tcode{fclose}    &
-%\tcode{fprintf} &
-%\tcode{ftell}   &
-%\tcode{putchar} &
-%\tcode{setvbuf} &
-%\tcode{vscanf}  \\
-%
-%\tcode{feof}    &
-%\tcode{fputc}   &
-%\tcode{fwrite}    &
-%\tcode{puts}    &
-%\tcode{snprintf}  &
-%\tcode{vsnprintf}\\
-%
-%\tcode{ferror}    &
-%\tcode{fputs}   &
-%\tcode{getc}    &
-%\tcode{rename}    &
-%\tcode{sprintf} &
-%\tcode{vsprintf}  \\
-%
-%\tcode{fflush}    &
-%\tcode{fread}   &
-%\tcode{getchar} &
-%\tcode{remove}    &
-%\tcode{tmpfile} &
-%\tcode{vsscanf}\\
-%
-%\tcode{fgetc}   &
-%\tcode{freopen} &
-%\tcode{gets}    &
-%\tcode{rewind}    &
-%\tcode{tmpnam}  &\\
-%
-%\tcode{fgetpos}   &
-%\tcode{fscanf}    &
-%\tcode{perror}    &
-%\tcode{scanf}   &
-%\tcode{ungetc}  &\\
-%
-%\tcode{fgets}   &
-%\tcode{fseek}   &
-%\tcode{printf}    &
-%\tcode{sscanf}    &
-%\tcode{vfprintf}&\\
-%
-%\end{libsyntab6}
+\begin{libsyntab6}{cstdio}{tab:iostreams.hdr.cstdio}
+\cspan{\macros}   \\
+\tcode{BUFSIZ}    &
+\tcode{FOPEN_MAX} &
+\tcode{SEEK_CUR}  &
+\tcode{TMP_MAX} &
+\tcode{_IONBF}    &
+\tcode{stdout}    \\
+\tcode{EOF}     &
+\tcode{L_tmpnam}  &
+\tcode{SEEK_END}  &
+\tcode{_IOFBF}    &
+\tcode{stderr}    & \\
+\tcode{FILENAME_MAX}  &
+\tcode{NULL <cstdio>} &
+\tcode{SEEK_SET}  &
+\tcode{_IOLBF}    &
+\tcode{stdin}   & \\ \rowsep
+\types        &
+ \tcode{FILE}   &
+ \tcode{fpos_t}   &
+ \tcode{size_t <cstdio>}  &&  \\ \rowsep
+
+\cspan{\functions}  \\
+
+\tcode{clearerr}  &
+\tcode{fopen}   &
+\tcode{fsetpos} &
+\tcode{putc}    &
+\tcode{setbuf}    &
+\tcode{vprintf} \\
+
+\tcode{fclose}    &
+\tcode{fprintf} &
+\tcode{ftell}   &
+\tcode{putchar} &
+\tcode{setvbuf} &
+\tcode{vscanf}  \\
+
+\tcode{feof}    &
+\tcode{fputc}   &
+\tcode{fwrite}    &
+\tcode{puts}    &
+\tcode{snprintf}  &
+\tcode{vsnprintf}\\
+
+\tcode{ferror}    &
+\tcode{fputs}   &
+\tcode{getc}    &
+\tcode{rename}    &
+\tcode{sprintf} &
+\tcode{vsprintf}  \\
+
+\tcode{fflush}    &
+\tcode{fread}   &
+\tcode{getchar} &
+\tcode{remove}    &
+\tcode{tmpfile} &
+\tcode{vsscanf}\\
+
+\tcode{fgetc}   &
+\tcode{freopen} &
+\tcode{gets}    &
+\tcode{rewind}    &
+\tcode{tmpnam}  &\\
+
+\tcode{fgetpos}   &
+\tcode{fscanf}    &
+\tcode{perror}    &
+\tcode{scanf}   &
+\tcode{ungetc}  &\\
+
+\tcode{fgets}   &
+\tcode{fseek}   &
+\tcode{printf}    &
+\tcode{sscanf}    &
+\tcode{vfprintf}&\\
+
+\end{libsyntab6}
 
 \pnum
 Calls to the function \tcode{tmpnam} with an argument of \tcode{NULL} may
@@ -9958,23 +9958,23 @@ macros defined by \tcode{<cinttypes>} are provided unconditionally. In particula
 \tcode{__STDC_FORMAT_MACROS}, mentioned in footnote 182 of the C standard, plays no role in
 \Cpp. \exitnote
 
-%\begin{libsyntab4}{cinttypes}{tab:iostreams.hdr.cinttypes}
-%\cspan{\macros}   \\
-%\cspan{\tcode{PRI\{d i o u x X\}[FAST LEAST]\{8 16 32 64\}}} \\
-%\cspan{\tcode{PRI\{d i o u x X\}\{MAX PTR\}}} \\
-%\cspan{\tcode{SCN\{d i o u x X\}[FAST LEAST]\{8 16 32 64\}}} \\
-%\cspan{\tcode{SCN\{d i o u x X\}\{MAX PTR\}}} \\ \rowsep
-%\types  & \tcode{imaxdiv_t} &&\\ \rowsep
-%\cspan{\functions}  \\
-%\tcode{abs} &
-%\tcode{imaxabs} &
-%\tcode{strtoimax} &
-%\tcode{wcstoimax} \\
-%\tcode{div} &
-%\tcode{imaxdiv} &
-%\tcode{strtoumax} &
-%\tcode{wcstoumax}\\
-%\end{libsyntab4}
+\begin{libsyntab4}{cinttypes}{tab:iostreams.hdr.cinttypes}
+\cspan{\macros}   \\
+\cspan{\tcode{PRI\{d i o u x X\}[FAST LEAST]\{8 16 32 64\}}} \\
+\cspan{\tcode{PRI\{d i o u x X\}\{MAX PTR\}}} \\
+\cspan{\tcode{SCN\{d i o u x X\}[FAST LEAST]\{8 16 32 64\}}} \\
+\cspan{\tcode{SCN\{d i o u x X\}\{MAX PTR\}}} \\ \rowsep
+\types  & \tcode{imaxdiv_t} &&\\ \rowsep
+\cspan{\functions}  \\
+\tcode{abs} &
+\tcode{imaxabs} &
+\tcode{strtoimax} &
+\tcode{wcstoimax} \\
+\tcode{div} &
+\tcode{imaxdiv} &
+\tcode{strtoumax} &
+\tcode{wcstoumax}\\
+\end{libsyntab4}
 
 \pnum
 The contents of header \tcode{<cinttypes>} are the same as the Standard C Library header

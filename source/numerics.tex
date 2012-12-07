@@ -15,18 +15,18 @@ arrays, generalized numeric algorithms,
 and facilities included from the ISO C library,
 as summarized in Table~\ref{tab:numerics.lib.summary}.
 
-%\begin{libsumtab}{Numerics library summary}{tab:numerics.lib.summary}
-%\ref{numeric.requirements}  & Requirements &           \\ \rowsep
-%\ref{cfenv}           & Floating-Point Environment & \tcode{<cfenv>}  \\ \rowsep
-%\ref{complex.numbers} & Complex Numbers & \tcode{<complex>} \\ \rowsep
-%\ref{rand}  & Random number generation & \tcode{<random>} \\ \rowsep
-%\ref{numarray}  & Numeric arrays     & \tcode{<valarray>}  \\ \rowsep
-%\ref{numeric.ops} & Generalized numeric operations  & \tcode{<numeric>} \\ \rowsep
-%\ref{c.math}  & C library            & \tcode{<cmath>}   \\
-%              &                        & \tcode{<ctgmath>} \\
-%              &                        & \tcode{<tgmath.h>}\\
-%              &                        & \tcode{<cstdlib>} \\
-%\end{libsumtab}
+\begin{libsumtab}{Numerics library summary}{tab:numerics.lib.summary}
+\ref{numeric.requirements}  & Requirements &           \\ \rowsep
+\ref{cfenv}           & Floating-Point Environment & \tcode{<cfenv>}  \\ \rowsep
+\ref{complex.numbers} & Complex Numbers & \tcode{<complex>} \\ \rowsep
+\ref{rand}  & Random number generation & \tcode{<random>} \\ \rowsep
+\ref{numarray}  & Numeric arrays     & \tcode{<valarray>}  \\ \rowsep
+\ref{numeric.ops} & Generalized numeric operations  & \tcode{<numeric>} \\ \rowsep
+\ref{c.math}  & C library            & \tcode{<cmath>}   \\
+              &                        & \tcode{<ctgmath>} \\
+              &                        & \tcode{<tgmath.h>}\\
+              &                        & \tcode{<cstdlib>} \\
+\end{libsumtab}
 
 \rSec1[numeric.requirements]{Numeric type requirements}
 \indextext{requirements!numeric type}
@@ -8810,134 +8810,134 @@ describe headers \tcode{<cmath>}
 and \tcode{<cstdlib>},
 respectively.
 
-%\begin{libsyntab5}{cmath}{tab:numerics.hdr.cmath}
-%\cspan{\macros} \\
-%
-%\tcode{FP_FAST_FMA} &
-%\tcode{FP_ILOGBNAN} &
-%\tcode{FP_SUBNORMAL} &
-%\tcode{HUGE_VALL} &
-%\tcode{MATH_ERRNO} \\
-%
-%\tcode{FP_FAST_FMAF} &
-%\tcode{FP_INFINITE} &
-%\tcode{FP_ZERO} &
-%\tcode{INFINITY} &
-%\tcode{MATH_ERREXCEPT} \\
-%
-%\tcode{FP_FAST_FMAL} &
-%\tcode{FP_NAN} &
-%\tcode{HUGE_VAL}&
-%\tcode{NAN} &
-%\tcode{math_errhandling} \\
-%
-%\tcode{FP_ILOGB0} &
-%\tcode{FP_NORMAL} &
-%\tcode{HUGE_VALF} &&\\ \rowsep
-%
-%
-%\types      & \tcode{double_t}&\tcode{float_t}&   &         \\ \rowsep
-%\cspan{\mfunctions}                                        \\
-%
-%\tcode{abs}   &
-%\tcode{cosh}  &
-%\tcode{fmod}  &
-%\tcode{logb}  &
-%\tcode{remquo} \\
-%
-%\tcode{acos}  &
-%\tcode{erf} &
-%\tcode{frexp} &
-%\tcode{lrint} &
-%\tcode{rint} \\
-%
-%\tcode{acosh} &
-%\tcode{erfc} &
-%\tcode{hypot} &
-%\tcode{lround} &
-%\tcode{round} \\
-%
-%\tcode{asin}  &
-%\tcode{exp2} &
-%\tcode{ilogb} &
-%\tcode{modf}  &
-%\tcode{scalbln} \\
-%
-%\tcode{asinh} &
-%\tcode{exp}   &
-%\tcode{ldexp} &
-%\tcode{nan} &
-%\tcode{scalbn} \\
-%
-%\tcode{atan}  &
-%\tcode{expm1} &
-%\tcode{lgamma} &
-%\tcode{nanf} &
-%\tcode{sin}   \\
-%
-%\tcode{atan2} &
-%\tcode{fabs}  &
-%\tcode{llrint} &
-%\tcode{nanl} &
-%\tcode{sinh}  \\
-%
-%\tcode{atanh} &
-%\tcode{fdim} &
-%\tcode{llround} &
-%\tcode{nearbyint} &
-%\tcode{sqrt}  \\
-%
-%\tcode{cbrt} &
-%\tcode{floor} &
-%\tcode{log}   &
-%\tcode{nextafter} &
-%\tcode{tan}   \\
-%
-%\tcode{ceil}  &
-%\tcode{fma} &
-%\tcode{log10} &
-%\tcode{nexttoward} &
-%\tcode{tanh}  \\
-%
-%\tcode{copysign} &
-%\tcode{fmax} &
-%\tcode{log1p} &
-%\tcode{pow}   &
-%\tcode{tgamma} \\
-%
-%\tcode{cos}   &
-%\tcode{fmin} &
-%\tcode{log2} &
-%\tcode{remainder} &
-%\tcode{trunc} \\ \rowsep
-%
-%\cspan{\cfunctions} \\
-%
-%\tcode{fpclassify} &
-%\tcode{isgreaterequal} &
-%\tcode{islessequal} &
-%\tcode{isnan} &
-%\tcode{isunordered} \\
-%
-%\tcode{isfinite} &
-%\tcode{isinf} &
-%\tcode{islessgreater} &
-%\tcode{isnormal} &
-%\tcode{signbit} \\
-%
-%\tcode{isgreater} &
-%\tcode{isless} &&&\\
-%\end{libsyntab5}
+\begin{libsyntab5}{cmath}{tab:numerics.hdr.cmath}
+\cspan{\macros} \\
 
-%\begin{libsyntab3}{cstdlib}{tab:numerics.hdr.cstdlib}
-%\macro      & \tcode{RAND_MAX}&         \\ \rowsep
-%\cspan{\types}  \\
-%\tcode{div_t} & \tcode{ldiv_t}  & \tcode{lldiv_t} \\ \rowsep
-%\functions    &         &         \\
-%\tcode{abs}   & \tcode{ldiv}  & \tcode{rand}  \\
-%\tcode{div}   & \tcode{llabs} & \tcode{srand} \\
-%\tcode{labs}  & \tcode{lldiv} &\\
-%\end{libsyntab3}
+\tcode{FP_FAST_FMA} &
+\tcode{FP_ILOGBNAN} &
+\tcode{FP_SUBNORMAL} &
+\tcode{HUGE_VALL} &
+\tcode{MATH_ERRNO} \\
+
+\tcode{FP_FAST_FMAF} &
+\tcode{FP_INFINITE} &
+\tcode{FP_ZERO} &
+\tcode{INFINITY} &
+\tcode{MATH_ERREXCEPT} \\
+
+\tcode{FP_FAST_FMAL} &
+\tcode{FP_NAN} &
+\tcode{HUGE_VAL}&
+\tcode{NAN} &
+\tcode{math_errhandling} \\
+
+\tcode{FP_ILOGB0} &
+\tcode{FP_NORMAL} &
+\tcode{HUGE_VALF} &&\\ \rowsep
+
+
+\types      & \tcode{double_t}&\tcode{float_t}&   &         \\ \rowsep
+\cspan{\mfunctions}                                        \\
+
+\tcode{abs}   &
+\tcode{cosh}  &
+\tcode{fmod}  &
+\tcode{logb}  &
+\tcode{remquo} \\
+
+\tcode{acos}  &
+\tcode{erf} &
+\tcode{frexp} &
+\tcode{lrint} &
+\tcode{rint} \\
+
+\tcode{acosh} &
+\tcode{erfc} &
+\tcode{hypot} &
+\tcode{lround} &
+\tcode{round} \\
+
+\tcode{asin}  &
+\tcode{exp2} &
+\tcode{ilogb} &
+\tcode{modf}  &
+\tcode{scalbln} \\
+
+\tcode{asinh} &
+\tcode{exp}   &
+\tcode{ldexp} &
+\tcode{nan} &
+\tcode{scalbn} \\
+
+\tcode{atan}  &
+\tcode{expm1} &
+\tcode{lgamma} &
+\tcode{nanf} &
+\tcode{sin}   \\
+
+\tcode{atan2} &
+\tcode{fabs}  &
+\tcode{llrint} &
+\tcode{nanl} &
+\tcode{sinh}  \\
+
+\tcode{atanh} &
+\tcode{fdim} &
+\tcode{llround} &
+\tcode{nearbyint} &
+\tcode{sqrt}  \\
+
+\tcode{cbrt} &
+\tcode{floor} &
+\tcode{log}   &
+\tcode{nextafter} &
+\tcode{tan}   \\
+
+\tcode{ceil}  &
+\tcode{fma} &
+\tcode{log10} &
+\tcode{nexttoward} &
+\tcode{tanh}  \\
+
+\tcode{copysign} &
+\tcode{fmax} &
+\tcode{log1p} &
+\tcode{pow}   &
+\tcode{tgamma} \\
+
+\tcode{cos}   &
+\tcode{fmin} &
+\tcode{log2} &
+\tcode{remainder} &
+\tcode{trunc} \\ \rowsep
+
+\cspan{\cfunctions} \\
+
+\tcode{fpclassify} &
+\tcode{isgreaterequal} &
+\tcode{islessequal} &
+\tcode{isnan} &
+\tcode{isunordered} \\
+
+\tcode{isfinite} &
+\tcode{isinf} &
+\tcode{islessgreater} &
+\tcode{isnormal} &
+\tcode{signbit} \\
+
+\tcode{isgreater} &
+\tcode{isless} &&&\\
+\end{libsyntab5}
+
+\begin{libsyntab3}{cstdlib}{tab:numerics.hdr.cstdlib}
+\macro      & \tcode{RAND_MAX}&         \\ \rowsep
+\cspan{\types}  \\
+\tcode{div_t} & \tcode{ldiv_t}  & \tcode{lldiv_t} \\ \rowsep
+\functions    &         &         \\
+\tcode{abs}   & \tcode{ldiv}  & \tcode{rand}  \\
+\tcode{div}   & \tcode{llabs} & \tcode{srand} \\
+\tcode{labs}  & \tcode{lldiv} &\\
+\end{libsyntab3}
 
 \pnum
 The contents of these headers are the same as the Standard C library headers

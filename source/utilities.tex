@@ -6,24 +6,23 @@
 This Clause describes utilities that are generally useful in \Cpp programs; some
 of these utilities are used by other elements of the \Cpp standard library.
 These utilities are summarized in Table~\ref{tab:util.lib.summary}.
-% html-comment
-%\begin{libsumtab}{General utilities library summary}{tab:util.lib.summary}
-%\ref{utility}               & Utility components                & \tcode{<utility>}     \\ \rowsep
-%\ref{pairs}                 & Pairs                             & \tcode{<utility>}     \\ \rowsep
-%\ref{tuple}                 & Tuples                            & \tcode{<tuple>}       \\ \rowsep
-%\ref{template.bitset}       & Fixed-size sequences of bits      & \tcode{<bitset>}      \\ \rowsep
-%                            &                                   & \tcode{<memory>}      \\
-%\ref{memory}                & Memory                            & \tcode{<cstdlib>}     \\
-%                            &                                   & \tcode{<cstring>}     \\ \rowsep
-%\ref{smartptr}              & Smart pointers                    & \tcode{<memory>}      \\ \rowsep
-%\ref{function.objects}      & Function objects                  & \tcode{<functional>}  \\ \rowsep
-%\ref{meta}                  & Type traits                       & \tcode{<type_traits>} \\ \rowsep
-%\ref{ratio}                 & Compile-time rational arithmetic  & \tcode{<ratio>}       \\ \rowsep
-%\ref{time}                  & Time utilities                    & \tcode{<chrono>}      \\
-%                            &                                   & \tcode{<ctime>}       \\ \rowsep
-%\ref{allocator.adaptor}     & Scoped allocators                 & \tcode{<scoped_allocator>} \\ \rowsep
-%\ref{type.index}            & Type indexes                      & \tcode{<typeindex>}   \\
-%\end{libsumtab}
+\begin{libsumtab}{General utilities library summary}{tab:util.lib.summary}
+\ref{utility}               & Utility components                & \tcode{<utility>}     \\ \rowsep
+\ref{pairs}                 & Pairs                             & \tcode{<utility>}     \\ \rowsep
+\ref{tuple}                 & Tuples                            & \tcode{<tuple>}       \\ \rowsep
+\ref{template.bitset}       & Fixed-size sequences of bits      & \tcode{<bitset>}      \\ \rowsep
+                            &                                   & \tcode{<memory>}      \\
+\ref{memory}                & Memory                            & \tcode{<cstdlib>}     \\
+                            &                                   & \tcode{<cstring>}     \\ \rowsep
+\ref{smartptr}              & Smart pointers                    & \tcode{<memory>}      \\ \rowsep
+\ref{function.objects}      & Function objects                  & \tcode{<functional>}  \\ \rowsep
+\ref{meta}                  & Type traits                       & \tcode{<type_traits>} \\ \rowsep
+\ref{ratio}                 & Compile-time rational arithmetic  & \tcode{<ratio>}       \\ \rowsep
+\ref{time}                  & Time utilities                    & \tcode{<chrono>}      \\
+                            &                                   & \tcode{<ctime>}       \\ \rowsep
+\ref{allocator.adaptor}     & Scoped allocators                 & \tcode{<scoped_allocator>} \\ \rowsep
+\ref{type.index}            & Type indexes                      & \tcode{<typeindex>}   \\
+\end{libsumtab}
 
 \rSec1[utility]{Utility components}
 
@@ -3994,11 +3993,10 @@ return first;
 \pnum
 Table~\ref{tab:util.hdr.cstdlib} describes the header
 \tcode{<cstdlib>}.
-% html-comment
-%\begin{libsyntab3}{cstdlib}{tab:util.hdr.cstdlib}
-%\functions  &   \tcode{calloc}  &   \tcode{malloc}      \\
-%            &   \tcode{free}    &   \tcode{realloc}     \\
-%\end{libsyntab3}
+\begin{libsyntab3}{cstdlib}{tab:util.hdr.cstdlib}
+\functions  &   \tcode{calloc}  &   \tcode{malloc}      \\
+            &   \tcode{free}    &   \tcode{realloc}     \\
+\end{libsyntab3}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -4039,13 +4037,12 @@ treat memory allocated with these functions as though it were allocated with
 \pnum
 Table~\ref{tab:util.hdr.cstring} describes the header
 \tcode{<cstring>}.
-% html-comment
-%\begin{libsyntab3}{cstring}{tab:util.hdr.cstring}
-%\macro          &   \tcode{NULL}    &                   \\ \rowsep
-%\type           &   \tcode{size_t}  &                   \\ \rowsep
-%\functions      &   \tcode{memchr}  &   \tcode{memcmp}  \\
-%\tcode{memcpy}  &   \tcode{memmove} &   \tcode{memset}  \\
-%\end{libsyntab3}
+\begin{libsyntab3}{cstring}{tab:util.hdr.cstring}
+\macro          &   \tcode{NULL}    &                   \\ \rowsep
+\type           &   \tcode{size_t}  &                   \\ \rowsep
+\functions      &   \tcode{memchr}  &   \tcode{memcmp}  \\
+\tcode{memcpy}  &   \tcode{memmove} &   \tcode{memset}  \\
+\end{libsyntab3}
 
 \pnum
 The contents are the same as the Standard C library header
@@ -9900,35 +9897,35 @@ ill-formed. Otherwise, an implementation should yield correct values of \tcode{U
 program is ill-formed unless the implementation yields correct values of \tcode{U} and
 \tcode{V}.
 
-%\begin{floattable}{Expressions used to perform ratio arithmetic}{tab:ratio.arithmetic}
-%{lll}
-%\topline
-%\lhdr{Type}                     &
-%  \chdr{Value of \tcode{X}}     &
-%  \rhdr{Value of \tcode{Y}}     \\ \rowsep
-%
-%\tcode{ratio_add<R1, R2>}       &
-%  \tcode{R1::num * R2::den +}   &
-%  \tcode{R1::den * R2::den}     \\
-%                                &
-%  \tcode{R2::num * R1::den}     &
-%                                \\ \rowsep
-%
-%\tcode{ratio_subtract<R1, R2>}  &
-%  \tcode{R1::num * R2::den -}   &
-%  \tcode{R1::den * R2::den}     \\
-%                                &
-%  \tcode{R2::num * R1::den}     &
-%                                \\ \rowsep
-%
-%\tcode{ratio_multiply<R1, R2>}  &
-%  \tcode{R1::num * R2::num}     &
-%  \tcode{R1::den * R2::den}     \\ \rowsep
-%
-%\tcode{ratio_divide<R1, R2>}    &
-%  \tcode{R1::num * R2::den}     &
-%  \tcode{R1::den * R2::num}     \\
-%\end{floattable}
+\begin{floattable}{Expressions used to perform ratio arithmetic}{tab:ratio.arithmetic}
+{lll}
+\topline
+\lhdr{Type}                     &
+  \chdr{Value of \tcode{X}}     &
+  \rhdr{Value of \tcode{Y}}     \\ \rowsep
+
+\tcode{ratio_add<R1, R2>}       &
+  \tcode{R1::num * R2::den +}   &
+  \tcode{R1::den * R2::den}     \\
+                                &
+  \tcode{R2::num * R1::den}     &
+                                \\ \rowsep
+
+\tcode{ratio_subtract<R1, R2>}  &
+  \tcode{R1::num * R2::den -}   &
+  \tcode{R1::den * R2::den}     \\
+                                &
+  \tcode{R2::num * R1::den}     &
+                                \\ \rowsep
+
+\tcode{ratio_multiply<R1, R2>}  &
+  \tcode{R1::num * R2::num}     &
+  \tcode{R1::den * R2::den}     \\ \rowsep
+
+\tcode{ratio_divide<R1, R2>}    &
+  \tcode{R1::num * R2::den}     &
+  \tcode{R1::den * R2::num}     \\
+\end{floattable}
 
 \pnum
 \enterexample
@@ -11395,35 +11392,35 @@ public:
 Table~\ref{tab:util.hdr.ctime} describes the header
 \tcode{<ctime>}.
 
-%\begin{libsyntab5}{ctime}{tab:util.hdr.ctime}
-%
-%\macros             &
-% \tcode{NULL}       &
-% \tcode{CLOCKS_PER_SEC}     &
-%                    &
-%                    \\ \rowsep
-%\types              &
-% \tcode{size_t}     &
-% \tcode{clock_t}    &
-% \tcode{time_t}     &
-%                    \\ \rowsep
-%\struct             &
-% \tcode{tm}         &
-%                    &
-%                    &
-%                    \\ \rowsep
-%\cspan{\functions}  \\
-%\tcode{asctime}     &
-% \tcode{clock}      &
-% \tcode{difftime}   &
-% \tcode{localtime}  &
-% \tcode{strftime}   \\
-%\tcode{ctime}       &
-% \tcode{gmtime}     &
-% \tcode{mktime}     &
-% \tcode{time}       &
-%                    \\
-%\end{libsyntab5}
+\begin{libsyntab5}{ctime}{tab:util.hdr.ctime}
+
+\macros             &
+ \tcode{NULL}       &
+ \tcode{CLOCKS_PER_SEC}     &
+                    &
+                    \\ \rowsep
+\types              &
+ \tcode{size_t}     &
+ \tcode{clock_t}    &
+ \tcode{time_t}     &
+                    \\ \rowsep
+\struct             &
+ \tcode{tm}         &
+                    &
+                    &
+                    \\ \rowsep
+\cspan{\functions}  \\
+\tcode{asctime}     &
+ \tcode{clock}      &
+ \tcode{difftime}   &
+ \tcode{localtime}  &
+ \tcode{strftime}   \\
+\tcode{ctime}       &
+ \tcode{gmtime}     &
+ \tcode{mktime}     &
+ \tcode{time}       &
+                    \\
+\end{libsyntab5}
 
 \pnum
 The contents are the same as the Standard C library header

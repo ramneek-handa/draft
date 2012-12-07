@@ -14,12 +14,12 @@
 FIGURES = $(patsubst %.dot,%.jpg,$(wildcard *.dot))
 
 STDPDF = pdflatex std | grep -v "^Overfull"
-
+STDHTML = htlatex
 default: rebuild
 
 images: $(FIGURES)	
 clean:
-	rm -f *.aux std.pdf *.idx *.ilg *.ind *.log *.lot *.lof *.tmp *.out *.jpg
+	rm -f *.aux std.pdf *.idx *.ilg *.ind *.log *.lot *.lof *.tmp *.out 
 	
 refresh:
 	$(STDPDF)
